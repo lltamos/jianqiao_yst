@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yst.web.model">
+	<class name="DoctorCallInfo" table="doctor_call_info" dynamic-insert="true" dynamic-update="true">
+		<id name="id" type="integer" column="id">
+			<generator class="native" />
+		</id>
+		<property name="order_id" type="string" column="order_id" />
+		<property name="during_time" type="integer" column="during_time" />
+		<property name="remain_time" type="integer" column="remain_time" />
+		<property name="buy_time" type="integer" column="buy_time" />
+		<property name="update_date">
+			<column name="update_date" sql-type="datetime" />
+		</property>
+	</class>
+</hibernate-mapping>

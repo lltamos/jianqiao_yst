@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yst.web.model">
+	<class name="DicTitle" table="dic_title" dynamic-insert="true" dynamic-update="true">
+		<id name="title_id" type="integer" column="title_id">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string" length="100" column="name" />
+		<property name="des" type="text" length="500" column="des" />
+		
+	</class>
+</hibernate-mapping>

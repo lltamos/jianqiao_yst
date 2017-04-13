@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须指向Dao接口 -->
+<mapper namespace="com.alqsoft.dao.dicspec.DictionaryDao">
+	
+	<!-- 专长 -->
+	<select id="findDicSpecAll" resultType="map" >
+		select * from dic_spec
+	</select>
+	
+	<!-- 科室 -->
+	<select id="finddicOfficeAll" resultType="map" >
+		select * from dic_office
+	</select>
+	
+	<!-- 职称 -->
+	<select id="findDicTitleAll" resultType="map" >
+		select * from dic_title
+	</select>
+	
+</mapper>

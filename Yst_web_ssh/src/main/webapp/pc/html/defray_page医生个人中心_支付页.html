@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/defray_page.css">
+    <script src="js/jquery-1.7.2.js"></script>
+</head>
+<body>
+<div class="header clearfix">
+    <div class="cityicon">
+        <div class="icon"></div>
+    </div>
+    <span>选择城市</span>
+
+    <div class="headerright">
+        <span class="welcome">欢迎您来到健桥官方网站！！</span>
+        <a href="javascript:;" class="pleaselogin">请登录</a>
+        <a href="javascript:;" class="register">免费注册</a>
+
+        <div class="appiconbox">
+            <span class="appicon"></span>
+        </div>
+        <a href="javascript:;" class="txt">健桥APP</a>
+
+        <div class="weixiniconbox">
+            <span class="weixinicon"></span>
+        </div>
+        <a href="javascript:;" class="txt">微信公众号</a>
+
+        <div class="shareiconbox">
+            <span class="shareicon"></span>
+        </div>
+        <a href="javascript:;" class="txt">分享论坛</a>
+    </div>
+    <div class="selectcity" style="display: none">
+        <div class="cityline">
+            <span>北京</span>
+            <span>上海</span>
+            <span>天津</span>
+            <span>重庆</span>
+        </div>
+        <div class="cityline">
+            <span>黑龙江</span>
+            <span>吉林</span>
+            <span>辽宁</span>
+            <span>江苏</span>
+            <span>安徽</span>
+        </div>
+        <div class="cityline">
+            <span>河北</span>
+            <span>河南</span>
+            <span>湖北</span>
+            <span>湖南</span>
+            <span>江西</span>
+        </div>
+        <div class="cityline">
+            <span>山西</span>
+            <span>四川</span>
+            <span>青海</span>
+            <span>海南</span>
+            <span>广东</span>
+        </div>
+        <div class="cityline">
+            <span>贵州</span>
+            <span>浙江</span>
+            <span>福建</span>
+            <span>台湾</span>
+            <span>甘肃</span>
+        </div>
+        <div class="cityline">
+            <span>云南</span>
+            <span>内蒙古</span>
+            <span>宁夏</span>
+            <span>新疆</span>
+            <span>西藏</span>
+        </div>
+        <div class="cityline">
+            <span>广西</span>
+            <span>香港</span>
+            <span>澳门</span>
+        </div>
+    </div>
+</div>
+<div class="navbox">
+    <div class="nav clearfix">
+        <h1 class="logo">
+            <a href="javascript:;">
+                <img src="img/logo.png" alt="">
+            </a>
+        </h1>
+        <ul class="navlinks clearfix">
+            <li>
+                <a href="javascript:;">首页</a>
+            </li>
+            <li>
+                <a href="javascript:;">疑难杂症导医</a>
+            </li>
+            <li>
+                <a href="javascript:;">健康服务包</a>
+            </li>
+            <li>
+                <a href="javascript:;">名医高手</a>
+            </li>
+            <li>
+                <a href="javascript:;">患者求医</a>
+            </li>
+            <li>
+                <a href="javascript:;">关于我们</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="hint">
+    <p>温馨提示：支付预约定金后，请到指定医院机构进行初诊后指定康复方案并签合约</p>
+    <div class="set_meal">
+        <p class="time">李医生-肩周炎套餐</p><p>预约定金</p><b><span>200</span>元</b>
+    </div>
+    <div class="referee">
+        <span>推荐人：</span><input type="text">
+    </div>
+    <div class="qrzf clearfix">
+        <div class="qr_1">确认支付方式：</div>
+        <div class="qr_2">
+            <p class="qr_21 mari clearfix">
+                <img src="img/yk_10.gif">
+                        <span class="zf_1">
+                            账户余额<br />
+                            <span class="zf_11">当前余额 <b>15470.99</b></span>
+                        </span>
+                <span class="zf_3"></span>
+            </p>
+        </div>
+        <p class="hz_32">
+            立即购买
+        </p>
+    </div>
+</div>
+<script>
+    $(function(){
+        $('.qr_2 .zf_3').click(function(){
+            $('.qr_2 .zf_3').each(function(){
+                $(this).removeClass('zf_2');
+            });
+            $(this).addClass('zf_2');
+        });
+    });
+</script>
+</body>
+</html>

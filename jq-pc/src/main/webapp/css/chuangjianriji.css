@@ -1,0 +1,251 @@
+.fuwdu_2 {
+    width: 1100px;
+    margin: 50px auto 40px;
+    text-align: center;
+}
+.fuwdu_2 .fuwdu_21 {
+    font-size: 22px;
+    color: #00b0fb;
+    display: block;
+}
+.fuwdu_2 img {
+    display: block;
+    margin: 10px auto 10px;
+}
+.chujiriji{
+    width: 1100px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+}
+.chujiriji  .jiriji{
+    margin-left: 110px;
+}
+.jianjuli{
+    width: 110px;
+    text-align: right;
+    float: left;
+}
+.chujiriji .jiriji_1{
+    margin-bottom: 36px;
+    font-size: 18px;
+    line-height: 30px;
+}
+.jiriji_1 input{
+    height:30px;
+    padding-left:10px;
+    width: 300px;
+    border-radius: 3px;
+    outline: none;
+    border:1px solid #979797;
+}
+.chujiriji .jiriji_2{
+    float: left;
+    background: url(../img/jianj_20.jpg) no-repeat left center;
+    padding-left: 20px;
+    margin-left: 20px;
+}
+.chujiriji .jiriji_3{
+    float: left;
+    width: 880px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+}
+.hui{
+    color: #a2a2a2;
+}
+.chujiriji .jiriji_4{
+    height: 28px;
+    line-height: 28px;
+    float: left;
+    width: 870px;
+    padding-left: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.jiriji_4 .star{
+    width:28px;
+    height:29px;
+    float: left;
+    margin-left:5px;
+    cursor:pointer;
+    background-image: url("../img/jianp_7.png");
+}
+.jiriji_4 .act{
+    width:28px;
+    height:29px;
+    float: left;
+    margin-left:5px;
+    cursor:pointer;
+    background-image: url("../img/jianp_13.png");
+}
+.chujiriji .jiriji_5{
+    width: 880px;
+    float: left;
+    padding-bottom: 20px;
+}
+
+.chujiriji .jiriji_5 a{
+    height: 33px;
+    border: 1px solid #888888;
+    border-radius: 5px;
+    margin-right: 6px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 112px;
+    font-size: 16px;
+    float: left;
+    text-align: center;
+    line-height: 33px;
+    margin-bottom: 20px;
+}
+.chujiriji .jiriji_6{
+    margin-bottom: 36px;
+    font-size: 18px;
+    height: 35px;
+    line-height: 35px;
+}
+.chuangjiandl{
+    width: 137px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: #fff;
+    background: #0062a4;
+    display: inline-block;
+    border-radius: 5px;
+    margin-left: 360px;
+}
+#dialog {
+    background-color: #fff;
+    border: 1px solid #C6C6C6;
+    height: 500px;
+    left: 50%;
+    margin: -230px 0 0 -430px;
+    padding: 1px;
+    position: fixed !important;
+    top: 50%;
+    width: 830px;
+    z-index: 5;
+    border-radius: 5px;
+        overflow: hidden;
+    display: none;
+   box-shadow: 0px 2px 2px 4px #DBDADA;
+}
+.drop_down{
+    width:600px;
+    margin: 10px auto;
+    text-align: center;
+}
+.age_2{
+    width:350px;
+    height:30px;
+    border-radius: 5px;
+    outline: none;
+    padding-left: 30px;
+}
+.mes_img{
+    height: 400px;
+   	width: 800px;
+}
+.mes_img ul li{
+    float: left;
+    margin-top: 10px;
+    margin-left: 14px;
+    cursor: pointer;
+}
+.blue_1{
+    background-color: #2BA6D9;
+    color: #fff;
+}
+.img_11{
+    float: left;
+    margin-top: 10px;
+    margin-left: 10px;
+    border:1px solid #DBDBDB;
+}
+.mes_44{
+    display: inline-block;
+    width:450px;
+    height:94px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.mes_44 h1{
+    display: inline-block;
+    font-size: 18px;
+    margin-top: 4px;
+}
+.mes_44 h2{
+    float: right;
+    display: inline-block;
+    margin-top: 6px;
+    margin-right: 14px;
+    color: #2BA6D9;
+}
+.mes_44 h2>span{
+    display: inline-block;
+    float: left;
+    width:18px;
+    height:18px;
+    margin-right:5px;
+    background: url("../img/map1.png") no-repeat -155px -11px;
+}
+.mes_44 p{
+    margin:12px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

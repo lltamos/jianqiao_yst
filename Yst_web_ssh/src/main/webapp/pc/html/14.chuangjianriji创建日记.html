@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh-en">
+<head>
+    <meta charset="UTF-8">
+    <title>求医发布</title>
+    <link rel="stylesheet" href="css/base.css" type="text/css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/chuangjianriji.css">
+	<script src="js/jquery-1.7.2.js"></script>
+</head>
+<body>
+   <div class="header clearfix">
+		<div class="cityicon">
+			<div class="icon"></div>
+		</div>
+		<span>选择城市</span>
+		<div class="headerright">
+			<span class="welcome">欢迎您来到健桥官方网站！！</span>
+			<a href="javascript:;" class="pleaselogin">请登录</a>
+			<a href="javascript:;" class="register">免费注册</a>
+			<div class="appiconbox">
+				<span class="appicon"></span>
+			</div>
+			<a href="javascript:;" class="txt">健桥APP</a>
+			<div class="weixiniconbox">
+				<span class="weixinicon"></span>
+			</div>
+			<a href="javascript:;" class="txt">微信公众号</a>
+			<div class="shareiconbox">
+				<span class="shareicon"></span>
+			</div>
+			<a href="javascript:;" class="txt">分享论坛</a>
+		</div>
+		<div class="selectcity" style="display: none">
+			<div class="cityline">
+				<span>北京</span>
+				<span>上海</span>
+				<span>天津</span>
+				<span>重庆</span>
+			</div>
+			<div class="cityline">
+				<span>黑龙江</span>
+				<span>吉林</span>
+				<span>辽宁</span>
+				<span>江苏</span>
+				<span>安徽</span>
+			</div>
+			<div class="cityline">
+				<span>河北</span>
+				<span>河南</span>
+				<span>湖北</span>
+				<span>湖南</span>
+				<span>江西</span>
+			</div>
+			<div class="cityline">
+				<span>山西</span>
+				<span>四川</span>
+				<span>青海</span>
+				<span>海南</span>
+				<span>广东</span>
+			</div>
+			<div class="cityline">
+				<span>贵州</span>
+				<span>浙江</span>
+				<span>福建</span>
+				<span>台湾</span>
+				<span>甘肃</span>
+			</div>
+			<div class="cityline">
+				<span>云南</span>
+				<span>内蒙古</span>
+				<span>宁夏</span>
+				<span>新疆</span>
+				<span>西藏</span>
+			</div>
+			<div class="cityline">
+				<span>广西</span>
+				<span>香港</span>
+				<span>澳门</span>
+			</div>
+		</div>
+	</div>
+	<div class="navbox">
+		<div class="nav clearfix">
+			<h1 class="logo">
+				<a href="javascript:;">
+					<img src="img/logo.png" alt="">
+				</a>
+			</h1>
+			<ul class="navlinks clearfix">
+				<li>
+					<a href="javascript:;">首页</a>
+				</li>
+				<li>
+					<a href="javascript:;">疑难杂症导医</a>
+				</li>
+				<li>
+					<a href="javascript:;">健康服务包</a>
+				</li>
+				<li>
+					<a href="javascript:;">名医高手</a>
+				</li>
+				<li>
+					<a href="javascript:;">患者求医</a>
+				</li>
+				<li>
+					<a href="javascript:;">关于我们</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="daohangf">
+	        <a href="javascript:;">首页</a>>><a href="javascript:;">健康分享</a>>><a href="javascript:;">日记本</a>>><span>创建日记本</span>
+    </div>
+    
+    <div  class="fuwdu_2">
+        <span class="fuwdu_21">创建日记本</span>
+        <img src="img/jianp_5.png">
+    </div>
+   <div class="chujiriji clearfix">
+      <div class="jiriji">
+           <div class="jiriji_1 clearfix">
+               <span class="jianjuli">日记本名称：</span>
+			   <input type="text" placeholder="输入日记名称">
+            </div>
+            <div class="jiriji_1 clearfix">
+                <span class="jianjuli">项目：</span>
+                <a href="javascript:showBg();" class="jiriji_2">请选择你做过的项目</a>
+            </div>
+            <div class="jiriji_1 hui clearfix">
+                <span class="jianjuli">医院：</span>
+                <b class="jiriji_3">555</b>
+            </div>
+            <div class="jiriji_1 hui clearfix">
+                <span class="jianjuli">标签：</span>
+                <b class="jiriji_3">555</b>
+            </div>
+            <div class="jiriji_1 clearfix">
+                <span class="jianjuli">赞意度：</span>
+                <ul id="jiriji_4">
+					<li class="star"></li>
+					<li class="star"></li>
+					<li class="star"></li>
+					<li class="star"></li>
+					<li class="star"></li>
+				</ul>
+            </div>
+		  <script>
+			  window.onload = function () {
+				  var star = document.getElementById("jiriji_4");
+				  var star_li = star.getElementsByTagName("li");
+				  var len = star_li.length;
+				  for (var i = 0; i < len; i++) {
+					  star_li[i].index = i;
+//					  star_li[i].onmouseover = function () {
+//						  console.log(123);
+//						  for (i = 0; i <= this.index; i++) {
+//							  star_li[i].className = "act";
+//						  }
+//					  }
+//					  star_li[i].onmouseout = function () {
+//						  for (i = 0; i < len; i++) {
+//							  star_li[i].className = "star";
+//						  }
+//					  }
+					  star_li[i].onclick=function(){
+						  for(i=0;i<=this.index;i++){
+							  star_li[i].className = "act";
+						  }
+					  }
+				  }
+			  }
+		  </script>
+            <div class="jiriji_6 clearfix">
+                <span class="jianjuli">赞一句：</span>
+                <div class="jiriji_5 clearfix">
+                    <a href="javascript:;">效果非常好</a>
+                    <a href="javascript:;">效果非常好</a>
+                    <a href="javascript:;">效果非常好</a>
+                    <a href="javascript:;">效果非常好</a>
+                    <a href="javascript:;">效果非常好</a>
+                    <a href="javascript:;">效果非常好</a>
+                    <a href="javascript:;">效果非常好</a>
+                    <a href="javascript:;">效果非常好</a>
+                </div>
+            </div>
+            <div class="jiriji_6 clearfix">
+                <span class="jianjuli">踩一句：</span>
+                <div class="jiriji_5 clearfix">
+                    <a href="javascript:;">效果非常好</a>
+                    <a href="javascript:;">效果非常好</a>
+                    <a href="javascript:;">效果非常好</a>
+                    <a href="javascript:;">效果非常好</a>
+                    <a href="javascript:;">效果非常好</a>
+                    <a href="javascript:;">效果非常好</a>
+                    <a href="javascript:;">效果非常好</a>
+                    <a href="javascript:;">效果非常好</a>
+                </div>
+            </div>
+            <a class="chuangjiandl" href="javascript:;">创建 </a>
+        </div>
+   </div>
+	<!--弹框-->
+   <div id="dialog">
+	   <div class="drop_down">
+		   <select class="age_2">
+			   <option value="volvo">请选择项目类型</option>
+			   <option value="saab">Saab</option>
+			   <option value="opel">Opel</option>
+			   <option value="audi">Audi</option>
+		   </select>
+	   </div>
+	   <div class="mes_img">
+		   <ul>
+			   <li>
+				   <img class="img_11" src="img/img_33.png" alt="">
+				   <div class="mes_44">
+					   <h1>项目名称</h1><h2><span></span>肩周炎</h2>
+					   <p>首都医科大附属医院</p>
+					   <b><span>400</span>元</b>
+				   </div>
+			   </li>
+			   <li>
+				   <img class="img_11" src="img/img_33.png" alt="">
+				   <div class="mes_44">
+					   <h1>项目名称</h1><h2><span></span>肩周炎</h2>
+					   <p>首都医科大附属医院</p>
+					   <b><span>400</span>元</b>
+				   </div>
+			   </li>
+			   <li>
+				   <img class="img_11" src="img/img_33.png" alt="">
+				   <div class="mes_44">
+					   <h1>项目名称</h1><h2><span></span>肩周炎</h2>
+					   <p>首都医科大附属医院</p>
+					   <b><span>400</span>元</b>
+				   </div>
+			   </li>
+			   <li>
+				   <img class="img_11" src="img/img_33.png" alt="">
+				   <div class="mes_44">
+					   <h1>项目名称</h1><h2><span></span>肩周炎</h2>
+					   <p>首都医科大附属医院</p>
+					   <b><span>400</span>元</b>
+				   </div>
+			   </li>
+			   <li>
+				   <img class="img_11" src="img/img_33.png" alt="">
+				   <div class="mes_44">
+					   <h1>项目名称</h1><h2><span></span>肩周炎</h2>
+					   <p>首都医科大附属医院</p>
+					   <b><span>400</span>元</b>
+				   </div>
+			   </li>
+			   <li>
+				   <img class="img_11" src="img/img_33.png" alt="">
+				   <div class="mes_44">
+					   <h1>项目名称</h1><h2><span></span>肩周炎</h2>
+					   <p>首都医科大附属医院</p>
+					   <b><span>400</span>元</b>
+				   </div>
+			   </li>
+		   </ul>
+		   <a class="queding" href="javascript:;">确定</a>
+		   <div class="diffdiseasepagebox">.
+			   <span class="pagebtn">上一页</span>
+			   <a href="javascript:;" class="pagenumber">1</a>
+			   <a href="javascript:;" class="pagenumber">2</a>
+			   <a href="javascript:;" class="pagenumber">3</a>
+			   <a href="javascript:;" class="pagenumber">4</a>
+			   <a href="javascript:;" class="pagenumber">5</a>
+			   <a href="javascript:;" class="pagenumber">6</a>
+			   <a href="javascript:;" class="pagenumber">7</a>
+			   <span class="pagebtn">...</span>
+			   <span class="pagebtn">下一页</span>
+			   <span class="pagebtn">共18页</span>
+			   <span class="pagebtn">到第</span>
+			   <input type="text" class="pageinput">
+			   <span class="pagebtn">页</span>
+			   <span class="confirmbtn">确定</span>
+		   </div>
+	   </div>
+   </div>
+ 
+
+
+
+
+
+    <div class="footbox">
+		<div class="foot">
+			<div class="logo">
+				<img src="img/logo.png" alt="">
+			</div>
+			<ul class="links">
+				<li>
+					<div class="linktitle">
+						<a href="javascript:;">关于我们</a>
+					</div>
+					<div class="footlink">
+						<a href="javascript:;">· 领导关注</a>
+					</div>
+					<div class="footlink">
+						<a href="javascript:;">· 公司愿景</a>
+					</div>
+					<div class="footlink">
+						<a href="javascript:;">· 团队精神</a>
+					</div>
+				</li>
+				<li>
+					<div class="linktitle">
+						<a href="javascript:;">健桥资讯</a>
+					</div>
+					<div class="footlink">
+						<a href="javascript:;">· 公司新闻</a>
+					</div>
+					<div class="footlink">
+						<a href="javascript:;">· 项目动态</a>
+					</div>
+					<div class="footlink">
+						<a href="javascript:;">· 行业新闻</a>
+					</div>
+				</li>
+				<li>
+					<div class="linktitle">
+						<a href="javascript:;">联系我们</a>
+					</div>
+					<div class="footlink">
+						<a href="javascript:;">· 联系方式</a>  
+					</div>
+					<div class="footlink">
+						<a href="javascript:;">· 在线留言</a>
+					</div>
+					<div class="footlink">
+						<a href="javascript:;">· 人才招聘</a>
+					</div>
+				</li>
+			</ul>
+			<div class="divide">
+				<div class="divideline"></div>
+			</div>
+			<ul class="twocode">
+				<li>
+					<div class="codebox">
+						<img src="img/twocode.jpg" alt="">
+					</div>
+					<div class="noteword">健桥官网</div>
+				</li>
+				<li>
+					<div class="codebox">
+						<img src="img/twocode.jpg" alt="">
+					</div>
+					<div class="noteword">ADROID APP</div>
+				</li>
+				<li class="lastcode">
+					<div class="codebox">
+						<img src="img/twocode.jpg" alt="">
+					</div>
+					<div class="noteword">IOS APP</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="footbottombox">
+		<div class="footbottom">
+			北京上善健桥健康管理中心     jianqiao001.com 京ICP备12048628号
+		</div>
+	</div>
+   <script>
+	   function showBg() {
+		   var bh = $("body").height();
+		   var bw = $("body").width();
+		   $("#fullbg").css({
+			   height:bh,
+			   width:bw,
+			   display:"block"
+		   });
+		   $("#dialog").show();
+	   }
+	   function closeBg() {
+		   $("#fullbg,#dialog").hide();
+	   }
+	   $('.mes_img >ul >li').click(function(){
+		   $(".mes_img >ul >li").removeClass("blue_1");
+		   $(this).addClass("blue_1");
+	   });
+   </script>
+</body>
+</html>

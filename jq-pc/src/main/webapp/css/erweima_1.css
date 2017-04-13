@@ -1,0 +1,72 @@
+body{
+    background-color: #ECEDF1;
+}
+.logo_6{
+    margin-top: 6px;
+    background-color: #fff;
+}
+.checkstand{
+    width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+    overflow: hidden;
+}
+.checkstand img{
+    float: left;
+}
+.checkstand h1{
+    display: inline-block;
+    float: left;
+    font-size: 16px;
+    padding: 12px 24px;
+    color: #3C3B3F;
+}
+.order_num{
+    width: 1200px;
+    margin: 0 auto;
+}
+.order_num p{
+    padding: 20px 76px;
+    color: #615F62;
+}
+.weixin{
+    width: 1100px;
+    margin: 10px auto;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 1px 1px 6px 4px #ccc;
+}
+.weixin p{
+	margin-top:16px;
+}
+.weixin p span{
+    font-size: 24px;
+    padding: 28px;
+    color: #5A5B61;
+}
+.weixin p b{
+    color: #858585;
+    margin-left: 48px;
+}
+.weixin p b i{
+    color: #FE5552;
+}
+.weixin_imgleft{
+    float: left;
+    margin: -15px 10px 84px 200px;
+}
+.weixin_imgleft img{
+        display: block;
+    width: 296px;
+}
+.erweima_1{
+    width: 296px;
+    height: 380px;
+}
+.weixin_imgright{
+      float: left;
+        margin: -20px 60px;
+}
+.weixin_imgright img{
+	width:388px;
+}

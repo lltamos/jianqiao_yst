@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="user" namespace="/" extends="common">
+		<action name="user" class="userAction">
+			<result name="add">system/user/add.jsp</result>
+			<result name="index">main.jsp</result>
+			<result name="show_page">jianqiao.jsp</result>
+			<result name="login_page">login.jsp</result>
+			<result name="list">system/user/list.jsp</result>
+			<result name="update_page">system/user/update.jsp</result>
+			<result name="customer_service_page">js/web-im-1.0.7.2/index.html</result>
+			<result name="add_page">system/user/add.jsp</result>
+			<result name="update_role_page">system/user/updateRole.jsp</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">user</param>
+			</result>
+			<result name="login_success">system/user/list.jsp</result>
+		</action>
+	</package>
+
+	<package name="resource" namespace="/" extends="common">
+		<action name="resource" class="resourceAction">
+			<result name="update_page">system/resource/update.jsp</result>
+			<result name="add_page">system/resource/add.jsp</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">resource</param>
+			</result>
+			<result name="list">system/resource/list.jsp</result>
+		</action>
+	</package>
+
+	<package name="customer" namespace="/" extends="common">
+		<action name="customer" class="customerAction">
+			<result name="add">system/customer/add.jsp</result>
+			<result name="list">system/customer/list.jsp</result>
+			<result name="add_page">system/customer/add.jsp</result>
+			<result name="update_page">system/customer/update.jsp</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">customer</param>
+			</result>
+			<result name="merchant_list">system/my_merchant/merchant_list.jsp</result>
+			<result name="patient_page">system/patient/patient_list.jsp</result>
+			<result name="add_patient_page">system/patient/add_patient.jsp</result>
+		</action>
+	</package>
+
+	<package name="customerAddress" namespace="/" extends="common">
+		<action name="customerAddress" class="customerAddressAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">customerAddress</param>
+			</result>
+		</action>
+	</package>
+
+	<package name="merchant" namespace="/" extends="common">
+		<action name="merchant" class="merchantAction">
+			<result name="list">system/merchant/list.jsp</result>
+			<result name="add_page">system/merchant/add.jsp</result>
+			<result name="update_page">system/merchant/update.jsp</result>
+			<result name="verify_page">system/merchant/verify.jsp</result>
+			<result name="show_page">system/merchant/show.jsp</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">merchant</param>
+			</result>
+		</action>
+	</package>
+
+
+	<package name="store" namespace="/" extends="common">
+		<action name="store" class="storeAction">
+			<result name="list">system/store/list.jsp</result>
+			<result name="add_page">system/store/add.jsp</result>
+			<result name="update_page">system/store/update.jsp</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">store</param>
+			</result>
+		</action>
+	</package>
+
+	<package name="product" namespace="/" extends="common">
+		<action name="product" class="productAction">
+			<result name="list">system/product/list.jsp</result>
+			<result name="product_list_page">jianqiao.jsp</result>
+			<result name="product_page">ridge.jsp</result>
+			<result name="index_page">pc/common/main.jsp</result>
+			<result name="wap_page">wap_page.jsp</result>
+			<result name="info_page">details.jsp</result>
+			<result name="add_page">system/product/add.jsp</result>
+			<result name="update_page">system/product/update.jsp</result>
+			<result name="show_page">system/product/show.jsp</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">product</param>
+			</result>
+		</action>
+	</package>
+
+	<package name="productOrder" namespace="/" extends="common">
+		<action name="productOrder" class="productOrderAction">
+			<result name="list">system/productOrder/list.jsp</result>
+			<result name="send_page">system/productOrder/send.jsp</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">productOrder</param>
+			</result>
+		</action>
+	</package>
+
+	<package name="advertise" namespace="/" extends="common">
+		<action name="advertise" class="advertiseAction">
+			<result name="list">system/advertise/list.jsp</result>
+			<result name="add_page">system/advertise/add.jsp</result>
+			<result name="update_page">system/advertise/update.jsp</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">advertise</param>
+			</result>
+		</action>
+	</package>
+	<package name="alipay" namespace="/" extends="common">
+		<action name="alipay" class="alipayAction" />
+	</package>
+	<package name="balance" namespace="/" extends="common">
+		<action name="balance" class="balanceTransAction" />
+	</package>
+	<package name="upload" namespace="/" extends="common">
+		<action name="upload" class="uploadAction" />
+	</package>
+	<package name="desc" namespace="/" extends="common">
+		<action name="desc" class="detailDescAction">
+		</action>
+	</package>
+	<package name="express" namespace="/" extends="common">
+		<action name="express" class="expressAction">
+		</action>
+	</package>
+	<package name="merchantActivity" namespace="/" extends="common">
+		<action name="merchantActivity" class="merchantActivityAction">
+			<result name="list">system/my_merchant/activity/list.jsp</result>
+			<result name="add_page">system/my_merchant/activity/add.jsp</result>
+			<result name="update_page">system/my_merchant/activity/update.jsp</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">merchantActivity</param>
+			</result>
+		</action>
+	</package>
+	<package name="comment" namespace="/" extends="common">
+		<action name="comment" class="commentAction">
+			<result name="list">system/comment/list.jsp</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">comment</param>
+			</result>
+		</action>
+	</package>
+	<package name="version" namespace="/" extends="common">
+		<action name="version" class="versionAction">
+			<result name="list">system/version/list.jsp</result>
+			<result name="add_page">system/version/add.jsp</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">version</param>
+			</result>
+		</action>
+	</package>
+
+	<!-- 角色字典 -->
+	<package name="role" namespace="/" extends="common">
+		<action name="role" class="roleAction">
+			<result name="list">system/dicRole/list.jsp</result>
+			<result name="add_page">system/dicRole/add.jsp</result>
+			<result name="update_page">system/dicRole/update.jsp</result>
+			<result name="resource_page">system/dicRole/resource.jsp</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">role</param>
+			</result>
+		</action>
+	</package>
+
+	<!-- 产品类型字典 -->
+	<package name="productType" namespace="/" extends="common">
+		<action name="productType" class="productTypeAction">
+			<result name="list">system/productType/list.jsp</result>
+			<result name="add_page">system/productType/add.jsp</result>
+			<result name="update_page">system/productType/update.jsp</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">productType</param>
+			</result>
+		</action>
+	</package>
+	<!-- Add packages here -->
+			<!-- 跳转到登录页 -->
+	<package name="index" namespace="/" extends="common">
+		<action name="index" class="indexAction" >
+			<result name="index">login.jsp</result>
+		</action>
+	</package>
+</struts>    

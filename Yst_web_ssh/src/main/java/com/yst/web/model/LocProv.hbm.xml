@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yst.web.model">
+	<class name="LocProv" table="loc_prov" dynamic-insert="true" dynamic-update="true">
+		<id name="prov_id" type="integer" column="prov_id">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string" length="50" column="name" />
+		<set name="locCitys" cascade="all" inverse="true" lazy="false">
+			<key>
+				<column name="prov_id"></column>
+			</key>
+			<one-to-many class="LocCity" />
+		</set>
+	</class>
+	<class name="LocCity" table="loc_city" dynamic-insert="true" dynamic-update="true">
+		<id name="city_id" type="integer" column="city_id">
+			<generator class="native" />
+		</id>
+		<many-to-one name="locProv" class="LocProv" cascade="save-update" lazy="false"   
+            fetch="select">  
+            <column name="prov_id"></column>  
+        </many-to-one>  
+		<property name="name" type="string" length="50" column="name" />
+	</class>
+</hibernate-mapping>

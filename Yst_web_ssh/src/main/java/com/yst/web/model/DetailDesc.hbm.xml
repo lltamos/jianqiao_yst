@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yst.web.model">
+	<class name="DetailDesc" table="detail_desc"  dynamic-insert="true" dynamic-update="true">
+		<id name="desc_id" type="integer" column="desc_id" >
+			<generator class="native" />
+		</id>
+		<property name="main_id"  type="integer" />
+		<property name="desc_for"  type="integer" />
+		<property name="desc_type"  type="integer" /> 
+		<property name="desc_content" type="string" length="1000" />
+		<property name="desc_index"  type="integer" /> 
+	</class>
+</hibernate-mapping>

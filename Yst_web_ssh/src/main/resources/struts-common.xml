@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.configuration.xml.reload" value="true" />
+	<!-- 是否启用开发模式(开发时设置为true,发布到生产环境后设置为false) -->
+	<constant name="struts.devMode" value="false" />
+	<!-- 指定每次请求到达，重新加载资源文件 -->
+	<constant name="struts.i18n.reload" value="true" />
+	<constant name="struts.objectFactory" value="spring" />
+	<constant name="struts.ognl.allowStaticMethodAccess" value="true" />
+	<constant name="struts.multipart.maxSize" value="10500000"/>
+	<package name="common" namespace="" extends="struts-default">
+		<interceptors>
+			<!-- <interceptor name="aotuClass" class="com.whl.utils.AotuClassInterceptor" 
+				/> -->
+			<interceptor name="paginate" class="com.yst.web.interceptor.PaginateInterceptor" />
+			<interceptor name="encoding" class="com.yst.web.interceptor.EncodingInterceptor" />
+			<interceptor name="authority" class="com.yst.web.interceptor.LoginInterceptor" />
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="exception" />
+				<interceptor-ref name="alias" />
+				<interceptor-ref name="servletConfig" />
+				<interceptor-ref name="i18n" />
+				<interceptor-ref name="prepare" />
+				<interceptor-ref name="chain" />
+				<interceptor-ref name="scopedModelDriven" />
+				<interceptor-ref name="modelDriven">
+					<!-- 渲染页面前刷新model在ValueStack的root的引用 -->
+					<param name="refreshModelBeforeResult">true</param>
+				</interceptor-ref>
+
+				<!-- <interceptor-ref name="aotuClass" /> <interceptor-ref name="paginate" 
+					/> -->
+				<interceptor-ref name="authority" />
+				<interceptor-ref name="encoding" />
+				<interceptor-ref name="paginate" />
+				<interceptor-ref name="fileUpload">
+					<!-- 配置允许上传的文件类型 -->
+					<!-- 允许后缀名为png,bmp,jpg,doc,ipa,apk的文件上传 -->
+					<param name="allowedExtensions">png,bmp,jpg,jpeg,ipa,apk</param>
+					<!-- <param name ="allowedTypes">image/bmp,image/png,image/gif,image/jpeg</param> -->
+					<!--配置允许上传的文件大小单位字节 默认10M -->
+					<param name = "maximumSize">10500000</param>
+				</interceptor-ref>
+				<interceptor-ref name="checkbox" />
+				<interceptor-ref name="multiselect" />
+				<interceptor-ref name="staticParams" />
+				<interceptor-ref name="actionMappingParams" />
+				<interceptor-ref name="params">
+					<param name="excludeParams">dojo\..*,^struts\..*</param>
+				</interceptor-ref>
+				<interceptor-ref name="conversionError" />
+				<interceptor-ref name="validation">
+					<param name="excludeMethods">input,back,cancel,browse</param>
+				</interceptor-ref>
+				<interceptor-ref name="workflow">
+					<param name="excludeMethods">input,back,cancel,browse</param>
+				</interceptor-ref>
+				<interceptor-ref name="debugging" />
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="myStack"></default-interceptor-ref>
+		<global-results>
+			<result name="error">/common/error.jsp</result>
+			<result name="login" type="redirect" >/</result>
+		</global-results>
+	</package>
+</struts>    

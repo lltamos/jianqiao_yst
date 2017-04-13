@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须指向Dao接口 -->
+<mapper namespace="com.alqsoft.dao.balance.BalanceDao">
+
+
+	<sql id="where_costomerid">
+		<where>
+			customer_id=#{id}
+		</where>
+	</sql>
+
+	<!-- 查询账户余额 -->
+	<select id="getBalanceByCId" resultType="java.util.HashMap"
+		parameterType="java.lang.Integer">
+		SELECT *
+		FROM balance
+		<include refid="where_costomerid" />
+
+	</select>
+
+
+
+
+
+
+
+
+</mapper>

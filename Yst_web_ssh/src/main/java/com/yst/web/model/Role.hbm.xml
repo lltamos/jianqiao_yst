@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yst.web.model">
+	<class name="Role" table="dic_role" dynamic-insert="true" dynamic-update="true">
+		<id name="role_id">
+			<generator class="native" />
+		</id>
+		<property length="50" name="role_name" not-null="true" type="string"
+			column="role_name" />
+		<property name="des" type="string" length="200" />
+		 <set name="roleUsers" cascade="all" inverse="true" lazy="false" >  
+            <key>  
+                <column name="role_id"></column>  
+            </key>  
+            <one-to-many class="UserRole" />  
+        </set> 
+        <set name="roleMenus" cascade="all" inverse="true" lazy="false">  
+            <key>  
+                <column name="role_id"></column>  
+            </key>  
+            <one-to-many class="ACL" />  
+        </set> 
+	</class>
+</hibernate-mapping>

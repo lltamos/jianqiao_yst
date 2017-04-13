@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yst.web.model">
+	<class name="DoctorComment" table="doctor_comment" >
+		<id name="comment_id" type="integer" column="comment_id">
+			<generator class="native" />
+		</id>
+		<!-- <many-to-one name="doctor" class="Doctor" fetch="select" lazy="false" unique="true">  
+            <column name="doctorId"></column>  
+            dynamic-insert="true" dynamic-update="true"
+        </many-to-one>
+        <many-to-one name="customer" class="Customer" fetch="select" lazy="false" unique="true">  
+            <column name="customer_id"></column>  
+        </many-to-one> -->
+        <property name="doctorId" type="integer" column="doctor_id" ></property>
+        <property name="customer_id" type="integer" column="customer_id" ></property>
+		<property name="order_id" type="integer" column="order_id" />
+		<property name="customer_sex" type="integer" column="customer_sex" />
+		<property name="customer_phone" type="string" column="customer_phone" />
+		<property name="customer_age" type="integer" column="customer_age" />
+		<property name="service_star" type="integer" column="service_star" />
+		<property name="comment_date">
+			<column name="comment_date" sql-type="datetime" />
+		</property>
+		<property name="customer_comment" type="string" length="500" column="customer_comment" />
+	</class>
+</hibernate-mapping>

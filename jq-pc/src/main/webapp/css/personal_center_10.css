@@ -1,0 +1,138 @@
+.change{
+    background-color: #F9F9F9;
+    height: 56px;
+    line-height: 56px;
+}
+.change span{
+    height: 54px;
+    display: inline-block;
+}
+.change span a{
+    display: inline-block;
+    height: 56px;
+    line-height: 56px;
+    padding: 0 10px;
+}
+.change_1{
+    float: left;
+    margin-left: 20px;
+}
+.change_2{
+    float: left;
+    margin-left: 290px;
+}
+.change_3{
+    float: right;
+    margin-right: 20px;
+}
+.color_bor{
+    border-bottom: 2px solid #00B1FB;
+}
+.color_font{
+    color: #00B1FB;
+    font-weight: bold;
+}
+.rijiben .riji_1{
+    margin-top: 20px;
+    width: 928px;
+    height: 162px;
+    border: 1px solid #d8d8d8;
+    background: #00b0fb;
+}
+.rijiben .riji_1 .riji_14{
+    width: 108px;
+    height: 108px;
+    margin-left: 26px;
+    margin-top: 26px;
+    margin-right: 12px;
+    float: left;
+}
+.rijiben .riji_1 .riji_12{
+    width: 610px;
+    padding-top: 34px;
+    float: left;
+}
+.rijiben .riji_1 .riji_12 i{
+    font-size: 22px;
+    color: #fff;
+    display: block;
+    padding-bottom: 30px;
+}
+.rijiben .riji_1 .riji_12 b{
+    font-size: 18px;
+    color: #fff;
+}
+.rijiben .riji_1 .riji_13{
+    float: left;
+    width: 100px;
+    height: 36px;
+    background: #fff;
+    border-radius: 5px;
+    line-height: 36px;
+    text-align: center;
+    margin-top: 68px;
+    color: #0062a4;
+}
+
+.riji_2{
+    text-align: center;
+    color: #00b0fb;
+    font-size: 26px;
+    font-weight:300;
+    padding-bottom: 24px;
+    width: 404px;
+    margin-left: 206px;
+    margin-top: 50px;
+    margin-bottom: 26px;
+}
+.rijixin{
+    margin-bottom: 100px;
+}
+.rijiben .riji_3{
+    width: 928px;
+    height: 162px;
+    border: 1px solid #d8d8d8;
+    background: #f5f5f5;
+    margin-bottom: 14px;
+}
+.rijiben .riji_3 .riji_31{
+    float: left;
+    width: 108px;
+    height: 108px;
+    margin-left: 26px;
+    margin-top: 26px;
+    margin-right: 12px;
+}
+.rijiben .riji_3 .riji_32{
+    float: left;
+    width: 600px;
+    padding-top: 34px;
+    overflow: hidden;
+}
+.rijiben .riji_3 .riji_32 i{
+    width: 700px;
+    font-size: 22px;
+    display: block;
+    padding-bottom: 30px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.rijiben .riji_3 .riji_32 b{
+    width: 700px;
+    font-size: 18px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.rijiben .riji_3 .riji_33{
+    float: left;
+    width: 100px;
+    height: 36px;
+    background: #0062a4;
+    border-radius: 5px;
+    line-height: 36px;
+    text-align: center;
+    margin-top: 68px;
+    color: #fff;
+}

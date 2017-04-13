@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yst.web.model">
+	<class name="ProductType" table="product_type" dynamic-insert="true" dynamic-update="true" lazy="false">
+		<id name="product_type_id" type="integer" column="product_type_id">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string" length="100" column="name" />
+		<property name="des" type="text" length="500" column="des" />
+		<property name="deleted" type="integer">
+			<column name="deleted"  not-null="true" default="0" ></column>
+		</property>
+	</class>
+</hibernate-mapping>

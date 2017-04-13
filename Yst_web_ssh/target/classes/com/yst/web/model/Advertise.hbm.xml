@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yst.web.model">
+	<class name="Advertise" table="advertise"  dynamic-insert="true" dynamic-update="true">
+		<id name="adv_id">
+			<generator class="native" />
+		</id>
+		<property name="order_index"  type="integer" />
+		<property length="100" name="name"  type="string" />
+		<property length="200" name="image"  type="string" />
+		<property name="start_date">
+			<column name="start_date" sql-type="datetime" />
+		</property>
+		<property name="end_date">
+			<column name="end_date" sql-type="datetime" />
+		</property>
+		<property length="500" name="link_content"  type="string" />
+		<property length="500" name="detail_html"  type="string" />
+	</class>
+</hibernate-mapping>

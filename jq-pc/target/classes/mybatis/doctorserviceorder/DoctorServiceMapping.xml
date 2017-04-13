@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须指向Dao接口 -->
+<mapper namespace="com.alqsoft.dao.doctorservice.DoctorServiceDao">
+
+
+	<select id="getDoctorServicePrice" resultType="java.util.Map"
+		parameterType="Long">
+		select service_online_time_price from doctor_service where doctor_id =#{id}
+	</select>
+
+
+</mapper>

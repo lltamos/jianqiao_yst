@@ -1,0 +1,80 @@
+.change{
+    background-color: #F9F9F9;
+    height: 56px;
+    line-height: 56px;
+}
+.change span{
+    height: 54px;
+    display: inline-block;
+}
+.change span a{
+    display: inline-block;
+    height: 56px;
+    line-height: 56px;
+    padding: 0 10px;
+     font-weight: bold;
+}
+.change_1{
+    float: left;
+    margin-left: 20px;
+}
+.change_2{
+    float: left;
+    margin-left: 290px;
+}
+.change_3{
+    float: right;
+    margin-right: 20px;
+}
+.color_font{
+    color: #00B1FB;
+    border-bottom: 2px solid #00B1FB;
+}
+.log{
+    height: 690px;
+}
+.log_content{
+    overflow: hidden;
+    padding-bottom: 10px;
+    margin: 0 auto;
+    width: 872px;
+    border-bottom: 1px dashed #B3B3B3;
+}
+.log_content img{
+    height: 117px;
+    width: 117px;
+    border-radius: 50%;
+    margin-left: 10px;
+    margin-top: 10px;
+    float: left;
+}
+.log_right{
+    float: left;
+    margin-top: 20px;
+    position: relative;
+}
+.log_right p{
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.log_right p span{
+    margin-right: 20px;
+}
+.log_right h1{
+    display: block;
+    width: 690px;
+    padding: 10px;
+    margin-left: 20px;
+    margin-top: 10px;
+    background-color: #E5E5E5;
+    border-bottom: 2px solid #C7C7C7;
+}
+.log_right i{
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background: url("../img/log.png") no-repeat;
+    position: absolute;
+    top: 41px;
+    left: 6px;
+}

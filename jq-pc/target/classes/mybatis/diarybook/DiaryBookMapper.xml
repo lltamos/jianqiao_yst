@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须指向Dao接口 -->
+<mapper namespace="com.alqsoft.dao.diarybook.DiaryBookDao">
+
+	<select id="findOne" resultType="com.alqsoft.entity.diarybook.DiaryBook" parameterType="Long">
+		select * from diary_book where id=#{id}	
+	</select>
+
+	<select id="getBookServicePcList" resultType="com.alqsoft.entity.diarybook.DiaryBook" parameterType="map">
+		select * from diary_book where customer_id=#{cid} limit #{page},#{rows}
+	</select>
+
+	<select id="getBookServicePcListCount" resultType="int" parameterType="Long">
+		select count(*) from diary_book where customer_id=#{cid}
+	</select>
+	
+</mapper>

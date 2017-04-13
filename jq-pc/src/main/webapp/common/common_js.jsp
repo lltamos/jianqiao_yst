@@ -1,0 +1,14 @@
+<script type="text/javascript" src="${cxt}/js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="${cxt}/js/jquery.tips.js"></script>
+<script type="text/javascript" src="${cxt}/js/handlerResultInfo.js"></script>
+<script type="text/javascript" src="${cxt}/js/popwin.js"></script>
+<script type="text/javascript" src="${cxt}/js/validateIDNumber.js"></script>
+<script type="text/javascript" src="${cxt}/js/jstree.min.js"></script>
+<script type="text/javascript" src="${cxt}/js/jquery.form.min.js"></script>
+<script type="text/javascript" src="${cxt}/js/dataTable/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="${cxt}/js/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="${cxt}/js/laydate/laydate.js"></script>
+<script type="text/javascript" src="${cxt}/js/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="${cxt}/js/mypager.js"></script>
+<script type="text/javascript" src="${cxt}/js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="${cxt}/js/jianqiaoindex.js"></script>

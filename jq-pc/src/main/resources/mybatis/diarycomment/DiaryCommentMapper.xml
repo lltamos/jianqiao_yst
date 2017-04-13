@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须指向Dao接口 -->
+<mapper namespace="com.alqsoft.dao.diarycomment.DiaryCommentDao">
+
+	<select id="findDiaryCommentAllByDiaryId" resultType="com.alqsoft.entity.diarycomment.DiaryComment" parameterType="Integer">
+		select * from diary_comment where diary_id=#{did}
+	</select>
+	
+</mapper>

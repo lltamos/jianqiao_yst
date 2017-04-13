@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yst.web.model">
+	<class name="DoctorImage" table="doctor_image" dynamic-insert="true" dynamic-update="true">
+		<id name="doctor_image_id" type="integer" column="doctor_image_id">
+			<generator class="native" />
+		</id>
+		<many-to-one name="doctor" class="Doctor" fetch="select" lazy="false" unique="true">  
+            <column name="doctor_id"></column>  
+        </many-to-one>
+		<property name="des" type="string" length="300" column="des" />
+		<property name="image" type="string" length="300" column="image" />
+	</class>
+</hibernate-mapping>

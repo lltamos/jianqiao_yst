@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yst.web.model">
+	<class name="KnowlgTag" table="knowlg_tag" dynamic-insert="true" dynamic-update="true">
+		<id name="id" type="integer" column="id">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string" length="50" column="name" />
+		<property name="hot" type="integer" column="hot" />
+	</class>
+</hibernate-mapping>

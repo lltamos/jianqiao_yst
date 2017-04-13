@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yst.web.model">
+	<class name="Doctor" table="doctor" dynamic-insert="true" dynamic-update="true"  lazy="false">
+		<id name="doctor_id" type="integer" column="doctor_id">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string" length="100"  column="name" />
+		<many-to-one name="dicOffice" class="DicOffice" fetch="select" lazy="false" unique="true">  
+            <column name="office_id"></column>  
+        </many-to-one>
+        <many-to-one name="dicTitle" class="DicTitle" fetch="select" lazy="false" unique="true">  
+            <column name="title_id"></column>  
+        </many-to-one>
+        <many-to-one name="dicSpec" class="DicSpec" fetch="select" lazy="false" unique="true">  
+            <column name="spec_id"></column>  
+        </many-to-one>
+        <many-to-one name="productType" class="ProductType" fetch="select" lazy="false" unique="true">  
+            <column name="product_type_id"></column>  
+        </many-to-one>
+		<many-to-one name="customer" class="Customer" fetch="select" lazy="false" unique="true">  
+            <column name="customer_id"></column>  
+        </many-to-one>
+        <many-to-one name="merchant" class="Merchant" fetch="select" lazy="false" unique="true">  
+            <column name="merchant_id"></column>  
+        </many-to-one>
+        <property name="online_time" type="string" length="32" column="online_time" />
+        <property name="veiw_count" type="integer" column="veiw_count" />
+        <property name="apply_status" type="integer" column="apply_status" />
+        <property name="type" type="integer" column="type" />
+		<property name="des" type="string" length="1000" column="des" />
+		<property name="image_header" type="string" length="200" column="image_header" />
+		<property name="image_work_1" type="string" length="200" column="image_work_1" />
+		<property name="image_work_2" type="string" length="200" column="image_work_2" />
+		<many-to-one name="dicHospitalType" class="DicHospitalType" fetch="select" lazy="false" unique="true">  
+            <column name="hospital_type_id"></column>  
+        </many-to-one>
+		<property name="hospital" type="string" length="100" column="hospital" />
+		<property name="address" type="string" length="500" column="address" />
+		<property name="latitude" type="string" length="30" column="latitude" />
+		<property name="longitude" type="string" length="30" column="longitude" />
+		<property name="create_date">
+			<column name="create_date" sql-type="datetime" />
+		</property>
+		<property name="update_date">
+			<column name="update_date" sql-type="datetime" />
+		</property>
+		<property name="delete_date">
+			<column name="delete_date" sql-type="datetime" />
+		</property>
+		<property name="deleted" type="integer">
+			<column name="deleted"  not-null="true" default="0" ></column>
+		</property>
+		<property name="verify" type="integer">
+			<column name="verify"  not-null="true" default="3" ></column>
+		</property>
+		<property name="reject_reason" type="string" length="300" column="reject_reason" />
+    	<one-to-one name="doctorService" class="DoctorService" cascade="delete" ></one-to-one>
+		<property name="can_consult_week" type="string" length="50"  column="can_consult_week" />
+		<property name="can_consult_starttime">
+			<column name="can_consult_starttime" sql-type="datetime" />
+		</property>
+		<property name="can_consult_endtime">
+			<column name="can_consult_endtime" sql-type="datetime" />
+		</property>
+	</class>
+</hibernate-mapping>

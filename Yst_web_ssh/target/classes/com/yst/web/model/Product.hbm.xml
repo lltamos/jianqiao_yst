@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yst.web.model">
+	<class name="Product" table="product" dynamic-insert="true"
+		dynamic-update="true" lazy="false">
+		<id name="product_id">
+			<generator class="native" />
+		</id>
+		<many-to-one name="productType" class="ProductType"
+			cascade="none" fetch="select" unique="true" column="product_type_id"/>
+		<many-to-one name="merchant" class="Merchant" column="merchant_id"
+			cascade="none" fetch="select" unique="true" />
+		<many-to-one name="doctor" class="Doctor" column="doctor_id"
+			cascade="none" fetch="select"/>
+		<property length="100" name="name" type="string" />
+		<property name="deleted" type="integer">
+			<column name="deleted" not-null="true" default="0"></column>
+		</property>
+		<property length="200" name="image1" type="string" />
+		<property length="200" name="image2" type="string" />
+		<property length="200" name="image3" type="string" />
+		<property length="200" name="image4" type="string" />
+		<property length="500" name="des1" type="string" />
+		<property length="500" name="des2" type="string" />
+		<property length="500" name="des3" type="string" />
+		<property length="500" name="des4" type="string" />
+		<property name="price" type="integer" />
+		<property name="deposite_price" type="long" />
+		<property name="divide" type="integer">
+			<column name="divide" not-null="true" default="0"></column>
+		</property>
+		<property name="fee1" type="integer" />
+		<property name="fee2" type="integer" />
+		<property name="fee3" type="integer" />
+		<property name="fee4" type="integer" />
+		<property name="fee5" type="integer" />
+		<property name="off" type="integer">
+			<column name="off" not-null="true" default="0"></column>
+		</property>
+		<property name="detail_url" type="string" />
+		<property length="500" name="detail_html" type="string" />
+		<property length="500" name="service_process" type="string" />
+		<property length="500" name="refund_process" type="string" />
+		<property length="500" name="special" type="string" />
+		<property name="is_real" type="integer">
+			<column name="is_real" not-null="true" default="0"></column>
+		</property>
+		<property name="product_for" type="integer">
+			<column name="product_for" not-null="true" default="0"></column>
+		</property>
+		<property name="freight" type="integer">
+			<column name="freight" not-null="true" default="0"></column>
+		</property>
+		<property name="customer_service_id"  type="string" length="50" column="customer_service_id"/>
+		<one-to-one name="productStat" class="ProductStat" cascade="all" />
+		<many-to-one name="recomm_customer" class="Customer" column="recomm_customer_id" cascade="all" fetch="join"></many-to-one>
+	</class>
+</hibernate-mapping>

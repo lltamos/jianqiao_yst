@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须指向Dao接口 -->
+<mapper namespace="com.alqsoft.dao.order.ProductOrderDao">
+
+
+	<sql id="where_costomerid">
+		<where>
+			customer_id=#{id}
+		</where>
+	</sql>
+
+	<!-- 分页查询全部订单 -->
+	<select id="findProductOrderListByCid" resultType="java.util.HashMap"
+		parameterType="java.util.HashMap">
+		SELECT *
+		FROM product_order
+		<include refid="where_costomerid" />
+		ORDER BY created_time DESC LIMIT
+		#{startIndex},#{endIndex}
+	</select>
+
+	
+
+
+
+	<!-- 根据状态查询订单 -->
+
+	<select id="findProductOrderByStatusAndCId" resultType="java.util.HashMap"
+		parameterType="java.util.HashMap">
+		SELECT *
+		FROM product_order
+		<include refid="where_costomerid" />
+		AND pay_status=#{status}
+		ORDER BY created_time DESC LIMIT
+		#{startIndex},#{endIndex}
+	</select>
+
+
+
+
+	<select id="getProductOrderById" resultType="java.util.HashMap"
+		parameterType="int">
+		SELECT *
+		FROM product_order WHERE id=#{id}
+		
+	</select>
+	
+	
+	
+
+</mapper>

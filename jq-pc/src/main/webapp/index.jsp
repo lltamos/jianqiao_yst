@@ -1,0 +1,1 @@
+<jsp:forward page="${ctx}/pc/view/customer/toIndex"></jsp:forward>

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yst.web.model">
+	<class name="Balance" table="balance"  dynamic-insert="true" dynamic-update="true">
+		<id name="balance_id" type="integer" column="balance_id" >
+			<generator class="native" />
+		</id>
+		<many-to-one name="customer" class="Customer" lazy="false"  fetch="select" outer-join="true" insert="true" column="customer_id" unique="true"/>
+		<property name="balance_remain" type="integer">
+			<column name="balance_remain" not-null="true"  default="0" ></column>
+		</property>
+		<property name="last_update_time">
+			<column name="last_update_time" sql-type="datetime" />
+		</property>
+		<property name="last_update_user"  type="integer" /> 
+		
+		<property name="fee" type="integer">
+			<column name="fee" not-null="true"  default="0" ></column>
+		</property>
+		<property name="deposit_fee" type="integer">
+			<column name="deposit_fee" not-null="true"  default="0" ></column>
+		</property>
+		<property name="have_withdrawal_fee" type="integer">
+			<column name="have_withdrawal_fee" not-null="true"  default="0" ></column>
+		</property>
+		
+	</class>
+</hibernate-mapping>

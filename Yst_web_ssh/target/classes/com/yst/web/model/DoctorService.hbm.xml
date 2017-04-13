@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yst.web.model">
+	<class name="DoctorService" table="doctor_service" dynamic-insert="true" dynamic-update="true">
+		<id name="doctor_service_id" type="integer" column="doctor_service_id" >
+			<generator class="native" />
+		</id>
+	<many-to-one name="doctor" class="Doctor" fetch="select" lazy="false" unique="true">  
+            <column name="doctor_id"></column>  
+    </many-to-one>
+	<property name="online_consult_switch"  type="integer" column="online_consult_switch" />
+	<property name="online_consult_price"  type="long" column="online_consult_price" />
+	<property name="online_consult_describe" type="string" length="100" column="online_consult_describe" />
+	<property name="phone_consult_switch"  type="integer" column="phone_consult_switch" />
+	<property name="phone_consult_price"  type="long" column="phone_consult_price" />
+	<property name="phone_consult_describe" type="string" length="100" column="phone_consult_describe" />
+	</class>
+</hibernate-mapping>

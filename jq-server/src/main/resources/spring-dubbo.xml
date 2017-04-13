@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://code.alibabatech.com/schema/dubbo
+       http://code.alibabatech.com/schema/dubbo/dubbo.xsd"
+	default-lazy-init="true">
+
+	<!-- 作为服务端需要配置 -->
+
+	<!-- 提供方应用信息，用于计算依赖关系 -->
+	<dubbo:application name="hello-world-app" />
+
+	<!-- 使用redist广播注册中心暴露服务地址 -->
+	<dubbo:registry protocol="redis" address="${dubbo.redis.host}"
+		username="alqsoft" password="alqsoft" />
+
+	<!-- 用dubbo协议在20880端口暴露服务 -->
+	<dubbo:protocol name="dubbo" port="${dubbo.port}" />
+
+	<!-- 声明需要暴露的服务接口 不需要webservice注解，只需要正常的服务类即可 -->
+	<dubbo:service interface="com.alqsoft.rpc.RpcHelloService"
+		ref="rpcHelloServiceImpl" timeout="1200000" />
+
+	<dubbo:service interface="com.alqsoft.rpc.RpcDoctorServiceOrderService"
+		ref="rpcDoctorServiceOrderServiceImpl" timeout="1200000" />
+
+	<dubbo:service interface="com.alqsoft.rpc.RpcProductOrderService"
+		ref="rpcProductOrderServiceImpl" timeout="1200000" />
+
+	<dubbo:service interface="com.alqsoft.rpc.RpcDoctorServicesService"
+		ref="rpcDoctorServicesServiceImpl" timeout="1200000" />
+
+	<dubbo:service interface="com.alqsoft.rpc.RpcUpdateCustormerService"
+		ref="rpcUpdateCustormerServiceImpl" timeout="1200000" />
+	<!-- 微信支付接口 -->
+	<dubbo:service interface="com.alqsoft.rpc.pay.RpcWeChatPayService"
+		ref="rpcWeChatPayServiceImpl" timeout="1200000" />
+	<!-- 用户银行卡信息接口 -->
+	<dubbo:service interface="com.alqsoft.rpc.RpcUserBankService"
+		ref="rpcUserBankServiceImpl" timeout="1200000" />
+	<!-- pay工程 -->
+	<!-- <dubbo:reference id="rpcPayService" interface="com.alqsoft.rpc.pay.RpcPayService" 
+		timeout="1200000"/> -->
+
+
+	<dubbo:service interface="com.alqsoft.rpc.RpcPublishDisease"
+		ref="rpcPublishDiseaseImpl" timeout="1200000" />
+
+	<dubbo:service interface="com.alqsoft.rpc.RpcProductService"
+		ref="rpcProductServiceImpl" timeout="1200000" />
+
+	<dubbo:reference id="rpcPayService" interface="com.alqsoft.rpc.pay.RpcPayService"
+		cache="false" check="false" timeout="1200000" url="${dubbo.redis.host.pay}" />
+
+	<dubbo:service  interface="com.alqsoft.rpc.RpcDoctorOrderService"
+		ref="rpcDoctorOrderServiceImpl" timeout="1200000" />
+
+</beans>

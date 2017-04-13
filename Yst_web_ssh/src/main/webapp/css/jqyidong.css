@@ -1,0 +1,188 @@
+@charset "utf-8";
+html {
+	font-size: 20px;
+}
+div{
+    box-sizing: border-box;
+}
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei UI", "Microsoft YaHei", SimHei, "\5B8B\4F53", simsun, sans-serif;
+}
+.header {
+	width: 32rem;
+    height: 8.6rem;
+}
+.header .hea_1{
+	font-size: 1.6rem;
+    text-align: center;
+    height: 5.7rem;
+    line-height: 5.7rem;
+}
+.header .eade_1{
+    float: left;
+    margin-left: 11rem;
+    color: #343434;
+}
+.header .eade_2 {
+    cursor: pointer;
+    float: left;
+    width: 2.1rem;
+    height: 1.55rem;
+    margin-top: 2rem;
+    margin-left: 6.85rem;
+}
+
+
+
+
+/*-----------------下拉框样式---------------------*/
+.lunde{
+    cursor: pointer;
+}
+.lunde .xiala{
+    width: 10.1rem;
+    position: absolute;
+    left: 0;
+    top: 2.4rem;
+    background: #fff;
+    display: none;
+}
+.lunde .xiala span{
+    height: 2.5rem;
+    line-height: 2.5rem;
+    display: block;
+    border-bottom: 0.05rem solid #dcdfe0;
+    cursor: pointer;
+}
+/*-----------------下拉框样式---------------------*/
+
+
+
+.header .hea_2 {
+	height: 2rem;
+    line-height: 2rem;
+}
+.hea_2 li{
+    float: left;
+    width: 10.1rem;
+    border-right: 0.05rem solid #dcdfe0;
+    height: 2rem;
+    line-height: 2rem;
+    font-size: 1.4rem;
+    color: #777777;
+    text-align: center;
+    position: relative;
+}
+.hea_2 .der_1{
+    border-right: none;
+}
+.hea_2 .er_1 {
+	float: left;
+    margin-left: 2.1rem;
+}
+.hea_2 .er_2 {
+	float: right;
+    width: 0.6rem;
+    height: 0.35rem;
+    margin-top: 0.7rem;
+    margin-left: 0.75rem;
+}
+.banner {
+	width: 32rem;
+    height: 19.2rem;
+}
+.content{
+    padding-top: 1.8rem;
+    padding-left: 1.7rem;
+    width: 30.3rem;
+    height: 10.8rem;
+    font-size: 1.2rem;
+    color: #343434;
+    line-height: 1.75rem;
+}
+.tdnen{
+    text-align: center;
+    width: 32rem;
+    height: 2.1rem;
+}
+.tdnen .nen {
+	width: 1.5rem;
+    height: 0.65rem;
+}
+.news{
+    width: 32rem;
+}
+.news .ews_1{
+    width: 32rem;
+    height: 13.15rem;
+}
+.ews_1 .ws_1 {
+	width: 9.15rem;
+    height: 9.15rem;
+    margin-top: 2.25rem;
+    margin-left: 1.45rem;
+    float: left;
+}
+.ews_1 .ws_2{
+    width: 18.7rem;
+    height: 9.60rem;
+    margin-top: 2.25rem;
+    margin-left: 1.05rem;
+    float: left;
+}
+.ws_2 .tan_1 {
+    display: block;
+	line-height: 2.6rem;
+    font-size: 1.3rem;
+}
+.ws_2 .tan_2{
+    display: block;
+    font-size: 1.15rem;
+    color: #adadad;
+}
+.ws_2 .tan_3{
+    display: block;
+    margin-top: 1.3rem;
+}
+.tan_3 .gne_1 {
+    width: 18.7rem;
+    height: 5.2rem;
+	float: left;
+    width: 1rem;
+    height: 1rem;
+}
+.tan_3 .gne_2{
+    box-sizing: border-box;
+    width: 4.2rem;
+    height: 1.3rem;
+    border: 0.05rem solid #6ae9dc;
+    border-radius: 0.25rem;
+    font-size: 1.1rem;
+    line-height: 1.3rem;
+    text-align: center;
+    color: #4ce4d5;
+    float: left;
+}
+.tan_3 .gne_3{
+    float: right;
+    width: 5.2rem;
+    height: 1.5rem;
+    background: #44b83e;
+    font-size: 0.9rem;
+    text-align: center;
+    line-height: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+}
+.kefu{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 4rem;
+    line-height: 4rem;
+    background: #42b8f4;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 1rem;
+}

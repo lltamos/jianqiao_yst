@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yst.web.model">
+	<class name="DicSpec" table="dic_spec"  dynamic-insert="true" dynamic-update="true">
+		<id name="spec_id" type="integer" column="spec_id" >
+			<generator class="native" >
+			</generator>
+		</id>
+		<property name="parent_spec_id"  type="integer" column="parent_spec_id"/>
+		<property name="name"  type="string" length="30" column="name"/>
+	</class>
+</hibernate-mapping>

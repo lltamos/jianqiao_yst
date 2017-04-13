@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yst.web.model">
+	<class name="ProductOrder" table="product_order" dynamic-insert="true"
+		dynamic-update="true">
+		<id name="product_order_id">
+			<generator class="native" />
+		</id>
+		<many-to-one name="product" class="Product" cascade="none"
+			fetch="select" unique="true">
+			<column name="product_id"></column>
+		</many-to-one>
+		<many-to-one name="merchant" class="Merchant" cascade="none"
+			fetch="select" unique="true">
+			<column name="merchant_id"></column>
+		</many-to-one>
+		<many-to-one name="customer" class="Customer" cascade="none"
+			fetch="select" unique="true">
+			<column name="customer_id"></column>
+		</many-to-one>
+		<many-to-one name="doctor" class="Doctor" column="doctor_id"
+			cascade="none" fetch="select" unique="true" />
+		<property name="deposite_price" type="long" />
+		<property name="price" type="integer" />
+		<property name="create_date">
+			<column name="create_date" sql-type="datetime" />
+		</property>
+		<property name="deleted" type="integer">
+			<column name="deleted" not-null="true" default="0"></column>
+		</property>
+		<property name="count" type="integer">
+			<column name="count" not-null="true" default="1"></column>
+		</property>
+		<property name="pay_status" type="integer">
+			<column name="pay_status" not-null="true" default="0"></column>
+		</property>
+		<property name="pay_type" type="integer" />
+		<property length="50" name="pay_relative_id" type="string" unique="true" />
+		<property name="pay_time">
+			<column name="pay_time" sql-type="datetime" />
+		</property>
+		<property name="divide" type="integer">
+			<column name="divide" not-null="true" default="0"></column>
+		</property>
+		<property name="fee1" type="integer" />
+		<property name="fee2" type="integer" />
+		<property name="fee3" type="integer" />
+		<property name="fee4" type="integer" />
+		<property name="fee5" type="integer" />
+		<property name="fee1_pay_status" type="integer">
+			<column name="fee1_pay_status" not-null="true" default="0"></column>
+		</property>
+		<property name="fee2_pay_status" type="integer">
+			<column name="fee2_pay_status" not-null="true" default="0"></column>
+		</property>
+		<property name="fee3_pay_status" type="integer">
+			<column name="fee3_pay_status" not-null="true" default="0"></column>
+		</property>
+		<property name="fee4_pay_status" type="integer">
+			<column name="fee4_pay_status" not-null="true" default="0"></column>
+		</property>
+		<property name="fee5_pay_status" type="integer">
+			<column name="fee5_pay_status" not-null="true" default="0"></column>
+		</property>
+		<property name="fee1_update_time">
+			<column name="fee1_update_time" sql-type="datetime" />
+		</property>
+		<property name="fee2_update_time">
+			<column name="fee2_update_time" sql-type="datetime" />
+		</property>
+		<property name="fee3_update_time">
+			<column name="fee3_update_time" sql-type="datetime" />
+		</property>
+		<property name="fee4_update_time">
+			<column name="fee4_update_time" sql-type="datetime" />
+		</property>
+		<property name="fee5_update_time">
+			<column name="fee5_update_time" sql-type="datetime" />
+		</property>
+		<property name="is_real" type="integer">
+			<column name="is_real" not-null="true" default="0"></column>
+		</property>
+		<property name="product_for" type="integer">
+			<column name="product_for" not-null="true" default="0"></column>
+		</property>
+		<property name="send_status" type="integer">
+			<column name="send_status" not-null="true" default="0"></column>
+		</property>
+		<property name="delivery_time" type="integer">
+			<column name="delivery_time" not-null="true" default="0"></column>
+		</property>
+		<property name="is_invoice" type="integer">
+			<column name="is_invoice" not-null="true" default="0"></column>
+		</property>
+		<property name="invoice_name" type="string" length="100"/>
+		<property name="buyer_des" type="string" length="200"/>
+		<property name="freight" type="integer">
+			<column name="freight" not-null="true" default="0"></column>
+		</property>
+		<property name="address_id" type="integer" />
+		<property name="addressee"  type="string" length="50" column="addressee"/>
+        <property name="addressee_phone"  type="string" length="50" column="addressee_phone"/>
+		<property name="address"  type="string" length="200" column="address"/>
+		<property name="zip_code"  type="string" length="50" column="zip_code"/>
+		<property name="fenrun_status" type="integer" />
+		
+		<property name="patient_name"  type="string" length="200" column="patient_name"/>
+		<property name="patient_phone"  type="string" length="200" column="patient_phone"/>
+		<property name="patient_address"  type="string" length="200" column="patient_address"/>
+		<property name="recomm_phone"  type="string" length="200" column="recomm_phone"/>
+		<property name="recomm_address"  type="string" length="200" column="recomm_address"/>
+		<property name="merchant_address"  type="string" length="200" column="merchant_address"/>
+		<property name="merchant_phone"  type="string" length="200" column="merchant_phone"/>
+	</class>
+	<class name="ExpressOrderInfo" table="express_order_info"
+		dynamic-insert="true" dynamic-update="true">
+		<id name="express_id">
+			<generator class="native" />
+		</id>
+		<property name="order_id" type="string" length="100" unique="true"/>
+		<property name="express_name" type="string" length="100" />
+		<property name="express_no" type="string" length="100" />
+	</class>
+</hibernate-mapping>

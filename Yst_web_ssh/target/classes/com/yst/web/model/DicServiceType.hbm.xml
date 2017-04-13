@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yst.web.model">
+	<class name="DicServiceType" table="dic_service_type" dynamic-insert="true" dynamic-update="true">
+		<id name="service_type_id" type="integer" column="service_type_id">
+			<generator class="native" />
+		</id>
+	<property name="name" type="string" length="30" column="name" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yst.web.model">
+	<class name="BalanceTrans" table="balance_trans" dynamic-insert="true"
+		dynamic-update="true">
+		<id name="trans_id" type="integer" column="trans_id">
+			<generator class="native" />
+		</id>
+		<many-to-one name="customer" class="Customer" fetch="join" unique="true">  
+            <column name="customer_id"></column>  
+        </many-to-one>
+        <property name="balance" type="integer" />
+        <property name="create_time">
+			<column name="create_time" sql-type="datetime" />
+		</property>
+        <property name="create_by" type="integer" />
+        <property name="reason" type="string" />
+		<property name="balance_remain" type="integer" />
+		<property name="pay_status" type="integer">
+			<column name="pay_status" not-null="true"  default="0" ></column>
+		</property>
+		<property name="pay_type"  type="integer" />
+		<property length="50" name="pay_relative_id"  type="string" unique="true" />
+		<property name="pay_time">
+			<column name="pay_time" sql-type="datetime" />
+		</property>
+	</class>
+</hibernate-mapping>

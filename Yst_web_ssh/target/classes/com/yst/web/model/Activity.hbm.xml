@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yst.web.model">
+	<class name="Activity" table="activity" dynamic-insert="true"
+		dynamic-update="true">
+		<id name="activity_id">
+			<generator class="native" />
+		</id>
+		<many-to-one name="merchant" class="Merchant" column="merchant_id"/>
+		<property name="content_desc" type="string" length="3000" />
+	</class>
+	<class name="MerchantActivity" table="merchant_activity"
+		dynamic-insert="true" dynamic-update="true">
+		<id name="merchant_activity_id">
+			<generator class="native" />
+		</id>
+		<many-to-one name="merchant" class="Merchant" column="merchant_id"/>
+		<property name="activity_type" type="integer" />
+		<property name="prod_acti_id" type="integer" />
+		<property name="begin_time">
+			<column name="begin_time" sql-type="datetime" />
+		</property>
+		<property name="end_time">
+			<column name="end_time" sql-type="datetime" />
+		</property>
+		<property name="deleted" type="integer">
+			<column name="deleted" not-null="true"  default="0" ></column>
+		</property>
+		<property name="approved" type="integer">
+			<column name="approved" not-null="true"  default="0" ></column>
+		</property>
+		<property length="50" name="name" type="string" />
+		<property length="100" name="short_desc" type="string" />
+		<property length="100" name="image" type="string" />
+	</class>
+	<class name="ActivityMember" table="activity_member" dynamic-insert="true"
+		dynamic-update="true">
+		<id name="activity_member_id">
+			<generator class="native" />
+		</id>
+		<many-to-one name="activity" class="MerchantActivity" column="activity_id"
+			unique="true" />
+		<many-to-one name="customer" class="Customer" column="customer_id"
+			unique="true" />
+		<property name="approved" type="integer">
+			<column name="approved" not-null="true"  default="0" ></column>
+		</property>
+		<property name="apply_time">
+			<column name="apply_time" sql-type="datetime" />
+		</property>
+	</class>
+</hibernate-mapping>

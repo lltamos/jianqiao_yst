@@ -1,0 +1,956 @@
+/*==================================================
+                 body鏍峰紡
+           author:寮犵2008.06.27
+==================================================*/
+/*ext鏍峰紡瑕嗙洊panel浣�/
+.x-panel-body {
+	background-color:#F3F6FC;
+}
+#westsearch{
+  	height:100%;
+  	background:#DCE9F9 url(../images/query_bg.gif) no-repeat bottom;
+}
+#firstmenu{
+  	height:100%;
+	background:#DCE9F9 url(../images/firstmenu_bg.gif) no-repeat bottom;
+}
+/*ext鏍峰紡瑕嗙洊涓嬫媺鑿滃崟瀵瑰叾*/
+.ext-ie .x-form-text{
+	margin:0px 0;height:22px;line-height:18px;
+}
+/*body鐨勬牱寮�/
+body{
+	font-family:"瀹嬩綋";
+	font-size:12px;
+	margin:0px;
+	color:#445588;
+	background-color:#fcfcfc;
+}
+
+/*榛樿鐨勮秴杩炴帴鏍峰紡*/
+a:link {font-size:12px;text-decoration:none;color:#16438B;}
+a:visited {font-size:12px;text-decoration:none;color:#16438B;}
+a:hover {font-size:12px;text-decoration:none;color:red;}
+a:active {font-size:12px;text-decoration:none;color:red;}
+
+/*TOP鐨勮秴杩炴帴鏍峰紡*/ 
+a.top:link {font-size:12px;text-decoration:none;color:#16438B;}
+a.top:visited {font-size:12px;text-decoration:none;color:#16438B;}
+a.top:hover {font-size:12px;text-decoration:none;color:#16438B;}
+a.top:active {font-size:12px;text-decoration:none;color:#16438B;}
+
+.add 
+{
+    background-image:url(../images/add.gif) !important;
+}
+.edit
+{
+    background-image:url(../images/edit.gif) !important;
+}
+.delete
+{
+    background-image:url(../images/delete.gif) !important;
+}
+
+.info
+{
+    background-image:url(../images/cfg_list.gif) !important;
+}
+.timeset
+{
+	background-image:url(../images/whole_time_select.gif) !important;
+}
+
+
+
+
+/*杩欎釜灏嗘槸閫夋嫨楂樹寒琛岀殑鑳屾櫙鑹�/
+.table_data tr.over td,.table_data_all tr.over td {
+	word-break: break-all;
+    word-wrap:break-word;
+    background-color:#E9F2FC;
+}
+
+/*涓嬫媺寮瑰嚭妗唗able鐨勬牱寮�/
+.selectmenu{
+	border-collapse:collapse;
+	vertical-align:middle;
+}
+
+/*鏁版嵁table鐨勬牱寮�/
+.table_data{
+	border-collapse:collapse;
+	border-left:1px solid #C3DEF9;
+	border-right:1px solid #C3DEF9;
+	border-top:1px solid #C3DEF9;
+	border-bottom:1px solid #C3DEF9;
+	padding:1px;
+	width:100%;
+	background-color:#FFFFFF;
+}
+
+/*鍗曠嫭绫诲埆table鐨勬牱寮�鍏ㄨ竟妗�*/
+.mytable_data_all{
+	border-collapse:collapse;
+	border:1px solid #C3DEF9;
+	padding:1px;
+	width:100%;
+	background-color:#FFFFFF;
+}
+
+.mytable_data_all td{
+	word-break: break-all;
+    word-wrap:break-word;
+	height:3px;
+	border:1px solid #C3DEF9;
+	padding-left:5px;
+}
+
+
+/*鏁版嵁table鐨勬牱寮�鍏ㄨ竟妗�*/
+.table_data_all{
+	border-collapse:collapse;
+	border:1px solid #C3DEF9;
+	padding:1px;
+	width:100%;
+	background-color:#FFFFFF;
+}
+
+/*鏁版嵁table鐨勮鏍峰紡*/
+.table_data tr.list,.table_data_all tr.list{
+	font-size:12px;
+	color:#000000;
+	text-align:left;
+	vertical-align:middle;
+}
+/*鏁版嵁table鐨勮鏍峰紡*/
+.table_data tr.two,.table_data_all tr.two{
+	font-size:12px;
+	color:#000000;
+	background-color:#FAFAFA;
+	text-align:left;
+	vertical-align:middle;
+}
+
+.table_data tr.sum,.table_data_all tr.sum{
+	font-size:12px;
+	color:#000000;
+	background-color:#E6E61A;
+	text-align:left;
+	vertical-align:middle;
+}
+
+/*鏁版嵁table鐨勮鏍峰紡*/
+.table_data tr,.table_data_all tr{
+	font-size:12px;
+	color:#000000;
+	background-color:#FFFFFF;
+	text-align:left;
+	vertical-align:middle;
+}
+
+/*鏁版嵁table鐨則h鏍峰紡*/
+.table_data th,.table_data_all th{
+	font-size:12px;
+	height:25px;
+	border-right:1px solid #D0D0D0;
+	text-align:center;
+	background-color:#F3F6FC;
+	background: url(../images/default/grid/grid3-hrow.gif) repeat-x right;
+}
+
+/*鏁版嵁table鐨則d鏍峰紡1*/
+.table_data td,.table_data_all td{
+	word-break: break-all;
+    word-wrap:break-word;
+	height:25px;
+	border:1px solid #ECECEC;
+}
+
+/*瀛愭暟鎹畉able鐨勬牱寮�/
+.table_data_child{
+	border-collapse:collapse;
+	padding:1px;
+	width:100%;
+	background-color:#FFFFFF;
+}
+/*瀛愭暟鎹畉able鐨勮鏍峰紡*/
+.table_data_child tr{
+	font-size:12px;
+	color:#445588;
+	background-color:#FFFFFF;
+	text-align:center;
+	vertical-align:middle;
+}
+/*瀛愭暟鎹畉able鐨則d鏍峰紡*/
+.table_data_child td{
+	height:25px;
+	border:1px dashed #ECECEC;
+}
+
+/*鍒嗛〉table鐨勬牱寮�/
+.table_pagination{
+	border-collapse:collapse;
+	border-left:1px solid #C3DEF9;
+	border-right:1px solid #C3DEF9;
+	border-bottom:1px solid #C3DEF9;
+	background-color:#FCFCFC;
+	font-size:12px;
+	color:#445588;
+	text-align:right;
+	vertical-align:middle;
+	width:100%;
+}
+
+/*鍒嗛〉table鐨勬牱寮�鍏ㄨ竟妗�*/
+.table_pagination_all{
+	border-collapse:collapse;
+	border:1px solid #C3DEF9;
+	background-color:#FCFCFC;
+	font-size:12px;
+	color:#445588;
+	text-align:right;
+	vertical-align:middle;
+	width:100%;
+}
+
+/*鍔ㄤ綔table鐨勬牱寮�/
+.table_action{
+	/*border-left:1px solid #C3DEF9;
+	border-right:1px solid #C3DEF9;
+	border-top:1px solid #C3DEF9;
+	background-color:#CCDEF6;
+	font-size:12px;
+	color:#445588;*/
+	text-align:left;
+	vertical-align:middle;
+	width:100%;
+}
+
+/*鍔ㄤ綔table鐨勬牱寮�鍏ㄨ竟妗�*/
+.table_action_all{
+	border:1px solid #C3DEF9;
+	background-color:#CCDEF6;
+	font-size:12px;
+	color:#445588;
+	text-align:left;
+	vertical-align:middle;
+	width:100%;
+}
+
+/*瀵艰埅table鐨勬牱寮�/
+.table_navigation{
+	border-collapse:collapse;
+	border-left:1px solid #CCDEF6;
+	border-right:1px solid #CCDEF6;
+	border-top:1px solid #CCDEF6;
+	background-color:#CCDEF6;
+	font-size:12px;
+	color:#445588;
+	text-align:left;
+	vertical-align:middle;
+	width:100%;
+}
+
+/*瀵艰埅table鐨勬牱寮�鍏ㄨ竟妗�*/
+.table_navigation_all{
+	border-collapse:collapse;
+	border:1px solid #CCDEF6;
+	background-color:#CCDEF6;
+	font-size:12px;
+	color:#445588;
+	text-align:left;
+	vertical-align:middle;
+	width:100%;
+}
+
+/*鏌ヨtable鐨勬牱寮�/
+.table_search{
+	border-collapse:collapse;
+	border-left:1px solid #CCDEF6;
+	border-top:1px solid #CCDEF6;
+	width:767px;
+}
+.table_search .head{
+	border-collapse:collapse;
+	border-left:1px solid #CCDEF6;
+	border-top:1px solid #CCDEF6;
+	border-right:1px solid #CCDEF6;
+	text-align:left;
+	font-size:12px;
+	background: #337099;
+	color: #FFF;
+	height:10px;
+}
+.table_search .left{
+	border-collapse:collapse;
+	border-right:1px solid #CCDEF6;
+	border-bottom:1px solid #CCDEF6;
+	background: #F3F3F3;
+	font-size:12px;
+	color:#445588;
+	text-align:right;
+	vertical-align:middle;
+}
+.table_search td{
+	border-collapse:collapse;
+	border-right:1px solid #CCDEF6;
+	border-bottom:1px solid #CCDEF6;
+	font-size:12px;
+	color:#445588;
+	text-align:left;
+	vertical-align:middle;
+}
+
+.table_search_all{
+	border-collapse:collapse;
+	border-left:1px solid #CCDEF6;
+	border-top:1px solid #CCDEF6;
+	width:100%;
+}
+.table_search_all .head{
+	border-collapse:collapse;
+	border-left:1px solid #CCDEF6;
+	border-top:1px solid #CCDEF6;
+	border-right:1px solid #CCDEF6;
+	text-align:left;
+	font-size:12px;
+	background: #337099;
+	color: #FFF;
+	height:10px;
+}
+.table_search_all .left{
+	border-collapse:collapse;
+	border-right:1px solid #CCDEF6;
+	border-bottom:1px solid #CCDEF6;
+	background: #F3F3F3;
+	font-size:12px;
+	color:#445588;
+	text-align:right;
+	vertical-align:middle;
+}
+.table_search_all td{
+	border-collapse:collapse;
+	border-right:1px solid #CCDEF6;
+	border-bottom:1px solid #CCDEF6;
+	font-size:12px;
+	color:#445588;
+	text-align:left;
+	vertical-align:middle;
+}
+
+
+/*鏌ヨtable鐨勬牱寮�鍏ㄨ竟妗�
+.table_search_all{
+	border-collapse:collapse;
+	border:1px solid #CCDEF6;
+	background-color:#CCDEF6;
+	font-size:12px;
+	color:#445588;
+	text-align:left;
+	vertical-align:middle;
+	width:100%;
+}
+*/
+.submit_hint{
+	border-collapse:collapse;
+	border:1px solid #CCDEF6;
+	text-align:left;
+	vertical-align:middle;
+	width:100%;
+}
+
+/*鎸夐挳鐨勬牱寮�/
+.btn {
+  border: 1px solid #387DB5;
+  padding-right: 2px;
+  padding-left: 2px;
+  padding-top: 2px;
+  height:22px;
+  font-size: 12px;
+  color:#445588;
+  background:url(../images/whole_btn_bg.gif) right; 
+  cursor: pointer;
+}
+.imgdiv{
+	float:left;
+	margin:0px;
+}
+.modeldisplay {
+  MARGIN-TOP: 8px; FONT-SIZE: 12px;  OVERFLOW: hidden;  
+}
+.modeldisplay .pl IMG {
+	DISPLAY: block; MARGIN: 6px auto 1px; CURSOR: pointer; BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+.modeldisplay .pl {
+	BORDER-RIGHT: #f3f3f3 1px solid; BORDER-TOP: #f3f3f3 1px solid; FLOAT: left; BORDER-LEFT: #f3f3f3 1px solid; WIDTH: 114px; LINE-HEIGHT: 24px; BORDER-BOTTOM: #f3f3f3 1px solid; TEXT-ALIGN: center; TEXT-DECORATION: underline
+}
+.modeldisplay A.pl:hover {
+	BORDER-RIGHT: #ff9900 1px solid; BORDER-TOP: #ff9900 1px solid; BACKGROUND: #fff; BORDER-LEFT: #ff9900 1px solid; COLOR: #ff9900; BORDER-BOTTOM: #ff9900 1px solid
+}
+.modeldisplay .moduleindex{
+float:left;height:180px;MARGIN-TOP: 8px;
+}
+/*榛樿img妗嗙殑鏍峰紡*/
+img{
+	border-style:none;
+}
+/*榛樿input鏂囨湰妗嗙殑鏍峰紡
+input{
+	padding:1px 3px;
+	background:#fff url(../images/default/form/text-bg.gif) repeat-x 0 0;
+	border:1px solid #B5B8C8;
+}*/
+/*榛樿閫夋嫨鏂囨湰妗嗙殑鏍峰紡*/
+select{
+	padding:1px 3px;
+	background:#fff url(../images/default/form/text-bg.gif) repeat-x 0 0;
+	border:1px solid #B5B8C8;
+}
+/*榛樿fieldset妗嗙殑鏍峰紡*/
+fieldset {
+padding:5px;
+border:1px solid #C3DEF9;
+}
+
+/*榛樿fieldset妗嗛噷鐨刲egend鏍峰紡*/
+fieldset legend {
+color:#1E7ACE;
+font-weight:bold;
+padding:3px 5px;
+}
+.welcomegif{
+	width:100%;
+	height:300;
+	background:url(../images/welcome.gif) no-repeat; 
+}
+/*==================================================
+                 鎸夐挳鏍峰紡
+==================================================*/
+
+/*鎸夊div鐨勬牱寮�/
+#btnimg{
+	margin: -4px 0px 0px 0px;
+	border-style:none;
+}
+/*鎸夊div鐨勬牱寮�/
+#btnspan{
+	border: 1px solid #387DB5;
+	padding: 5px 5px 0px 5px;
+	cursor:pointer;
+	height:22px;
+  	font-size: 12px;
+  	color:#445588;
+  	background:url(../images/whole_btn_bg.gif) right; 
+}
+
+/*==================================================
+                 tab鎿嶄綔鎸夐挳鏍峰紡
+==================================================*/
+
+/*璁惧畾鍖呭惈鍒楄〃鐨刣iv鐨凚ox灞炴�*/
+#tabBtnContainer{
+	width:100%;
+	height:25px;
+	/*background-color:#B3D2E6;*/
+	background-image: url(../images/query_title.gif);
+  	color:#000;
+	font-weight:bold;
+	/*background:url(../images/work_line.gif) right;*/
+	padding:3px 0 3px 0;
+}
+
+/**璁惧畾椤圭洰鍒楄〃Ul鍏冪礌鐨勫睘鎬�/
+#tabBtnUi{
+	margin: 1;
+	padding-left: 1px;
+}
+
+/*璁惧畾鍚勪釜鍒楄〃椤圭洰鐨勫睘鎬э紝display灞炴�璁惧畾鍙栨秷椤圭洰闂寸殑鍒嗚锛宭ist-style-type璁惧畾鍙栨秷鍒楄〃椤圭洰鍓嶇殑绗﹀彿*/
+#tabBtnUi li{
+	display: inline;
+	list-style-type: none;
+}
+
+/*璁惧畾鏍囩鍗′腑瓒呴摼鎺ョ殑鏂囧瓧鐨勫睘鎬�/
+#tabBtnUi a:link, #tabBtnUi a:visited{
+	background:url(../images/green_arrow.gif) no-repeat;
+	width:20px;
+	height:15px;
+}
+/*==================================================
+                 tab鎻愮ず鏍囩鏍峰紡
+==================================================*/
+
+/*璁惧畾鍖呭惈鍒楄〃鐨刣iv鐨凚ox灞炴�*/
+#tabMsgContainer{
+	/*border-bottom: 0px solid #C3DEF9;background-color: red;*/
+	width:100%;
+	height:25px;
+	background:url(../images/bottom_tab_line.gif) right;
+	padding:3px 0 0px 0;
+	border-bottom:1px solid #387DB5;
+}
+
+/**璁惧畾椤圭洰鍒楄〃Ul鍏冪礌鐨勫睘鎬�/
+#tabMsgUi{
+	padding-left: 5px;
+}
+
+/*璁惧畾鍚勪釜鍒楄〃椤圭洰鐨勫睘鎬э紝display灞炴�璁惧畾鍙栨秷椤圭洰闂寸殑鍒嗚锛宭ist-style-type璁惧畾鍙栨秷鍒楄〃椤圭洰鍓嶇殑绗﹀彿*/
+#tabMsgUi li{
+	margin: 0px 2px -5px 2px;
+	padding: 0;
+	display: inline;
+	list-style-type: none;
+	float: right;
+}
+
+/*璁惧畾鏍囩鍗′腑瓒呴摼鎺ョ殑鏂囧瓧鐨勫睘鎬�/
+#tabMsgUi a:link, #tabMsgUi a:visited{
+	/*background:url(/img/btn_bg.gif) right;background-color: #CCDEF6;border: 1px solid #CCDEF6;*/
+	float: none;
+	font-size: 12px;
+	font-weight:normal;
+	line-height: 14px;
+	padding: 1px 4px 0px 4px;
+	text-decoration: none;
+	color: #ffffff;
+	height:22px;
+	blr:expression(this.onFocus=this.blur());
+	border-left: 1px solid #387DB5;
+	border-top: 1px solid #387DB5;
+	border-right: 1px solid #387DB5;
+	border-bottom: 0px solid #387DB5;
+}
+
+/*璁惧畾褰撳墠琚�涓殑鏍囩鍗′腑瓒呴摼鎺ョ殑灞炴�*/
+#tabMsgUi a:link.selectedTab, #tabMsgUi a:visited.selectedTab{
+	background:url(../images/whole_btn_bg.gif) right;
+	padding: 1px 4px 0px 4px;
+	color: #445588;
+	border-left: 1px solid #387DB5;
+	border-top: 1px solid #387DB5;
+	border-right: 1px solid #387DB5;
+	border-bottom: 0px solid #387DB5;
+}
+
+/*璁惧畾瓒呴摼鎺ラ紶鏍囨诞鍔ㄦ晥鏋�/
+#tabMsgUi a:hover {
+	background:url(../images/whole_btn_bg.gif) right;
+	padding: 1px 4px 0px 4px;
+	color: #445588;
+	border-left: 1px solid #387DB5;
+	border-top: 1px solid #387DB5;
+	border-right: 1px solid #387DB5;
+	border-bottom: 0px solid #387DB5;
+}
+
+/*璁惧畾瓒呴摼鎺ラ紶鏍囧姩浣滄晥鏋�/
+#tabMsgUi a:active  {
+	background:url(../images/whole_btn_bg.gif) right;
+	padding: 1px 4px 0px 4px;
+	color: #445588;
+	border-left: 1px solid #387DB5;
+	border-top: 1px solid #387DB5;
+	border-right: 1px solid #387DB5;
+	border-bottom: 0px solid #387DB5;
+}
+
+#tabMsgUi a:link.transparenceTab, #tabMsgUi a:visited.transparenceTab, #tabMsgUi a:hover.transparenceTab{
+	background-image:none;
+	color: #ffffff;
+	padding: 1px 4px 0px 4px;
+	border: 0px solid #387DB5;
+}
+
+
+
+/*==================================================
+                 涓�骇鑿滃崟鏍峰紡
+==================================================*/
+
+#navigationImg{
+	margin:0px 5px 0px 5px;
+	border-style:none;
+}
+
+/*璁惧畾鍖呭惈鍒楄〃鐨刣iv鐨凚ox灞炴�*/
+#navigationContainer{
+	width:100%;
+	background-color: #CCDEF6;
+}
+
+/**璁惧畾椤圭洰鍒楄〃Ul鍏冪礌鐨勫睘鎬�/
+#navigationUi{
+	margin: 0px;
+	padding-left: 0px;
+	border-bottom: 5px solid #90bade;
+}
+
+/*璁惧畾鍚勪釜鍒楄〃椤圭洰鐨勫睘鎬э紝display灞炴�璁惧畾鍙栨秷椤圭洰闂寸殑鍒嗚锛宭ist-style-type璁惧畾鍙栨秷鍒楄〃椤圭洰鍓嶇殑绗﹀彿*/
+#navigationUi li{
+	margin: 0; 
+	padding: 0;
+	list-style-type: none;
+}
+
+/*璁惧畾鏍囩鍗′腑瓒呴摼鎺ョ殑榛樿灞炴�*/
+#navigationUi li a{
+	display: block;
+	height:40px;
+}
+
+/*璁惧畾鏍囩鍗′腑瓒呴摼鎺ョ殑鏂囧瓧鐨勫睘鎬�/
+#navigationUi a:link, #navigationUi a:visited{
+	float: none;
+	background-color: #CCDEF6;
+	font-size: 18px;
+	padding: 10px 0px 0px 0px;
+	border-top: 1px solid #90bade;
+	text-decoration: none;
+	color: #445588;
+	blr:expression(this.onFocus=this.blur());
+}
+
+/*璁惧畾褰撳墠琚�涓殑鏍囩鍗′腑瓒呴摼鎺ョ殑灞炴�*/
+#navigationUi a:link.selectedTab, #navigationUi a:visited.selectedTab{
+	color: #fff;
+	background-color:#B7CCE6;
+}
+
+/*璁惧畾瓒呴摼鎺ラ紶鏍囨诞鍔ㄦ晥鏋�/
+#navigationUi a:hover {
+	color: #fff;
+	background-color:#B7CCE6;
+}
+
+/*璁惧畾瓒呴摼鎺ラ紶鏍囧姩浣滄晥鏋�/
+#navigationUi a:active  {
+	color: #fff;
+	background-color:#B7CCE6;
+}
+
+/*==================================================
+                 tab鏍囩鏍峰紡
+==================================================*/
+
+/*璁惧畾鍖呭惈鍒楄〃鐨刣iv鐨凚ox灞炴�*/
+#tabContainer{
+	/*border-bottom: 0px solid #C3DEF9;*/
+	padding: 5px 0px 2px 0px;
+}
+
+/**璁惧畾椤圭洰鍒楄〃Ul鍏冪礌鐨勫睘鎬�/
+#tabUi{
+	margin: 0;
+	padding-left: 0px;
+}
+
+/*璁惧畾鍚勪釜鍒楄〃椤圭洰鐨勫睘鎬э紝display灞炴�璁惧畾鍙栨秷椤圭洰闂寸殑鍒嗚锛宭ist-style-type璁惧畾鍙栨秷鍒楄〃椤圭洰鍓嶇殑绗﹀彿*/
+#tabUi li{
+	margin: 0; 
+	padding: 0;
+	display: inline;
+	list-style-type: none;
+}
+
+/*璁惧畾鏍囩鍗′腑瓒呴摼鎺ョ殑鏂囧瓧鐨勫睘鎬�/
+#tabUi a:link, #tabUi a:visited{
+	/*background:url(../img/btn_bg.gif) right;*/
+	float: none;
+	background-color: #DEECFD;
+	font-size: 12px;
+	line-height: 14px;
+	font-weight: bold;
+	padding: 2px 10px;
+	margin-right: -1px;
+	border-top: 1px solid #CCDEF6;
+	border-left: 1px solid #CCDEF6;
+	border-right: 1px solid #CCDEF6;
+	border-bottom: 1px solid #DEECFD;
+	text-decoration: none;
+	color: #8DB2E3;
+}
+
+/*璁惧畾褰撳墠琚�涓殑鏍囩鍗′腑瓒呴摼鎺ョ殑灞炴�*/
+#tabUi a:link.selectedTab, #tabUi a:visited.selectedTab{
+	/*background:url(../img/ad_bg.gif) right;*/
+	border-top: 1px solid #CCDEF6;
+	border-left: 1px solid #CCDEF6;
+	border-right: 1px solid #CCDEF6;
+	border-bottom: 2px solid #CCDEF6;
+	background-color: #CCDEF6;
+	color: #445588;
+}
+
+/*璁惧畾瓒呴摼鎺ラ紶鏍囨诞鍔ㄦ晥鏋�/
+#tabUi a:hover{
+	/*background:url(../img/ad_bg.gif) right; */
+	border: 1px solid #CCDEF6;
+	color: #445588;
+	background-color: #CCDEF6;
+}
+
+/*==================================================
+                 缂栬緫椤甸潰鏍峰紡
+           author:鍑岄潚2008.07.01
+==================================================*/
+
+/*缂栬緫椤甸潰鏁版嵁鍒楄〃琛ㄦ牸鐨勬牱寮�/
+.table_edit_list {
+	border-collapse:collapse;
+
+}
+/*缂栬緫椤甸潰鏁版嵁鍒楄〃琛ㄦ牸鐨勬牱寮�鍏ㄨ竟妗�*/
+.table_edit_list_all {
+	border-collapse:collapse;
+	padding-bottom: 1px;
+	border: 1px solid #2275B9;
+	width:100%;
+	padding:1px;
+}
+
+/*璁惧畾宸﹁竟鍒楃殑棰滆壊*/
+.table_edit_list_left_box {
+	border-right: 1px solid #2275B9;
+	background: #E7EEF6;
+	text-align: right;
+	padding-right: 6px;
+	border-bottom: 1px solid #2275B9;
+}
+
+/*璁惧畾鍙宠竟鍒楃殑棰滆壊*/
+.table_edit_list_right_box {
+	padding-left: 2px;
+	border-bottom: 1px solid #2275B9;
+}
+
+/*璁惧畾缂栬緫妗嗕腑鏍囬鏍煎紡*/
+.smalltitle {
+	border-left: 6px solid #FF7300;
+	background:url(../images/whole_btn_bg.gif) right;
+	padding: 4px 20px 1px 8px;
+	color: #445588;
+	font-weight: bold;
+	width:100%;
+}
+
+/*缂栬緫鏁版嵁table鐨則d鏍峰紡*/
+.table_edit_list td,.table_edit_list_all td{
+	height:25px;
+	border:1px dashed #E7EEF6;
+}
+
+/*璁惧畾绾㈣壊*/
+.redfont {
+	color:red;
+}
+
+/*鎬讳綋琛ㄦ牸鐨勬牱寮�/
+.table {
+	border-collapse:collapse;
+	border-top:2px solid #C3DEF9;
+	border-right:2px solid #C3DEF9;
+	border-left:2px solid #C3DEF9;
+	width:100%;
+}
+/*鎬讳綋琛ㄦ牸鐨勬牱寮�鍏ㄨ竟妗�*/
+.table_all {
+	border-collapse:collapse;
+	border:2px solid #C3DEF9;
+	width:100%;
+}
+/*缂栬緫鏁版嵁table鐨則d鏍峰紡*/
+.table_all td,table td{
+	font-size:12px;
+}
+/*鍒嗛〉娌℃湁璁板綍鎻愮ず淇℃伅*/
+.page_all_display{
+	width:100%;
+  	font-size:18px;
+  	color: #ff0000;
+  	text-align:center;
+  	padding: 5px 0px 5px 0px;
+}
+
+.TableBorderStyle{
+	border-collapse:collapse;
+	border:1px solid #A7CCEB;
+	background-color:#FFFFFF;
+	padding:0px,0px,0px,0px;
+	margin:0px,0px,0px,0px; 
+	background: #f9f9f4;
+	width:100%;
+}
+
+/*杩欎釜灏嗘槸閫夋嫨楂樹寒琛岀殑鑳屾櫙鑹�ggh*/
+.outer td,outer tr{
+    background-color:#f9f9f4;
+}
+.bodytable{
+  width:100%;
+}
+.bodytable .top{
+ 
+  padding-top:5px;
+  width:100%;
+  	text-align:center;
+}
+.bodytable .search{
+  
+  width:100%;
+  	text-align:center;
+}
+
+.bodytable .center{
+  width:100%;
+}
+.bodytable .foot{
+ /*height:20px;*/
+ padding-top:10px;
+ width:100%;
+}
+.bodytable .handle{
+ width:100%;
+ padding-top:10px;
+  	text-align:center;
+}
+/*
+.bodytable .centerdiv{
+ height:100%;overflow:auto;overflow-y:yes;
+}
+*/
+#tooltip{
+    background:#fdf9e5; 
+	border:1px solid #fd7d2c;
+	color:#222222;
+	display: none;
+	text-align: left;
+	padding: 5px 3px 5px 3px;
+	position: absolute;
+	z-index:99999; 
+}
+
+
+.blue_clum{border:1px solid #BECED8;margin-top:15px;}
+.blue_clum h2{height:29px;line-height:31px;_line-height:29px;padding-left:15px;background:url(../images/repeat.png) 0 -84px repeat-x;display:block;border:1px solid #fff;font-weight:bold;}
+
+.blue_clum_title{border-bottom:1px solid #BECED8;height:31px;}
+/*瀵硅瘽妗�/
+.blue_border{border:1px solid #bdcddc;}
+.dialog_box{margin:0;background:#fff;}
+.dialog_box .massage_frame{padding:5px 10px;margin:10px 12px;}
+.re_question li .f_left{width:180px;}
+.re_question li,.edit_pay li{margin:0}
+.edit_pay li .f_left{width:150px;}
+.dialog_box .blue_clum_title{ position:relative;}
+.dialog_close{position:absolute;right:10px;top:8px; background:url(../images/icon1.png) -84px -77px no-repeat;width:16px;height:16px;display:inline-block; cursor:pointer;}
+.dialog_text{padding:20px 30px 30px 30px}
+.dialog_button{padding:0 30px 20px 30px;text-align:center}
+.blue_btn{ background-position:left -144px;}
+.blue_btn span,.blue_btn input{background-position:right -144px;color:#fff;height:29px;line-height:29px; font-size:14px;}
+
+.d_blue_btn{ background-position:left -351px;}/*棣栭〉鐧诲綍鍚庢寜閽�/
+.d_blue_btn span,.d_blue_btn input{background-position:right -351px;color:#000;height:30px;line-height:29px; font-size:14px;font-weight:normal;padding:0 16px;}
+
+.dialog_text{padding:20px 30px 30px 30px;font:14px Arial,"瀹嬩綋";color:#000;line-height:150% }
+.dialog_button{padding:0 30px 20px 30px;text-align:center}
+.w_440{width:440px;}
+.blue_clum_title h2 {font-weight:bould;font-size:14px;margin-left:18px;}
+
+
+.mail_space{
+	float:left;
+	padding-top:5px;
+	}
+.mail_space p{
+	float:left;
+	}
+.mail_space strong{
+	display:block;
+	width:120px;
+	height:20px;
+	line-height:11px;
+	overflow:hidden;
+	float:left;
+	background:url(../images/space_bg.gif) no-repeat;
+	padding:4px 3px;
+	margin:2px 0 0 4px;
+	cursor:hand;
+	}
+.mail_space strong b{
+	display:block;
+	height:3px;
+	line-height:3px;
+	overflow:hidden;
+	background:url(../images/space_cont.gif) repeat-x;
+	}
+.mail_space em{
+	display:block;
+	float:left;
+	padding:2px 0 0 4px;
+	font-size:10px;
+	color:#090;
+	}
+.fred{
+	color:#c00;
+	}
+.clear{
+clear:both;
+}
+
+input.button {
+	    padding-left:5px;padding-right:5px;border: 1px solid #387DB5; COLOR: #000;  HEIGHT: 30px; 
+		background:url(../images/whole_btn_bg.gif);CURSOR: hand;height:25px; 
+}
+
+.textbox { background:#fff url(../images/textboxBg1.jpg) repeat-x top center;height:23px;line-height:23px;padding:0 5px;border:1px solid #e0e0e0;width:395px;color:#666;font-size:12px;}
+.textbox_big { background:url(../images/textboxBg2.jpg) repeat-x;height:28px;line-height:28px;border:1px solid #aeaeae;padding:0 5px;width:300px;}
+
+
+/*鏌ヨ椤甸潰鍔熻兘鎿嶄綔鍖哄煙鏍峰紡*/
+.operationarea{
+ width:100%;
+ background-color:#F3F6FC;
+}
+.operationarea_button{
+  float:left;
+}
+.operationarea_button .button_index{
+ float:left;padding-right:5px;
+}
+.operationarea_page{
+  float:right;
+}
+
+
+
+
+.autocomplete{ 
+border: 1px solid #9ACCFB; 
+background-color: white; 
+position:absolute;
+z-index:100;
+text-align: left;
+height:400px;width:250px; OVERFLOW: auto;
+font-family:"瀹嬩綋";
+font-size:14px;
+
+} 
+.autocomplete li{ 
+list-style-type: none;
+line-height:25px;
+font-color:#000;
+} 
+.clickable { 
+cursor: default; 
+} 
+.highlight { 
+background-color: #9ACCFB; 
+} 
+
+
+
+
+

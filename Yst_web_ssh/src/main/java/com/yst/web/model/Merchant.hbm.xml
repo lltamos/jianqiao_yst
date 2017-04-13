@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yst.web.model">
+	<class name="Merchant" table="merchant"  dynamic-insert="true" dynamic-update="true" lazy="false">
+		<id name="merchant_id">
+			<generator class="native" />
+		</id>
+		<property length="100" name="name"  type="string" />
+		<property length="100" name="image_cred_1"  type="string" />
+		<property length="100" name="image_cred_2"  type="string" /> 
+        <many-to-one name="customer" class="Customer" cascade="none"  
+            fetch="select" unique="true" >  
+            <column name="customer_id"></column>  
+        </many-to-one>
+        <property name="verify"  type="integer" >
+        	<column name="verify"  not-null="true" default="0" ></column>
+		</property>
+        <property name="deleted" type="integer">
+			<column name="deleted"  not-null="true" default="0" ></column>
+		</property>
+		<property length="500" name="des"  type="string" /> 
+		<property length="500" name="reject_reason"  type="string" /> 
+	</class>
+</hibernate-mapping>

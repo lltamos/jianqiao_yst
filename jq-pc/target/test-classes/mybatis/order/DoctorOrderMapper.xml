@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须指向Dao接口 -->
+<mapper namespace="com.alqsoft.dao.order.DoctorOrderDao">
+
+
+	<sql id="where_costomerid">
+		<where>
+			o.customer_id=#{id}
+		</where>
+	</sql>
+
+	<!-- 分页查询全部订单 -->
+	<select id="findDoctorOrderListByCid" resultType="java.util.HashMap"
+		parameterType="java.util.HashMap">
+
+		SELECT
+		doctor.name AS doctorname,
+		dic_hospital_type.name AS hospital,
+		dic_spec.name AS spec,
+		o.order_date,
+		o.order_id,
+		o.pay_status,
+		o.price
+
+		FROM
+		doctor_service_order AS o,
+		doctor,
+		dic_spec,
+		dic_hospital_type
+		<include refid="where_costomerid" />
+		AND
+		o.doctor_id=doctor.id
+		AND
+		doctor.spec_id=dic_spec.id
+		AND
+		doctor.hospitalype_id=dic_hospital_type.id
+		ORDER BY order_date DESC LIMIT #{startIndex},#{endIndex}
+	</select>
+
+
+	<!-- 根据状态查询订单 -->
+
+	<select id="findDoctorOrderByStatusAndCId" resultType="java.util.HashMap"
+		parameterType="java.util.HashMap">
+		SELECT *
+		FROM doctor_service_order
+		<include refid="where_costomerid" />
+		AND pay_status=#{status}
+		ORDER BY created_time DESC LIMIT
+		#{startIndex},#{endIndex}
+	</select>
+
+
+	<select id="getDoctorOrderById" resultType="java.util.HashMap"
+		parameterType="int">
+		SELECT *
+		FROM doctor_service_order WHERE id=#{id}
+
+
+	</select>
+
+
+</mapper>

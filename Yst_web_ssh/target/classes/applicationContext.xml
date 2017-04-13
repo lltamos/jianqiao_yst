@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+	http://www.springframework.org/schema/task
+	 http://www.springframework.org/schema/task/spring-task-3.1.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-3.1.xsd
+	http://www.springframework.org/schema/data/jpa 
+    http://www.springframework.org/schema/data/jpa/spring-jpa-1.2.xsd">
+	<!-- 读取注释bean -->
+	<context:component-scan base-package="com.yst.web"></context:component-scan>
+	
+	<!-- 配置注解运行机制 -->
+	<task:annotation-driven 
+		executor="taskExecutor" scheduler="taskScheduler" />
+
+	<!-- 运行的线程数配置 -->
+	<task:executor id="taskExecutor" pool-size="100" />
+
+
+	<!-- 如果需要配置分布式作业，请查看配置http://git.oschina.net/uncode/uncode-schedule -->
+	<!-- spring作业运行机制 -->
+	<task:scheduler id="taskScheduler" pool-size="50" />
+	
+	
+	<!--======================= 读取jdbc属性文件 ================ -->
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location" value="classpath:jdbc.properties" />
+	</bean>
+	<!-- 数据源配置,使用应用内的DBCP数据库连接池 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<property name="driverClass" value="${mysql.jdbc.driverClassName}" />
+		<property name="jdbcUrl" value="${mysql.jdbc.url}" />
+		<property name="user" value="${mysql.jdbc.username}" />
+		<property name="password" value="${mysql.jdbc.password}" />
+		<property name="autoCommitOnClose" value="true" />
+		<property name="checkoutTimeout" value="${cpool.checkoutTimeout}" />
+		<property name="initialPoolSize" value="${cpool.minPoolSize}" />
+		<property name="minPoolSize" value="${cpool.minPoolSize}" />
+		<property name="maxPoolSize" value="${cpool.maxPoolSize}" />
+		<property name="maxIdleTime" value="${cpool.maxIdleTime}" />
+		<property name="acquireIncrement" value="${cpool.acquireIncrement}" />
+		<property name="maxIdleTimeExcessConnections" value="${cpool.maxIdleTimeExcessConnections}" />
+	</bean>
+	<!-- sessionFactory -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="packagesToScan" value="com.yst.web.entity" />
+		<property name="hibernateProperties">
+			<props>
+				<!-- hibernate 相关配置 -->
+				<prop key="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory
+				</prop>
+				<!-- <prop key="net.sf.ehcache.configurationResourceName">cache/ehcache-hibernate-local.xml</prop> -->
+				<prop key="hibernate.cache.use_second_level_cache" >false</prop>
+				<prop key="hibernate.cache.use_structured_entries">false</prop>
+				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+				<prop key="hibernate.format_sql">${hibernate.format_sql}</prop>
+				<prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<prop key="hibernate.jdbc.fetch_size">${hibernate.jdbc.fetch_size}</prop>
+				<prop key="hibernate.jdbc.batch_size">${hibernate.jdbc.batch_size}</prop>
+				<prop key="hibernate.connection.isolation">2</prop>
+				<prop key="hibernate.current_session_context_class">org.springframework.orm.hibernate4.SpringSessionContext
+				</prop>
+			</props>
+		</property>
+		<property name="namingStrategy">
+	      <bean class="org.hibernate.cfg.ImprovedNamingStrategy" />
+	    </property>
+		<property name="mappingLocations" value="classpath:com/yst/web/model/*.hbm.xml" />
+	</bean>
+	<bean id="hiberentityManagerFactory"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jpaVendorAdapter" ref="hibernateJpaVendorAdapter" />
+		<!-- 配置实体地址 -->
+		<property name="packagesToScan" value="com.yst.web.entity" />
+		<property name="jpaProperties">
+			<props>
+				<prop key="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory
+				</prop>
+				<!-- <prop key="net.sf.ehcache.configurationResourceName">cache/ehcache-hibernate-local.xml</prop> -->
+				<prop key="hibernate.ejb.naming_strategy">org.hibernate.cfg.ImprovedNamingStrategy</prop>
+				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+				<prop key="hibernate.format_sql">${hibernate.format_sql}</prop>
+				<prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<prop key="hibernate.jdbc.fetch_size">${hibernate.jdbc.fetch_size}</prop>
+				<prop key="hibernate.jdbc.batch_size">${hibernate.jdbc.batch_size}</prop>
+				<prop key="hibernate.connection.isolation">2</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="hibernateJpaVendorAdapter"
+		class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+		<property name="databasePlatform">
+			<bean factory-method="getDialect" class="org.alqframework.orm.hibernate.Hibernates">
+				<constructor-arg ref="dataSource" />
+			</bean>
+		</property>
+	</bean>
+		<!-- Spring Data Jpa配置, 扫描base-package下所有继承于Repository<T,ID>的接口 -->
+	<jpa:repositories base-package="com.yst.web.dao"
+		transaction-manager-ref="hibertransactionManager"
+		entity-manager-factory-ref="hiberentityManagerFactory" />
+	<!-- ===========================管理事务============================ -->
+	<!-- 事务管理器配置, Jpa单数据源事务 -->
+	<bean id="hibertransactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="hiberentityManagerFactory" />
+	</bean>
+    	<!-- 使用annotation定义事务 -->
+	<tx:annotation-driven transaction-manager="hibertransactionManager"
+		proxy-target-class="true" order="1" />
+</beans>

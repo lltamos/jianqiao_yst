@@ -1,0 +1,196 @@
+.topsue{
+    height: 137px;
+    background: url(../img/jian1_03.png) ;
+}
+.topsue .topsue_1{
+    width: 1100px;
+    margin: 0 auto;
+    height: 137px;
+    color: #00b0fb;
+}
+.topsue .topsue_1 .issue{
+    padding-top: 15px;
+    padding-left: 15px;
+}
+.topsue .topsue_1 .issue a{
+    color: #00b0fb;
+}
+.topsue .topsue_1 .issue i{
+    color: #000;
+}
+.topsue .topsue_1 .issue_1{
+    margin: 0 auto;
+    font-weight: bold;
+    width: 400px;
+    height: 105px;
+    text-align: center;
+    line-height: 80px;
+    background: url(../img/jian_2.png) no-repeat 0 54px;
+}
+.middlebj{
+    width: 1100px;
+    margin: 0 auto;
+	margin-bottom: 500px;
+}
+.middlebj .nickname{
+    margin-top: 30px;
+    height: 35px;
+    line-height: 35px;
+    margin-left: 70px;
+}
+.middlebj .nickname input{
+    height: 29px;
+    line-height: 29px;
+    width: 208px;
+}
+.middlebj .agebj{
+    height: 35px;
+    line-height: 35px;
+    margin-top: 24px;
+    margin-left: 70px;
+}
+.middlebj .agebj .age_1{
+    height: 35px;
+    line-height: 35px;
+    width: 212px;
+    margin: 0;
+}
+.genderjq{
+    margin-top: 30px;
+    margin-left: 70px;
+    height: 35px;
+    line-height: 35px;
+}
+.genderjq .derjq{
+    height: 35px;
+    line-height: 35px;
+    display: inline-block;
+    margin-left: 30px;
+}
+.genderjq .der_1{
+    width: 26px;
+    height: 26px;
+    background: url(../img/jian3_07.png) no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+}
+.genderjq .der_2{
+    width: 26px;
+    height: 26px;
+    background: url(../img/jian3_09.png) no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+}
+.provincejq{
+    margin-top: 30px;
+    margin-left: 70px;
+    height: 35px;
+    line-height: 35px;
+}
+
+.provincejq .provijq{
+    width: 208px;
+    height: 35px;
+    line-height: 35px;
+}
+.particulars{
+    margin-top: 30px;
+    height: 35px;
+    line-height: 35px;
+    margin-left: 33px;
+}
+.particulars input{
+    height: 29px;
+    line-height: 29px;
+    width: 653px;
+}
+.clasify{
+    margin-top: 30px;
+    height: 35px;
+    line-height: 35px;
+    margin-left: 33px;
+}
+.clasify .asify{
+    width: 378px;
+    height: 35px;
+    line-height: 35px;
+}
+.describejq{
+    margin-top: 30px;
+    margin-left: 33px;
+}
+.describejq .descjq{
+    width: 843px;
+    height: 423px;
+    vertical-align: top;
+}
+.uploadingjq{
+    margin-left: 113px;
+    height: 109px;
+    width: 109px;
+    display: inline-block;
+    background: url(../img/jian_4.jpg) no-repeat ;
+}
+.bulebott{
+    height: 109px;
+    margin-top: 30px;
+}
+.uploadingjq input{
+    display: block;
+    width: 109px;
+    height:109px;
+    opacity: 0;
+}
+.tianjja{
+    height: 40px;
+    line-height: 40px;
+    display: inline-block;
+    vertical-align: bottom;
+}
+.fabujq{
+    width: 172px;
+    height: 64px;
+    text-align: center;
+    color: #fff;
+    background: #00b0fb;
+    display: block;
+    font-size: 28px;
+    line-height: 64px;
+    margin-left: 113px;
+    margin-top: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yst.web.model">
+	<class name="ACL" table="system_acl" dynamic-insert="true" dynamic-update="true">
+		<id name="acl_id" column="acl_id">
+			<generator class="native" />
+		</id>
+		 <many-to-one name="role" class="Role" cascade="save-update" lazy="false" 
+            fetch="select">  
+            <column name="role_id"></column>  
+        </many-to-one>  
+        <many-to-one name="menu" class="Menu" cascade="save-update" lazy="false"   
+            fetch="select">  
+            <column name="menu_id"></column>  
+        </many-to-one>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须指向Dao接口 -->
+<mapper namespace="com.alqsoft.dao.productdetails.ProductDetailsDao">
+
+
+
+	<!-- 服务包详情 -->
+	<select id="getProductDetailsById" resultType="java.util.Map"
+			parameterType="Long">
+			select * from product WHERE id=#{id}	
+	</select>
+	
+	<!-- 服务类型id获取服务类型名称 -->
+	<select id="getServiceNameByServiceTypeId" resultType="java.util.Map"
+			parameterType="java.util.Map">
+						SELECT
+			p.id,
+			dst.service_name AS productTypeName,
+			p.name,
+			p.des1,
+			pig.address,
+			p.deposite_price
+		FROM product p, product_image pig,dic_service_type dst
+		WHERE 
+		p.id=#{productId}
+		AND
+		#{productId} =pig.product_id
+		AND
+		#{serviceTypeId}=dst.id
+	</select>
+	
+	<select id="getDoctorByProductTypeId" resultType="java.util.Map"
+			parameterType="Long">
+			<!-- SELECT * FROM doctor d
+			LEFT JOIN dic_title t ON t.id =d.title_id
+			LEFT JOIN doctor_image i ON i.doctor_id=d.id
+			WHERE d.product_type_id=#{id}
+			ORDER BY t.des DESC LIMIT 0,4 -->
+			<!-- SELECT d.id as doctorid,d.name as doctorname,t.name as titlename,s.name as spcename,d.hospital as hospital,d.hospitalype_id as hospitalid
+			from doctor d
+			LEFT JOIN dic_title t ON t.id =d.title_id
+			LEFT JOIN doctor_image i ON i.doctor_id=d.id
+			LEFT JOIN dic_spec s on d.spec_id=s.id
+			WHERE d.product_type_id=#{id} 
+			AND doctor.deleted=0 
+			AND doctor.apply_status=1 
+			AND 1=(SELECT customer.type FROM customer WHERE customer.id=doctor.customer_id)
+			ORDER BY t.des DESC LIMIT 0,4 -->
+			SELECT * FROM doctor 
+			WHERE doctor.deleted=0 
+			AND doctor.apply_status=1 
+			AND 1=(SELECT customer.type FROM customer WHERE customer.id=doctor.customer_id)
+			AND doctor.product_type_id=#{id} 
+			ORDER BY title_id 
+			LIMIT 0,6
+			</select>
+	
+	
+	
+	<!-- 查询当前服务包的日记 -->
+	<select id="getDiaryByProductTypeId" resultType="java.util.Map"
+	parameterType="java.util.Map">
+	SELECT * FROM diary 
+	WHERE product_type_id=#{productTypeId} 
+	ORDER BY (SELECT COUNT(*) FROM diary_favour WHERE  diary_favour.diary_id=diary.id) DESC 
+	LIMIT 0,#{rows};	
+	</select>
+	
+	<select id="getNewDiary" resultType="java.util.Map" >
+	select id from diary ORDER BY created_time DESC LIMIT 0,1
+	</select>
+
+
+
+<select id="getDepositePrice" resultType="java.util.Map" parameterType="Long">
+	select deposite_price from product where id =#{id}
+	</select>
+<!-- 获取日记的点赞量 -->
+<select id="getLikeNum" resultType="java.lang.Long" parameterType="java.lang.Long">
+	SELECT COUNT(*) FROM diary_favour WHERE  diary_favour.diary_id=#{diaryId}
+	</select>
+	<!-- 获取日记的图片 -->
+<select id="getImageByDiaryId" resultType="java.lang.String" parameterType="java.lang.Long">
+	SELECT address FROM alq_attachment WHERE diary_id=#{diaryId}
+	</select>
+
+	
+	
+	
+
+</mapper>

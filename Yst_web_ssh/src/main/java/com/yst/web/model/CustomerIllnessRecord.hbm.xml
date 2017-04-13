@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yst.web.model">
+	<class name="CustomerIllnessRecord" table="customer_illness_record" dynamic-insert="true" dynamic-update="true">
+		<id name="record_id" type="integer" column="record_id">
+			<generator class="native" />
+		</id>
+		<!-- <property name="relative_id" type="integer" column="relative_id" />  -->
+		<many-to-one name="customerRelative" class="CustomerRelative" fetch="select" lazy="false" unique="true">  
+            <column name="relative_id"></column>
+        </many-to-one>
+		<property name="symptom" type="string" length="1000" column="symptom" />
+		<property name="diagnose" type="string" length="1000" column="diagnose" />
+		<property name="proce" type="string" length="1000" column="proce" />
+		<property name="name" type="string" length="100" column="name" />
+		<property name="entering_time">
+			<column name="entering_time" sql-type="datetime" />
+		</property>
+		<property name="image1" type="string" column="image1" />
+		<property name="image2" type="string" length="200" column="image2" />
+		<property name="image3" type="string" length="200" column="image3" />
+		<property name="image4" type="string" length="200" column="image4" />
+		<property name="image5" type="string" length="200" column="image5" />
+		<property name="image6" type="string" length="200" column="image6" />
+		<property name="image7" type="string" length="200" column="image7" />
+		<property name="image8" type="string" length="200" column="image8" />
+		<property name="image9" type="string" length="200" column="image9" />
+		<property name="image10" type="string" length="200" column="image10" />
+		<property name="image11" type="string" length="200" column="image11" />
+		<property name="image12" type="string" length="200" column="image12" />
+		<property name="image13" type="string" length="200" column="image13" />
+		<property name="image14" type="string" length="200" column="image14" />
+		<property name="image15" type="string" length="200" column="image15" />
+		<property name="image16" type="string" length="200" column="image16" />
+		<property name="image17" type="string" length="200" column="image17" />
+		<property name="image18" type="string" length="200" column="image18" />
+		<property name="image19" type="string" length="200" column="image19" />
+		<property name="image20" type="string" length="200" column="image20" />
+	</class>
+</hibernate-mapping>

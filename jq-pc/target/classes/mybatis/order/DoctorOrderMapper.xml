@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须指向Dao接口 -->
+<mapper namespace="com.alqsoft.dao.order.DoctorOrderDao">
+
+
+	<sql id="where_costomerid">
+		<where>
+			o.customer_id=#{id}
+		</where>
+	</sql>
+	<!-- 分页查询全部订单 -->
+	<select id="findDoctorOrderListByCid" resultType="java.util.HashMap"
+		parameterType="java.util.HashMap">
+
+		SELECT
+		doctor.name AS doctorname,
+		merchant.name AS hospital,
+		doctor.spec_name,
+		o.created_time,
+		o.order_id,
+		o.pay_status,
+		o.price,
+		o.id AS oid,
+		doctor.id,
+		o.str_service_name,
+		doctor.image_header as image
+		FROM
+		doctor_service_order AS
+		o,
+		doctor,
+
+		merchant
+		<include refid="where_costomerid" />
+		AND
+		o.doctor_id=doctor.id
+		AND
+		doctor.merchant_id=merchant.id
+		ORDER BY
+		o.created_time DESC
+		LIMIT
+		#{startIndex},#{endIndex}
+	</select>
+
+
+	<!-- 根据状态查询订单 -->
+
+	<select id="findDoctorOrderByStatusAndCId" resultType="java.util.HashMap"
+		parameterType="java.util.HashMap">
+
+		SELECT
+		doctor.name AS doctorname,
+		merchant.name AS hospital,
+		o.created_time,
+		o.order_id,
+		o.pay_status,
+		o.price,
+		o.id AS oid,
+		doctor.id,
+		doctor.spec_name,
+		o.str_service_name,
+		doctor.image_header as image
+		FROM
+		doctor_service_order AS
+		o,
+		doctor,
+		merchant
+		<include refid="where_costomerid" />
+		AND
+		o.doctor_id=doctor.id
+		AND
+		o.pay_status=#{status}
+		AND
+		doctor.merchant_id=merchant.id
+		ORDER BY
+		o.created_time DESC
+		LIMIT
+		#{startIndex},#{endIndex}
+
+	</select>
+
+
+	<select id="getDoctorOrderById" resultType="java.util.HashMap"
+		parameterType="long">
+		SELECT *
+		FROM doctor_service_order WHERE id=#{id}
+
+	</select>
+
+	<select id="getCountFormOrder" resultType="int" parameterType="long">
+
+		select count(*) from
+
+		doctor_service_order AS o,
+		doctor,
+		merchant
+
+		<include refid="where_costomerid" />
+
+		AND
+		o.doctor_id=doctor.id
+
+		AND
+		doctor.merchant_id=merchant.id
+
+	</select>
+
+
+
+	<select id="getCountFormOrderByStatus" resultType="int"
+		parameterType="java.util.HashMap">
+
+		select count(*) from
+		doctor_service_order AS o,
+		doctor,
+
+		merchant
+		<include refid="where_costomerid" />
+		AND
+		o.doctor_id=doctor.id
+
+		AND
+		doctor.merchant_id=merchant.id
+		AND
+		o.pay_status=#{status}
+
+	</select>
+
+	<!-- 根据医生id分页查询订单（腾卉） -->
+	<select id="getDoctorOrderListByDoctorId" resultType="java.util.HashMap"
+		parameterType="java.util.HashMap">
+		SELECT dso.customer_id,c.image,c.nick_name,
+		dso.order_date,dso.order_id,dso.pay_status,dso.price
+		FROM
+		doctor_service_order dso,customer c
+		WHERE
+		dso.customer_id=c.id
+		AND
+		dso.doctor_id=#{doctor_id}
+		ORDER BY dso.order_date DESC
+		LIMIT
+		#{startIndex},#{endIndex}
+	</select>
+	<!-- 根据医生id查询订单数量（腾卉） -->
+	<select id="getOrderCountByDoctorId" resultType="int"
+		parameterType="Long">
+		select count(*) from doctor_service_order where
+		doctor_id=#{doctor_id}
+	</select>
+	
+		<!-- 根医生订单号查询订单 -->
+	<select id="getDoctorOrder" resultType="com.alqsoft.entity.DoctorServiceOrder"
+		parameterType="java.util.Map">
+		SELECT * FROM doctor_service_order dso 
+		WHERE dso.customer_id=#{customerId} 
+		AND dso.str_service_type_name=#{productName} 
+		AND dso.doctor_id=#{doctorId} LIMIT 0,1;
+	</select>
+
+</mapper>

@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="doctor" namespace="/" extends="common">
+		<action name="doctor" class="doctorAction">
+			<!-- <result name="list">system/doctor/list.jsp</result>
+			<result name="add_page">system/doctor/add.jsp</result>
+			<result name="update_page">system/doctor/update.jsp</result>
+			<result name="show_page">system/doctor/show.jsp</result>
+			<result name="approval">system/doctor/approval.jsp</result> -->
+			<result name="doctor_list">system/doctor/doctor_list.jsp</result>
+			<result name="doctor_approval_list">system/doctor/approval_list.jsp</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">doctor</param>
+			</result>
+		</action>
+	</package>
+	
+	<!-- 医生图片-->
+	<package name="doctorImage" namespace="/" extends="common">
+		<action name="doctorImage" class="doctorImageAction">
+			<result name="list">system/ImageText/list.jsp</result>
+			<result name="list_page">system/ImageText/list.jsp</result>
+			<result name="add_page">system/ImageText/add.jsp</result>
+			<result name="update_page">system/ImageText/update.jsp</result>
+			<result name="show_page">system/ImageText/show.jsp</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">doctorImage</param>
+			</result>
+		</action>
+	</package>
+	
+	<!-- 医院类型字典-->
+	<package name="dicHospitalType" namespace="/" extends="common">
+		<action name="dicHospitalType" class="dicHospitalTypeAction">
+			<result name="list">system/dicHospitalType/list.jsp</result>
+			<result name="add_page">system/dicHospitalType/add.jsp</result>
+			<result name="update_page">system/dicHospitalType/update.jsp</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">dicHospitalType</param>
+			</result>
+		</action>
+	</package>
+	
+	<!-- 科室字典-->
+	<package name="dicOffice" namespace="/" extends="common">
+		<action name="dicOffice" class="dicOfficeAction">
+			<result name="list">system/dicOffice/list.jsp</result>
+			<result name="add_page">system/dicOffice/add.jsp</result>
+			<result name="update_page">system/dicOffice/update.jsp</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">dicOffice</param>
+			</result>
+		</action>
+	</package>
+	
+	<!-- 专长字典-->
+	<package name="dicSpec" namespace="/" extends="common">
+		<action name="dicSpec" class="dicSpecAction">
+			<result name="list">system/dicSpec/list.jsp</result>
+			<result name="add_page">system/dicSpec/add.jsp</result>
+			<result name="update_page">system/dicSpec/update.jsp</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">dicSpec</param>
+			</result>
+		</action>
+	</package>
+	
+	
+	<!-- 医生抬头字典-->
+	<package name="dicTitle" namespace="/" extends="common">
+		<action name="dicTitle" class="dicTitleAction">
+			<result name="list">system/dicTitle/list.jsp</result>
+			<result name="add_page">system/dicTitle/add.jsp</result>
+			<result name="update_page">system/dicTitle/update.jsp</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">dicTitle</param>
+			</result>
+		</action>
+	</package>
+	
+	<!-- 关系字典-->
+	<package name="dicRelation" namespace="/" extends="common">
+		<action name="dicRelation" class="dicRelationAction">
+			<result name="list">system/dicRelation/list.jsp</result>
+			<result name="add_page">system/dicRelation/add.jsp</result>
+			<result name="update_page">system/dicRelation/update.jsp</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">dicRelation</param>
+			</result>
+		</action>
+	</package>
+	
+	<!-- 服务类型字典-->
+	<package name="dicServiceType" namespace="/" extends="common">
+		<action name="dicServiceType" class="dicServiceTypeAction">
+			<result name="list">system/dicServiceType/list.jsp</result>
+			<result name="add_page">system/dicServiceType/add.jsp</result>
+			<result name="update_page">system/dicServiceType/update.jsp</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">dicServiceType</param>
+			</result>
+		</action>
+	</package>
+
+	<!-- 医生服务设置 -->
+	<package name="doctorService" namespace="/" extends="common">
+		<action name="doctorService" class="doctorServiceAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">doctorService</param>
+			</result>
+		</action>
+	</package>
+	<!-- 病例记录 -->
+	<package name="customerIllnessRecord" namespace="/" extends="common">
+		<action name="customerIllnessRecord" class="customerIllnessRecordAction">
+			<result name="list">system/illnessRecord/list.jsp</result>
+			<result name="add_page">system/illnessRecord/add.jsp</result>
+			<result name="update_page">system/illnessRecord/update.jsp</result>
+			<result name="show_page">system/illnessRecord/show.jsp</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">customerIllnessRecord</param>
+			</result>
+		</action>
+	</package>
+	<!-- 相关人员 -->
+	<package name="customerRelative" namespace="/" extends="common">
+		<action name="customerRelative" class="customerRelativeAction">
+		</action>
+	</package>
+	<!-- 相关人员用药记录 -->
+	<package name="relativeMedicineRecord" namespace="/" extends="common">
+		<action name="relativeMedicineRecord" class="relativeMedicineRecordAction">
+			<result name="list">system/relativeMedicineRecord/list.jsp</result>
+			<result name="add_page">system/relativeMedicineRecord/add.jsp</result>
+			<result name="update_page">system/relativeMedicineRecord/update.jsp</result>
+			<result name="show_page">system/relativeMedicineRecord/show.jsp</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">relativeMedicineRecord</param>
+			</result>
+		</action>
+	</package>
+	<!-- 相关人员用药记录图片 -->
+	<package name="relativeMedicineImage" namespace="/" extends="common">
+		<action name="relativeMedicineImage" class="relativeMedicineImageAction">
+		</action>
+	</package>
+	
+	<!-- 医生服务订单 -->
+	<package name="doctorServiceOrder" namespace="/" extends="common">
+		<action name="doctorServiceOrder" class="doctorServiceOrderAction">
+			<result name="list">system/orderRecord/list.jsp</result>
+			<result name="show_page">system/orderRecord/show.jsp</result>
+			<result name="update_page">system/orderRecord/update.jsp</result>
+			<result name="to_consult_order">system/doctor/doctorserviceorder/doctorserviceorderlist.jsp</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">doctorServiceOrder</param>
+			</result>
+		</action>
+		<action name="doctorHomeServiceOrders" class="doctorServiceOrderAction">
+			<result name="list">system/orderRecord/doctorHomeService/list.jsp</result>
+			<result name="to_approval">system/orderRecord/doctorHomeService/approval.jsp</result>
+			<result name="show_approval">system/orderRecord/doctorHomeService/showApproval.jsp</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">doctorHomeServiceOrders</param>
+			</result>
+		</action>
+	</package>
+	<!-- 到家服务信息 -->
+	<package name="doctorHomeServiceInfo" namespace="/" extends="common">
+		<action name="doctorHomeServiceInfo" class="doctorHomeServiceInfoAction">
+			<result name="list">system/doctorHomeService/list.jsp</result>
+			<result name="add_page">system/doctorHomeService/add.jsp</result>
+			<result name="update_page">system/doctorHomeService/update.jsp</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">doctorHomeServiceInfo</param>
+			</result>
+		</action>
+	</package>
+	<!-- 医生评价 -->
+	<package name="doctorComment" namespace="/" extends="common">
+		<action name="doctorComment" class="doctorCommentAction">
+		</action>
+	</package>
+	
+	<!-- 首页医生推荐 -->
+	<package name="doctorRecomm" namespace="/" extends="common">
+		<action name="doctorRecomm" class="doctorRecommAction">
+		</action>
+	</package>
+	
+	<!-- 服务描述 -->
+	<package name="serviceDesc" namespace="/" extends="common">
+		<action name="serviceDesc" class="serviceDescAction">
+			<result name="list">system/serviceDesc/list.jsp</result>
+			<result name="add_page">system/serviceDesc/add.jsp</result>
+			<result name="update_page">system/serviceDesc/update.jsp</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">serviceDesc</param>
+			</result>
+		</action>
+	</package>
+	<!-- 会诊邀请 -->
+	<package name="doctorMeetingServiceInfo" namespace="/" extends="common">
+		<action name="doctorMeetingServiceInfo" class="doctorMeetingServiceInfoAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">doctorMeetingServiceInfo</param>
+			</result>
+		</action>
+	</package>
+	<!-- 电话呼叫记录 -->
+	<package name="doctorCallInfo" namespace="/" extends="common">
+		<action name="doctorCallInfo" class="doctorCallInfoAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">doctorMeetingServiceInfo</param>
+			</result>
+		</action>
+	</package>
+	<!-- 大讲堂视频管理 -->
+	<package name="videoInfo" namespace="/" extends="common">
+		<action name="videoInfo" class="videoInfoAction">
+		<result name="list">system/videoInfo/list.jsp</result>
+		<result name="add_page">system/videoInfo/add.jsp</result>
+		<result name="update_page">system/videoInfo/update.jsp</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">videoInfo</param>
+			</result>
+		</action>
+	</package>
+	
+	<!-- 知识库标签-->
+	<package name="knowlgTag" namespace="/" extends="common">
+		<action name="knowlgTag" class="knowlgTagAction">
+			<result name="list">system/knowlgTag/list.jsp</result>
+			<result name="add_page">system/knowlgTag/add.jsp</result>
+			<result name="update_page">system/knowlgTag/update.jsp</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">knowlgTag</param>
+			</result>
+		</action>
+	</package>
+	
+	<!-- 知识库信息-->
+	<package name="knowlgInfo" namespace="/" extends="common">
+		<action name="knowlgInfo" class="knowlgInfoAction">
+			<result name="list">system/knowlgInfo/list.jsp</result>
+			<result name="add_page">system/knowlgInfo/add.jsp</result>
+			<result name="update_page">system/knowlgInfo/update.jsp</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">knowlgInfo</param>
+			</result>
+		</action>
+	</package>
+	
+</struts>    

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.1.xsd 
+	http://www.springframework.org/schema/util
+	http://www.springframework.org/schema/util/spring-util-3.1.xsd 
+	http://www.springframework.org/schema/jee 
+	http://www.springframework.org/schema/jee/spring-jee-3.1.xsd 
+	http://www.springframework.org/schema/context 
+	http://www.springframework.org/schema/context/spring-context-3.1.xsd 
+	http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+    http://www.springframework.org/schema/task 
+	http://www.springframework.org/schema/task/spring-task-3.1.xsd
+	http://www.springframework.org/schema/mvc 
+	http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd"
+	default-lazy-init="true">
+	
+	<!-- 自动扫描的包名 -->
+	<context:component-scan base-package="com.yst.web.controller" />
+	
+	<!-- 默认的注解映射的支持包含返回的json数据解析器 -->
+	<mvc:annotation-driven conversion-service="conversionService">
+		<mvc:message-converters register-defaults="false">
+			<!-- 将StringHttpMessageCOnverter的默认编码设为UTF-8 -->
+			<bean
+				class="org.springframework.http.converter.ByteArrayHttpMessageConverter" />
+			<bean class="org.springframework.http.converter.StringHttpMessageConverter">
+				<property name="supportedMediaTypes" value="text/plain;charset=UTF-8" />
+			</bean>
+			<!-- json 响应的 content-type 是 application/json，而 IE 10 以前的浏览器对于这个类型是作为文件下载的 -->
+			<!-- 解决方法是只要将返回响应的 content-type 改为text/plain 即可 -->
+			<bean
+				class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+				<property name="supportedMediaTypes" value="text/plain;charset=UTF-8" />
+			</bean>
+		</mvc:message-converters>
+	</mvc:annotation-driven>
+
+
+	<bean id="conversionService"
+		class="org.springframework.context.support.ConversionServiceFactoryBean">
+		<property name="converters">
+			<list>
+				<bean
+					class="org.alqframework.json.jackson.convertor.StringToDateConvertor"></bean>
+			</list>
+		</property>
+	</bean>
+
+	<!-- 文件上传的配置 -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
+		p:defaultEncoding="UTF-8" p:maxUploadSize="52428800" p:uploadTempDir="upload/temp"></bean>
+
+	<!-- 视图解释类 -->
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/system/" />
+		<property name="suffix" value=".jsp" /><!--可为空,方便实现自已的依据扩展名来选择视图解释类的逻辑 -->
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+		<!-- 定义模板顺序 -->
+		<property name="order" value="1"></property>
+	</bean>
+	<!-- spring分页参数注入 -->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/ydmvc/**"/>
+            <bean class="com.yst.web.interceptor.SpringPaginateInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+	
+</beans>

@@ -1,0 +1,44 @@
+
+.navbox{
+	height: 90px;
+	line-height: 90px;
+	min-width: 1100px;
+	background:#00B0FB;
+}
+.navbox .nav{
+	width: 1225px;
+	margin: 0 auto;
+	position: relative;
+}
+.navbox .nav .logo{
+	float: left;
+	width: 163px;
+	padding: 15px 0;
+	height: 60px;
+	line-height: 60px;
+	margin-right: 126px;
+}
+.navbox .nav .navlinks{
+	overflow: hidden;
+    float: right;
+}
+.navbox .nav .navlinks li{
+	float: left;
+	height: 90px;
+	line-height: 90px;
+}
+.navbox .nav .navlinks li a{
+	color: #fff;
+	font-size: 18px;
+	display: block;
+	height: 90px;
+	line-height: 90px;
+	padding: 0 20px;
+	text-align: center;
+}
+.navbox .nav .navlinks li a:hover{
+    background: #0084bc;
+}
+.navbox .nav .navlinks li .bluedl{
+    background: #0084bc;
+}

@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yst.web.model">
+	<class name="CustomerRelative" table="customer_relative" dynamic-insert="true" dynamic-update="true">
+		<id name="relative_id" type="integer" column="relative_id">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string" length="30" column="name" />
+		<property name="phone" type="string" length="30" column="phone" />
+		<property name="prov" type="string" length="30" column="prov" />
+		<property name="city" type="string" length="30" column="city" />
+		<property name="sex" type="integer" column="sex" />
+		<property name="patient_id" type="integer" column="patient_id" />
+		<property name="birth_date">
+			<column name="birth_date" sql-type="datetime" />
+		</property>
+		<many-to-one name="customer" class="Customer" fetch="select" lazy="false" unique="true">  
+            <column name="customer_id"></column>  
+        </many-to-one>
+		<property name="relation_id" type="integer" column="relation_id" />
+		<set name="customerIllnessRecord"  cascade="delete" lazy="true">
+			<key>
+				<column name="relative_id"></column>
+			</key>
+			<one-to-many class="CustomerIllnessRecord" />
+		</set>
+		<set name="relativeMedicineRecord"  cascade="delete" lazy="true">
+			<key>
+				<column name="relative_id"></column>
+			</key>
+			<one-to-many class="RelativeMedicineRecord" />
+		</set>
+	</class>
+</hibernate-mapping>

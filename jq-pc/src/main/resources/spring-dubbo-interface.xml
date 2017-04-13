@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://code.alibabatech.com/schema/dubbo
+       http://code.alibabatech.com/schema/dubbo/dubbo.xsd"
+	default-lazy-init="true">
+
+	<!-- 消费方应用名，用于计算依赖关系，不是匹配条件，不要与提供方一样 -->
+	<dubbo:application name="dubbo_consumer" />
+
+	<!-- 使用redist广播注册中心暴露服务地址 -->
+	<dubbo:registry protocol="redis" address="${dubbo.redis.host}"
+		username="alqsoft" password="alqsoft" check="false" /><!-- check 启动时检查提供者是否存在，true报错，false忽略 -->
+
+	<!-- 以下是要引用的服务接口 -->
+	<!-- 生成远程服务代理，可以和本地bean一样使用demoService 不需要webservice注解，只需要正常的服务类即可 -->
+	<dubbo:reference id="rpcHelloService" interface="com.alqsoft.rpc.RpcHelloService" />
+
+	<dubbo:reference id="rpcDoctorImageService"
+		interface="com.alqsoft.rpc.RpcDoctorImageService" />
+
+	<dubbo:reference id="rpcUpdateCustormerService"
+		interface="com.alqsoft.rpc.RpcUpdateCustormerService" />
+
+
+	<dubbo:reference id="rpcProductOrderService"
+		interface="com.alqsoft.rpc.RpcProductOrderService" />
+
+	<dubbo:reference id="rpcDoctorServiceOrderService"
+		interface="com.alqsoft.rpc.RpcDoctorServiceOrderService" />
+
+	<!-- 发布求医信息 -->
+	<dubbo:reference id="rpcPublishDisease" interface="com.alqsoft.rpc.RpcPublishDisease" />
+
+	<dubbo:reference id="rpcDoctorServicesService"
+		interface="com.alqsoft.rpc.RpcDoctorServicesService" />
+
+	<!-- 微信支付接口 -->
+	<dubbo:reference id="rpcWeChatPayService"
+		interface="com.alqsoft.rpc.pay.RpcWeChatPayService" />
+
+
+	<dubbo:reference id="rpcDoctorOrderService"
+		interface="com.alqsoft.rpc.RpcDoctorOrderService" />
+	<!-- 绑定银行卡信息 -->
+	<dubbo:reference id="rpcUserBankService"
+		interface="com.alqsoft.rpc.RpcUserBankService" />
+
+	<dubbo:reference id="rpcProductService" interface="com.alqsoft.rpc.RpcProductService" />
+
+	<!-- <dubbo:reference id="rpcPayService" interface="com.alqsoft.rpc.pay.RpcPayService" 
+		cache="false" check="false" timeout="1200000" url="${dubbo.redis.host.pay}" 
+		/> -->
+
+</beans>

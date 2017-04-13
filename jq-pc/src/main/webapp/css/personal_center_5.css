@@ -1,0 +1,61 @@
+.password_1{
+    width: 860px;
+    margin: 0 auto;
+}
+.modify{
+    height: 150px;
+    text-align: center;
+    line-height: 150px;
+    font-size: 26px;
+    color: #656474;
+    border-bottom: 1px dashed #B0B0B3;
+}
+.password_1>ul{
+    overflow: hidden;
+    width: 500px;
+    margin: 30px auto;
+}
+.password_1>ul li{
+    float: left;
+    text-align: center;
+    margin-left: 7px;
+}
+.password_1>ul li span{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #FFE1DF;
+    font-size: 20px;
+}
+.font_1{
+    color: #FE6965;
+    border:2px solid #FE6965 ;
+}
+.font_2{
+    color: #FFABA9;
+    border:2px solid transparent ;
+}
+.password_1>ul li b{
+    display: inline-block;
+    width: 114px;
+    border: 1px solid #FFCECD;
+    margin-top: 28px;
+}
+.password_1>ul li p{
+    color: #FE6965;
+    margin-top: 12px;
+}
+.phone_1{
+    width: 406px;
+    margin: 0 auto;
+}
+.phone_1 span{
+    display: block;
+    width: 61px;
+    height: 61px;
+    margin: 84px auto;
+    background: url("../img/success.png") no-repeat;
+}

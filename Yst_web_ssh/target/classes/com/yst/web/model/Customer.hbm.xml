@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yst.web.model">
+	<class name="Customer" table="customer" dynamic-insert="true" dynamic-update="true" lazy="false">
+		<id name="customer_id" type="integer" column="customer_id">
+			<generator class="native" />
+		</id>
+		<property name="name" length="50"  type="string" column="name" />
+		<property name="phone" length="30" unique="true"/>
+		<property name="password" length="200" not-null="true"/>
+		<property name="pay_password" length="200" />
+		<property name="image" length="500" type="string" />
+		<property name="sex" type="integer"/>
+		<property name="age" type="integer"/>
+		<property name="birth_day"  column="birth_day" length="50" type="string"/>
+		
+		<property name="deleted" type="integer">
+			<column name="deleted"  not-null="true" default="0" ></column>
+		</property>
+		<property name="create_time">
+			<column name="create_time" sql-type="datetime" />
+		</property>
+		<property name="update_time">
+			<column name="update_time" sql-type="datetime" />
+		</property>
+		<property name="delete_time">
+			<column name="delete_time" sql-type="datetime" />
+		</property>
+		<property name="last_login_time">
+			<column name="last_login_time" sql-type="datetime" />
+		</property>
+		<property name="last_failed_time" type="integer" column="last_failed_time" />
+		<property name="isLock" type="integer">
+			<column name="isLock"  not-null="true" default="0" ></column>
+		</property>
+		<one-to-one name="merchant" class="Merchant" fetch="join" cascade="delete"></one-to-one>
+		<one-to-one name="doctor" fetch="select" cascade="all"/>
+		<one-to-one name="balance" cascade="all" fetch="join" lazy="false" />
+		<property name="huanxin_id" length="100" type="string"/>
+		<property name="huanxin_password" length="200"  type="string"/>
+		<property name="address_id" type="integer" />
+		<property name="type" type="integer">
+			<column name="type"  not-null="true" default="0" ></column>
+		</property>
+		<many-to-one name="recomm_customer" class="Customer" column="recomm_customer_id" cascade="all" fetch="join"></many-to-one>
+		<property name="address" length="500"  type="string"/>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yst.web.model">
+	<class name="VideoInfo" table="video_info" dynamic-insert="true" dynamic-update="true">
+		<id name="id" type="integer" column="id">
+			<generator class="native" />
+		</id>
+		<property name="name" length="50"  type="string" column="name" />
+		<property name="short_desc" length="200" type="string" column="short_desc" />
+		<many-to-one name="knowlgTag" class="KnowlgTag" fetch="select" lazy="false" unique="true">  
+            <column name="tag_id"></column>  
+        </many-to-one>
+		<property name="image_header" length="100" type="string" column="image_header" />
+		<property name="image_video" length="200" type="string" column="image_video" not-null="true"/>
+		<property name="comment_count" type="integer" column="comment_count" />
+		<property name="view_count" type="integer" column="view_count" />
+		<property name="deleted" type="integer">
+			<column name="deleted"  not-null="true" default="0" ></column>
+		</property>
+	</class>
+</hibernate-mapping>

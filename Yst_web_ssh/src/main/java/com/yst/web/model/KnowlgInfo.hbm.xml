@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yst.web.model">
+	<class name="KnowlgInfo" table="knowlg_info" dynamic-insert="true" dynamic-update="true">
+		<id name="id" type="integer" column="id">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string" length="50" column="name" />
+		<property name="short_desc" type="string" length="200" column="short_desc" />
+		<many-to-one name="knowlgTag" class="KnowlgTag" fetch="select" lazy="false" unique="true">  
+            <column name="tag_id"></column>  
+        </many-to-one>
+        <property name="image_header" type="string" length="100" column="image_header" />
+        <property name="content_desc" type="string" length="200" column="content_desc" />
+        <property name="comment_count" type="integer" column="comment_count" />
+        <property name="view_count" type="integer">
+			<column name="view_count"  not-null="true" default="0" ></column>
+		</property>
+        <property name="deleted" type="integer">
+			<column name="deleted"  not-null="true" default="0" ></column>
+		</property>
+	</class>
+</hibernate-mapping>

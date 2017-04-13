@@ -1,0 +1,342 @@
+@charset "utf-8";
+.subjectjq{
+    width: 1100px;
+    margin: 0 auto;
+}
+.leftjq{
+    width: 1100px;
+    float: left;
+}
+.leftjq .hzqiu{
+    width: 726px;
+}
+.leftjq .hzqiu .hzqiu_1{
+    color: #00b0fb;
+    font-size: 18px;
+}
+.leftjq .hzqiu .hzqiu_1 a{
+    color: #00b0fb;
+}
+.leftjq .hzqiu .hzqiu_1 i{
+    color: #000;
+}
+.theway{
+    width: 700px;
+    border: 1px solid #00b0fb;
+    padding-left: 24px;
+    margin-top: 30px;
+}
+.theway .hewayjq_1{
+    width: 726px;
+    height: 80px;
+    line-height: 80px;
+    font-size: 24px;
+}
+
+.theway .hewayjq_2{
+}
+
+.theway .hewayjq_2 img{
+    width: 298px;
+    height: 292px;
+    float: left;
+    margin-right: 50px;
+}
+.theway .hewayjq_2 .wayjq_21{
+    float: left;
+    width: 352px;
+    height: 302px;
+    font-size: 18px;
+}
+.theway .hewayjq_2 .wayjq_21 .tejia_1{
+    color: #d2d2d2;
+    text-align: center;
+}
+.theway .hewayjq_2 .wayjq_21 .tejia_2{
+    height: 35px;
+    line-height: 35px;
+}
+.theway .hewayjq_2 .wayjq_21 .tejia_2 i{
+    color: #ff6600;
+}
+.theway .hewayjq_2 .wayjq_21 .tejia_3{
+    height: 35px;
+    line-height: 35px;
+}
+.theway .hewayjq_2 .wayjq_21 .tejia_3>i{
+    text-decoration:line-through;
+    color: #7e7e7e;
+}
+.theway .hewayjq_2 .wayjq_21 .tejia_3 b{
+	margin-left: 22px;
+    display: inline-block;
+    width: 60px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 8px;
+    color:#F7AB00;
+    border: 1px solid #F7AB00;
+}
+.theway .hewayjq_2 .wayjq_21 .tejia_4{
+    height: 35px;
+    line-height: 35px;
+}
+.theway .hewayjq_2 .wayjq_21 .tejia_4 i{
+    color: #575757;
+}
+.theway .hewayjq_2 .wayjq_21 .tejia_5{
+    height: 140px;
+    line-height: 23px;
+    overflow: hidden;
+}
+.theway .hewayjq_2 .wayjq_21 .tejia_5 i{
+    color: #7e7e7e; 
+}
+.theway .hewayjq_2 .wayjq_21 .tejia_6{
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 5px;
+    padding-left: 27px;
+    width: 93px;
+    height: 30px;
+    line-height: 30px;
+    margin-left: 188px;
+    background: url(../img/jianp_6.png) no-repeat 8px center #2ba6d9;
+}
+.hewayjq_3{
+    margin-top: 26px;
+    margin-bottom: 48px;
+    font-size: 18px;
+}
+.hewayjq_3 i{
+    color: #ff7800;
+}
+.xmmsjq{
+    width: 1100px;
+    height: 150px;
+    line-height: 110px;
+    font-size: 28px;
+    text-align: center;
+    color: #00b0fb;
+    background: url(../img/jianp_5.png) no-repeat center 76px;
+}
+.xiangmujq{
+    width: 726px;
+}
+.xiangmujq .xiangmujq_1{
+    font-size: 22px;
+    width: 726px;
+    overflow: hidden;
+    white-space: nowrap;     
+    text-overflow: ellipsis;
+    color: #0084bc;
+    margin-bottom: 15px;
+}
+.xiangmujq .xiangmujq_2{
+    font-size: 19px;
+    width: 726px;
+    overflow: hidden;
+    white-space: nowrap;     
+    text-overflow: ellipsis;
+    color: #575757;
+    margin-bottom: 30px;
+}
+.xiangmujq .xiangmujq_3{
+    line-height: 38px;
+    color: #373737;
+    font-size: 20px;
+}
+.xiangmujq .xiangmujq_3 p{
+    margin-bottom: 14px;
+}
+.fwxxjq{
+    padding-bottom: 200px;
+    width: 1100px;
+}
+.fwxxjq .fwxxjq_1{
+    color: #fff;
+    width: 726px;
+    background: #00b0fb;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    margin: 20px auto;
+}
+.fwxxjq .fwxxjq_1 .wxxjq_12{
+    text-align: center;
+    font-size: 33px;
+    height: 80px;
+    line-height: 80px;
+}
+.fwxxjq .fwxxjq_1 .wxxjq_22 img{
+    margin-left: 22px;
+    margin-right: 30px;
+    width: 71px;
+    height: 71px;
+    float: left;
+}
+.fwxxjq .fwxxjq_1 .wxxjq_22 span{
+    font-size: 20px;
+    float: left;
+    width: 576px;
+}
+
+.fwxxjq .fwxxjq_1 .wxxjq_22 .rvicejq{
+    height: 80px;
+    line-height: 72px;
+    padding-bottom: 8px;
+}
+.fwxxjq .fwxxjq_1 .wxxjq_22 .rvicejq_2{
+    height: 86px;
+    line-height: 36px;
+    padding-bottom: 6px;
+}
+.zhuanjia{
+    overflow: hidden;
+    width: 1100px;
+}
+.zhuanjia_1{
+    float: left;
+    width: 540px;
+    border: 1px solid #DFDFDF;
+    margin-left: 8px;
+    margin-bottom: 8px;
+    background-color: #F5F5F5;
+}
+.zhuanjia_1 img{
+	width: 160px;
+    float: left;
+    padding: 10px;
+    border-radius: 50%;
+}
+.online_1{
+    display: inline-block;
+    width: 80px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    background-color: #0262A5;
+    color: #fff;
+    margin-left: 20px;
+}
+.zhuanjia_1 ul{
+    float: left;
+    width: 360px;
+    height: 180px;
+    margin-top: 20px;
+}
+.zhuanjia_1 ul li{
+    margin-bottom: 10px;
+}
+.zj_1{
+    color: #27B7F8;
+    font-size: 20px;
+}
+.zj_2{
+    color: #757575;
+}
+
+.diarybox{
+    overflow: hidden;
+    width: 813px;
+    border: 1px solid #d3d3d3;
+    background: #fafafa;
+    padding-top: 25px;
+    padding-bottom: 40px;
+    margin: 0 auto;
+}
+.diarybox .diarynumber{
+    float: left;
+    width: 74px;
+    height: 72px;
+    line-height:72px;
+    text-align:center;
+    color:#fff;
+    font-size:34px;
+    margin-right: 16px;
+    background:url("../img/font_1.png") no-repeat;
+}
+.diarybox .diarymain{
+    float: left;
+    width: 670px;
+}
+.diarybox .diarymain .article{
+    font-size: 22px;
+    color: #373737;
+    line-height: 36px;
+}
+.diarybox .diarymain .picbox{
+    overflow: hidden;
+    margin-top: 46px;
+}
+.diarybox .diarymain .picbox .diarypic{
+    float: left;
+    margin-right: 20px;
+}
+.diarypic img{
+	width:100px;
+	height:100px;
+}
+.diarybox .diarymain .timeandrank{
+    overflow: hidden;
+    width: 670px;
+    height: 15px;
+    line-height: 15px;
+    margin-top: 60px;
+}
+.diarybox .diarymain .timeandrank .time{
+    float: left;
+    font-size: 15px;
+    color: #8a8a8a;
+}
+.diarybox .diarymain .timeandrank .rank{
+    overflow: hidden;
+    float: right;
+}
+.diarybox .diarymain .timeandrank .rank .likeicon{
+    float: left;
+    height: 12px;
+    padding: 1px;
+    margin-right: 7px;
+}
+.diarybox .diarymain .timeandrank .rank .likeicon .icon{
+    background: url(../img/map1.png) no-repeat -243px -60px;
+    width: 14px;
+    height: 12px;
+}
+.diarybox .diarymain .timeandrank .rank .commenticon{
+    float: left;
+    height: 12px;
+    padding: 1px;
+    margin-right: 7px;
+    margin-left: 20px;
+}
+.diarybox .diarymain .timeandrank .rank .commenticon .icon{
+    background: url(../img/map1.png) no-repeat -272px -61px;
+    width: 16px;
+    height: 12px;
+}
+.diarybox .diarymain .timeandrank .rank .lookicon{
+    float: left;
+    height: 8px;
+    padding: 3px;
+    margin-right: 7px;
+    margin-left: 20px;
+}
+.diarybox .diarymain .timeandrank .rank .lookicon .icon{
+    background: url(../img/map1.png) no-repeat -302px -62px;
+    width: 14px;
+    height: 8px;
+}
+.diarybox .diarymain .timeandrank .rank .like,.diarysharelistbox .diaryshare .diaryshareleft .diarybox .diarymain .timeandrank .rank .comment,.diarysharelistbox .diaryshare .diaryshareleft .diarybox .diarymain .timeandrank .rank .look{
+    float: left;
+    font-size: 12px;
+    color: #00b0fb;
+}
+
+
+
+
+
+

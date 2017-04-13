@@ -1,0 +1,48 @@
+.con_1{
+    width: 500px;
+    margin: 80px auto;
+}
+.con_1 ul li{
+    margin-bottom: 50px;
+    position: relative;
+}
+.con_1 ul li span{
+    float: left;
+    margin-right: 20px;
+    color: #717171;
+}
+.center_1{
+    margin-top: 44px;
+}
+.con_1 ul li input{
+    width: 228px;
+    height: 20px;
+}
+.con_1 ul li p{
+    font-size: 14px;
+    margin-left: 60px;
+    margin-top: 14px;
+    color: #717171;
+}
+.con_1 ul li button {
+    position: absolute;
+    top: 77px;
+    left: 181px;
+    width: 70px;
+    height: 28px;
+    background-color: #EDEFEF;
+    border: 1px solid #DEDEDE;
+    cursor: pointer;
+}
+#keep{
+    display: block;
+    width: 158px;
+    height: 42px;
+    line-height: 42px;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #DEDEDE;
+    color: #717171;
+    margin-left: 60px;
+    margin-top: 114px;
+}

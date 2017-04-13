@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yst.web.model">
+	<class name="UserComment" table="user_comment"  dynamic-insert="true" dynamic-update="true">
+		<id name="user_comment_id" type="integer" column="user_comment_id" >
+			<generator class="native" />
+		</id>
+		<property name="customer_id"  type="integer" />
+		<property name="customer_name"  type="string" length="50"/>
+		<property name="customer_phone"  type="string" length="32"/>
+		<property name="customer_comment"  type="string" length="200"/>
+		<property name="deleted" type="integer">
+			<column name="deleted" not-null="true"  default="0" ></column>
+		</property>
+		<property name="comment_for_type"  type="integer" />
+		<property name="comment_date">
+			<column name="comment_date" sql-type="datetime" />
+		</property>
+		<property name="comment_for_id"  type="integer" /> 
+		<property name="agree" type="integer">
+			<column name="agree" not-null="true"  default="0" ></column>
+		</property>
+		<property name="disagree" type="integer">
+			<column name="disagree" not-null="true"  default="0" ></column>
+		</property>
+		<property name="hot" type="integer">
+			<column name="hot" not-null="true"  default="0" ></column>
+		</property>
+	</class>
+</hibernate-mapping>

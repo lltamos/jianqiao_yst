@@ -1,0 +1,843 @@
+
+.banner{
+	height: 570px;
+}
+.jianqiaonew{
+	margin: 0 auto;
+	margin-top: 65px;
+	width: 1100px;
+}
+.jianqiaonew .title,.jianqiaoservice .title,.bighealth .title,.healthguide .title,.doctor .title,.seekdoc .title,.healthshare .title{
+	font-size: 34px;
+	color: #00b0fb;
+	text-align: center;
+	font-family: "Microsoft Yahei";
+}
+.jianqiaonew .titleline,.jianqiaoservice .stitleline,.bighealth .stitleline,.healthguide .stitleline,.doctor .stitleline,.seekdoc .stitleline,.healthshare .stitleline{
+	margin-top: 10px;
+	height: 23px;
+	background: url(../img/newtitleline.jpg) no-repeat center;
+}
+.stitleline1{
+	margin-top: 10px;
+	height: 23px;
+	background: url(../img/newtitleline1.png) no-repeat center;
+}
+.more{
+	width:40px;
+	height:16px;
+	font-size: 14px;
+	line-height: 16px;
+	float: right;
+}
+.more a{
+	color: #A6A6A6;
+}
+.jianqiaonew .txt{
+	width: 1100px;
+	font-size: 14px;
+	color: #8f8f8f;
+	text-align: center;
+	font-family: "Microsoft Yahei";
+	margin-top: 14px;
+	position: relative;
+}
+.jianqiaonew .txt .next{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	background: url(../img/next.jpg) no-repeat center;
+	width: 29px;
+	height: 29px;
+	cursor: pointer;
+}
+.jianqiaonew .txt .pre{
+	position: absolute;
+	right: 30px;
+	bottom: 0;
+	background: url(../img/pre.jpg) no-repeat center;
+	width: 29px;
+	height: 29px;
+	cursor: pointer;
+}
+.jianqiaonew .newbox{
+	height: 280px;
+	margin-top: 26px;
+	overflow: hidden;
+    position: relative;
+}
+.jianqiaonew .newbox .swiper-wrapper{
+	overflow: hidden;
+	width: 1000%;
+    position: absolute;
+}
+.jianqiaonew .newbox .swiper-slide{
+	width: 250px;
+	float: left;
+	margin-right: 25px;
+}
+.jianqiaonew .newbox .swiper-slide .picbox{
+	width: 257px;
+	height: 183px;
+	overflow: hidden;
+}
+.jianqiaonew .newbox .swiper-slide .newtitle{
+	font-size: 16px;
+	color: #00b0fb;
+	font-family: "Microsoft Yahei";
+	text-align: left;
+	line-height: 46px;
+	height: 46px;
+}
+.jianqiaonew .newbox .swiper-slide .detailtxt{
+	font-size: 12px;
+	color: #797979;
+	font-family: "Microsoft Yahei";
+	line-height: 17px;
+	height: 51px;
+	overflow: hidden;
+}
+.jianqiaonew .morenew{
+	text-align: center;
+	margin-top: 35px;
+}
+.jianqiaonew .morenew a{
+	display: inline-block;
+	width: 156px;
+	height: 47px;
+	line-height: 47px;
+	border: 1px solid #d3d3d3;
+	font-size: 14px;
+	color: #717171;
+}
+.jianqiaoservice{
+	margin: 0 auto;
+	margin-top: 135px;
+	width: 1100px;
+}
+.jianqiaoservice .diseaselistbox{
+	overflow: hidden;
+	margin-top: 60px;
+}
+.jianqiaoservice .diseaselistbox li{
+	float: left;
+	margin-right: 25px;
+	width: 300px;
+	padding-left: 24px;
+	padding-right: 24px;
+	padding-top: 26px;
+	padding-bottom: 13px;
+	border: 1px solid #e6e6e6;
+	border-radius: 5px;
+	margin-bottom: 30px;
+}
+.jianqiaoservice .diseaselistbox .lastdis{
+	margin-right: 0;
+}
+.jianqiaoservice .diseaselistbox li .diseasepic{
+	text-align: center;
+	height: 298px;
+	width: 298px;
+	overflow: hidden;
+}
+.jianqiaoservice .diseaselistbox li .diseaselisttitle{
+	font-size: 18px;
+	color: #262626;
+	margin-top: 20px;
+}
+.jianqiaoservice .diseaselistbox li .diseasedetail{
+	font-size: 12px;
+	color: #a5a5a5;
+	line-height: 15px;
+	margin-top: 6px;
+}
+.jianqiaoservice .diseaselistbox li .diseasebtn{
+	overflow: hidden;
+	margin-top: 7px;
+}
+.jianqiaoservice .diseaselistbox li .diseasebtn .dbtnleft{
+	float: left;
+	font-size: 14px;
+	color: #2ba6d9;
+	overflow: hidden;
+	height: 30px;
+	line-height: 30px;
+}
+.jianqiaoservice .diseaselistbox li .diseasebtn .dbtnleft .btniconbox{
+	height: 17px;
+	padding: 6px 0;
+	float: left;
+	margin-right: 5px;
+}
+.jianqiaoservice .diseaselistbox li .diseasebtn .dbtnleft .btniconbox .icon{
+	background: url(../img/map1.png) no-repeat -155px -11px;
+	width: 17px;
+	height: 17px;
+}
+.jianqiaoservice .diseaselistbox li .diseasebtn .dbtnright{
+	float: right;
+}
+.jianqiaoservice .diseaselistbox li .diseasebtn .dbtnright .rbtnicon{
+	background: url(../img/map1.png) no-repeat -181px -5px;
+	width: 90px;
+	height: 30px;
+}
+
+.bighealth{
+	margin-top: 122px;
+	height: 540px;
+	background: url(../img/banner7.png) no-repeat;
+}
+.bighealth .polygonbox{
+	width: 1100px;
+	margin: 0 auto;
+	position: relative;
+	margin-top: 34px;
+}
+.bighealth .polygonbox .normal1{
+	position: absolute;
+	top: 0;
+	left: 262px;
+}
+.bighealth .polygonbox .normal2{
+	position: absolute;
+	top: 0;
+	left: 559px;
+}
+.bighealth .polygonbox .normal3{
+	position: absolute;
+	top: 177px;
+	left: 114px;
+}
+.bighealth .polygonbox .normal4{
+	position: absolute;
+	top: 177px;
+	left: 411px;
+}
+.bighealth .polygonbox .normal5{
+	position: absolute;
+	top: 177px;
+	left: 708px;
+}
+.healthguide{
+	margin-top: 144px;
+	margin-bottom: 60px;
+}
+.healthguide .guidefloatbox{
+	overflow: hidden;
+	width: 1100px;
+	margin: 0 auto;
+	margin-top: 28px;
+}
+.healthguide .guidefloatbox .magazine{
+	float: left;
+	width: 378px;
+	margin-right: 30px;
+}
+.healthguide .guidefloatbox .magazine .guidetitle,.healthguide .guidefloatbox .class .guidetitle,.healthguide .guidefloatbox .article .guidetitle{
+	font-family: "Microsoft Yahei";
+	font-size: 24px;
+	color: #282828;
+	height: 37px;
+}
+.healthguide .guidefloatbox .magazine .guidemain img{
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 1px;
+}
+.healthguide .guidefloatbox .magazine .guidemain{
+	overflow: hidden;
+	font-size: 14px;
+	color: #4c4c4c;
+	line-height: 26px;
+	height: 320px;
+	text-indent: 2em;
+}
+.healthguide .guidefloatbox .magazine .moreinfo,.healthguide .guidefloatbox .class .moreinfo,.healthguide .guidefloatbox .article .moreinfo{
+	margin-top: 10px;
+}
+.healthguide .guidefloatbox .magazine .moreinfo a,.healthguide .guidefloatbox .class .moreinfo a,.healthguide .guidefloatbox .article .moreinfo a{
+	font-size: 14px;
+	color: #00b0fb;
+}
+.healthguide .guidefloatbox .class{
+	float: left;
+	width: 350px;
+	margin-right: 30px;
+}
+.healthguide .guidefloatbox .class .classmainbox{
+	height: 320px;
+	overflow: hidden;
+}
+.healthguide .guidefloatbox .class .classmain{
+	width: 350px;
+	height: 233px;
+	overflow: hidden;
+}
+.healthguide .guidefloatbox .class .clipbox{
+	overflow: hidden;
+	margin-top: 10px;
+}
+.healthguide .guidefloatbox .class .clipbox img{
+	float: left;
+}
+.healthguide .guidefloatbox .class .clipbox .mr10{
+	margin-right: 10px;
+}
+.healthguide .guidefloatbox .article{
+	float: left;
+	width: 311px;
+}
+.healthguide .guidefloatbox .article .articlemain{
+	height: 320px;
+	overflow: hidden;
+}
+.healthguide .guidefloatbox .article .articlemain li .showbox{
+	width: 100%;
+	overflow: hidden;
+}
+.healthguide .guidefloatbox .article .articlemain li .showbox .iconbox{
+	float: left;
+	height: 7px;
+	line-height: 7px;
+	padding: 13.5px 0;
+	margin-right: 7px;
+}
+.healthguide .guidefloatbox .article .articlemain li .showbox .iconbox .icon{
+	width: 7px;
+	height: 7px;
+	background: url(../img/point.jpg) no-repeat center;
+}
+.healthguide .guidefloatbox .article .articlemain li .showbox .articletitle{
+	float: left;
+	height: 34px;
+	line-height: 34px;
+	font-size: 14px;
+	color: #565656;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.healthguide .guidefloatbox .article .articlemain li .showbox .time{
+	float: right;
+	height: 34px;
+	line-height: 34px;
+	font-size: 14px;
+	color: #818181;
+}
+.healthguide .guidefloatbox .article .articlemain li .hidebox{
+	overflow: hidden;
+	
+}
+.healthguide .guidefloatbox .article .articlemain li .hidebox .hidearticlepic{
+	float: left;
+	margin-right: 13px;
+	margin-bottom: 14px;
+}
+.healthguide .guidefloatbox .article .articlemain li .hidebox .hidetxtbox{
+	float: left;
+	width: 192px;
+}
+.healthguide .guidefloatbox .article .articlemain li .hidebox .hidetxtbox .hidetitle{
+	font-size: 16px;
+	color: #00b0fb;
+}
+.healthguide .guidefloatbox .article .articlemain li .hidebox .hidetxtbox .note{
+	margin-top: 10px;
+	font-size: 12px;
+	color: #848484;
+}
+.doctor{
+	margin-top: 146px;
+}
+.doctor .doctorlistbox .doctorlist{
+	overflow: hidden;
+	width: 9999999px;
+}
+.doctor .doctorlistbox{
+	width: 1100px;
+	margin: 0 auto;
+	overflow: hidden;
+	margin-top: 36px;
+}
+.doctor .doctorlistbox .doctorlist li{
+	float: left;
+	width: 376px;
+}
+.doctor .doctorlistbox .doctorlist li .disease{
+	background: #00b0fb;
+	font-size: 20px;
+	font-family: "Mcrosoft Yahei";
+	color: #fff;
+	width: 347px;
+	height: 47px;
+	line-height: 47px;
+	text-align: center;
+}
+.doctor .doctorlistbox .doctorlist li .doctormain .doctorintro{
+	padding-top: 18px;
+	padding-left: 15px;
+	overflow: hidden;
+}
+.doctor .doctorlistbox .doctorlist li .doctormain .doctorintro .doctorpic{
+	float: left;
+	margin-right: 15px;
+}
+.doctor .doctorlistbox .doctorlist li .doctormain .doctorintro .doctorintrotxt{
+	float: left;
+	width: 168px;
+	height: 186px;
+}
+.doctor .doctorlistbox .doctorlist li .doctormain .doctorintro .doctorintrotxt .doctorname{
+	font-size: 20px;
+	color: #434343;
+	height: 34px;
+}
+.doctor .doctorlistbox .doctorlist li .doctormain .doctorintro .doctorintrotxt .job,.doctor .doctorlistbox .doctorlist li .doctormain .doctorintro .doctorintrotxt .introduce{
+	font-size: 14px;
+	color: #787878;
+	line-height: 22px;
+}
+.doctor .doctorlistbox .doctorlist li .otherdoctor{
+	margin-top: 25px;
+}
+.doctor .doctorlistbox .doctorlist li .otherdoctor .otherdoclist{
+	overflow: hidden;
+}
+.doctor .doctorlistbox .doctorlist li .otherdoctor .otherdoclist .otherdocname{
+	float: left;
+	font-size: 16px;
+	color: #000;
+	width: 150px;
+	padding-left: 15px;
+	height: 55px;
+	line-height: 55px;
+}
+.doctor .doctorlistbox .doctorlist li .otherdoctor .otherdoclist .otherdocjob{
+	float: left;
+	font-size: 16px;
+	color: #9b9b9b;
+	width: 168px;
+	height: 55px;
+	line-height: 55px;
+}
+.doctor .otherservice{
+	width: 1100px;
+	margin: 0 auto;
+	margin-top: 20px;
+	overflow: hidden;
+}
+.doctor .otherservice .otherservicel{
+	width: 565px;
+	float: left;
+}
+.doctor .otherservice .otherservicel .docgoin{
+	width: 535px;
+	height: 125px;
+	background: url(../img/doctorbg.jpg) no-repeat center;
+	overflow: hidden;
+}
+.doctor .otherservice .otherservicel .findmedic{
+	background: url(../img/doctorbg2.jpg) no-repeat center;
+	margin-top: 30px;
+}
+.doctor .otherservice .otherservicel .docgoin .goinleft{
+	float: left;
+	width: 364px;
+	padding-top: 20px;
+	padding-left: 20px;
+}
+.doctor .otherservice .otherservicel .docgoin .goinleft .gointitle{
+	font-size: 20px;
+	color: #fff;
+	margin-bottom: 12px;
+}
+.doctor .otherservice .otherservicel .docgoin .goinleft .goinnote{
+	font-size: 14px;
+	color: #fff;
+	line-height: 20px;
+	margin-right: 13px;
+}
+.doctor .otherservice .otherservicel .docgoin .goinbtn{
+	float: left;
+	padding: 36px 0;
+}
+.doctor .otherservice .otherservicel .docgoin .goinbtn a{
+	font-size: 14px;
+	color: #fff;
+	display: block;
+	width: 111px;
+	height: 49px;
+	line-height: 49px;
+	text-align: center;
+	border: 2px solid #fff;
+}
+.doctor .otherservice .otherservicer{
+	float: left;
+	width: 535px;
+}
+.doctor .otherservice .otherservicer .docsearch{
+	width: 511px;
+	height: 105px;
+	background: #00b0fb;
+	padding-top: 20px;
+	padding-left: 24px;
+}
+.doctor .otherservice .otherservicer .patientsearch{
+	margin-top: 30px;
+}
+.doctor .otherservice .otherservicer .docsearch .docsearchtitle{
+	font-size: 20px;
+	color: #fff;
+}
+.doctor .otherservice .otherservicer .docsearch .inputbox{
+	overflow: hidden;
+	margin-top: 17px;
+	position: relative;
+}
+.doctor .otherservice .otherservicer .docsearch .inputbox input{
+	float: left;
+	border: none;
+	width: 369px;
+	height: 44px;
+	line-height: 44px;
+	font-size: 16px;
+	padding-left: 16px;
+}
+.doctor .otherservice .otherservicer .docsearch .inputbox a{
+	float: left;
+	display: block;
+	width: 102px;
+	height: 44px;
+	line-height: 44px;
+	text-align: center;
+	font-size: 18px;
+	color: #fff;
+	background: #ffa800;
+}
+.doctor .otherservice .otherservicer .docsearch .inputbox .searchicon{
+	display: inline-block;
+	width: 29px;
+	height: 23px;
+	background: url(../img/map1.png) no-repeat -378px -5px;
+    vertical-align: middle;
+}
+.doctor .otherservice .otherservicer .docsearch .inputbox .placeholder{
+	position: absolute;
+	top: 10px;
+	left: 14px;
+    height: 23px;
+    line-height: 23px;
+	font-size: 16px;
+	color: #b9b9b9;
+}
+.seekdoc{
+	margin-top: 150px;
+}
+.seekdoc .diseasebtn{
+	text-align: center;
+	margin-top: 17px;
+}
+.seekdoc .diseasebtn a{
+	display: inline-block;
+	font-size: 16px;
+	font-family: "Microsoft Yahei";
+	color: #000;
+	padding: 0 12px;
+	height: 32px;
+	line-height: 32px;
+	border-radius: 3px;
+}
+.seekdoc .diseasebtn .checked{
+	background: #00b0fb;
+	color: #fff;
+}
+.seekdoc .seekdocbox{
+	position: relative;
+	overflow: hidden;
+	margin-top: 30px;
+	height: 374px;
+}
+.seekdoc .seekdocbox .seekdoclist{
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 9999999px;
+}
+.seekdoc .seekdocbox .seekdoclist li{
+	float: left;
+	width: 276px;
+}
+.seekdoc .seekdocbox .seekdoclist li .seekdocimg{
+	overflow: hidden;
+}
+.seekdoc .seekdocbox .seekdoclist li .detailbox{
+	padding-left: 18px;
+	padding-top: 15px;
+	width: 238px;
+}
+.seekdoc .seekdocbox .seekdoclist li .detailbox .line{
+	line-height: 26px;
+	font-size: 14px;
+	font-family: "Microsoft Yahei";
+}
+.seekdoc .seekdocbox .seekdoclist li .detailbox .address{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.seekdoc .seekdocbox .seekdoclist li .detailbox .diseasedet span{
+	color: #838383;
+}
+.seekdoc .seekdocbox .seekdoclist li .detailbox .diseasedet{
+	max-height: 78px;
+}
+.healthshare{
+	margin-top: 140px;
+}
+.healthshare .sharebox{
+	overflow: hidden;
+	width: 1100px;
+	margin: 0 auto;
+	margin-top: 45px;
+}
+.healthshare .sharebox .webbershare{
+	float: left;
+	width: 558px;
+	padding-left: 22px;
+}
+.healthshare .sharebox .webbershare .wstitle,.healthshare .sharebox .recommenditem .wstitle{
+	overflow: hidden;
+	width: 498px;
+}
+.healthshare .sharebox .webbershare .wstitle .left,.healthshare .sharebox .recommenditem .wstitle .left{
+	float: left;
+	height: 35px;
+	font-size: 20px;
+	color: #262626;
+	font-family: "Microsoft Yahei";
+}
+.healthshare .sharebox .webbershare .wstitle .right,.healthshare .sharebox .recommenditem .wstitle .right{
+	float: right;
+	height: 20px;
+	line-height: 20px;
+	font-size: 14px;
+	color: #a6a6a6;
+	font-family: "Microsoft Yahei";
+}
+.healthshare .sharebox .webbershare .webberlist{
+	margin-bottom: 27px;
+}
+.healthshare .sharebox .webbershare .webberlist .webbertitle{
+	overflow: hidden;
+}
+.healthshare .sharebox .webbershare .webberlist .webbertitle .webberimg{
+	float: left;
+	width: 40px;
+	height: 40px;
+	overflow: hidden;
+	margin-right: 12px;
+}
+.healthshare .sharebox .webbershare .webberlist .webbertitle .webbertright{
+	float: left;
+}
+.healthshare .sharebox .webbershare .webberlist .webbertitle .webbertright .sstitle{
+	font-size: 18px;
+	color: #00b0fb;
+	height: 23px;
+	font-family: "Microsoft Yahei";
+}
+.healthshare .sharebox .webbershare .webberlist .webbertitle .webbertright .authortime{
+	font-size: 12px;
+	color: #ababab;
+	height: 17px;
+}
+.healthshare .sharebox .webbershare .webberlist .webberimgbox{
+	padding-left: 52px;
+	padding-top: 7px;
+	overflow: hidden;
+	max-height: 128px;
+}
+.healthshare .sharebox .webbershare .webberlist .webberimgbox .webberpic{
+	float: left;
+}
+.healthshare .sharebox .webbershare .webberlist .webberimgbox .webberpic1{
+	width: 99px;
+}
+.healthshare .sharebox .webbershare .webberlist .webberimgbox .webberpic1 img{
+	width: 94px;
+}
+.healthshare .sharebox .webbershare .webberlist .webberimgbox .webberpic2{
+	width: 115px;
+}
+.healthshare .sharebox .webbershare .webberlist .webberimgbox .webberpic2 img{
+	width: 111px;
+}
+.healthshare .sharebox .webbershare .webberlist .webberimgbox .webberpic3{
+	width: 100px;
+}
+.healthshare .sharebox .webbershare .webberlist .webberimgbox .webberpic3 img{
+	width: 96px;
+}
+.healthshare .sharebox .webbershare .webberlist .webbernote{
+	padding-left: 52px;
+	font-size: 14px;
+	color: #747474;
+	line-height: 18px;
+}
+.healthshare .sharebox .recommenditem{
+	float: left;
+	width: 500px;
+}
+.healthshare .sharebox .recommenditem .recommendlist li{
+	overflow: hidden;
+	margin-bottom: 26px;
+}
+.healthshare .sharebox .recommenditem .recommendlist li .recommendpic{
+	float: left;
+	width: 108px;
+	height: 80px;
+	margin-right: 17px;
+	overflow: hidden;
+}
+.healthshare .sharebox .recommenditem .recommendlist li .recommendr{
+	float: left;
+	width: 373px;
+}
+.healthshare .sharebox .recommenditem .recommendlist li .recommendr .retitle{
+	font-size: 18px;
+	color: #00b0fb;
+	height: 26px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.healthshare .sharebox .recommenditem .recommendlist li .recommendr .redetail {
+	font-size: 12px;
+	color: #939393;
+	line-height: 16px;
+	max-height: 32px;
+}
+.healthshare .sharebox .recommenditem .recommendlist li .recommendr .remoney{
+	font-size: 18px;
+	color: #e61b1b;
+}
+
+
+/*轮播图*/
+.flexslider {
+	margin: 0px auto 20px;
+	position: relative;
+	width: 100%;
+	height: 482px;
+	overflow: hidden;
+	zoom: 1;
+}
+
+.flexslider .slides li {
+	width: 100%;
+	height: 100%;
+}
+
+.flex-direction-nav a {
+	width: 70px;
+	height: 70px;
+	line-height: 99em;
+	overflow: hidden;
+	margin: -35px 0 0;
+	display: block;
+	background: url(../img/ad_ctr.png) no-repeat;
+	position: absolute;
+	top: 50%;
+	z-index: 10;
+	cursor: pointer;
+	opacity: 0;
+	filter: alpha(opacity=0);
+	-webkit-transition: all .3s ease;
+	border-radius: 35px;
+}
+
+.flex-direction-nav .flex-next {
+	background-position: 0 -70px;
+	right: 0;
+}
+
+.flex-direction-nav .flex-prev {
+	left: 0;
+}
+
+.flexslider:hover .flex-next {
+	opacity: 0.8;
+	filter: alpha(opacity=25);
+}
+
+.flexslider:hover .flex-prev {
+	opacity: 0.8;
+	filter: alpha(opacity=25);
+}
+
+.flexslider:hover .flex-next:hover,
+.flexslider:hover .flex-prev:hover {
+	opacity: 1;
+	filter: alpha(opacity=50);
+}
+
+.flex-control-nav {
+	width: 100%;
+	position: absolute;
+	bottom: 10px;
+	text-align: center;
+}
+
+.flex-control-nav li {
+	margin: 0 2px;
+	display: inline-block;
+	zoom: 1;
+	*display: inline;
+}
+
+.flex-control-paging li a {
+	background: url(../img/dot.png) no-repeat 0 -16px;
+	display: block;
+	height: 16px;
+	overflow: hidden;
+	text-indent: -99em;
+	width: 16px;
+	cursor: pointer;
+}
+
+.flex-control-paging li a.flex-active,
+.flex-control-paging li.active a {
+	background-position: 0 0;
+}
+
+.flexslider .slides a img {
+	width: 100%;
+	height: 482px;
+	display: block;
+}
+
+.fangxiang{
+    width: 1100px;
+    position: relative;
+    height: 480px;
+    margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

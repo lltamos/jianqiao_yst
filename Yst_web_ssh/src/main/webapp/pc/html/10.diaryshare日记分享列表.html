@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="css/diaryshare.css">
+	<script src="js/jquery-1.7.2.js"></script>
+</head>
+<body>
+	<div class="header clearfix">
+		<div class="cityicon">
+			<div class="icon"></div>
+		</div>
+		<span>选择城市</span>
+		<div class="headerright">
+			<span class="welcome">欢迎您来到健桥官方网站！！</span>
+			<a href="javascript:;" class="pleaselogin">请登录</a>
+			<a href="javascript:;" class="register">免费注册</a>
+			<div class="appiconbox">
+				<span class="appicon"></span>
+			</div>
+			<a href="javascript:;" class="txt">健桥APP</a>
+			<div class="weixiniconbox">
+				<span class="weixinicon"></span>
+			</div>
+			<a href="javascript:;" class="txt">微信公众号</a>
+			<div class="shareiconbox">
+				<span class="shareicon"></span>
+			</div>
+			<a href="javascript:;" class="txt">分享论坛</a>
+		</div>
+		<div class="selectcity" style="display: none">
+			<div class="cityline">
+				<span>北京</span>
+				<span>上海</span>
+				<span>天津</span>
+				<span>重庆</span>
+			</div>
+			<div class="cityline">
+				<span>黑龙江</span>
+				<span>吉林</span>
+				<span>辽宁</span>
+				<span>江苏</span>
+				<span>安徽</span>
+			</div>
+			<div class="cityline">
+				<span>河北</span>
+				<span>河南</span>
+				<span>湖北</span>
+				<span>湖南</span>
+				<span>江西</span>
+			</div>
+			<div class="cityline">
+				<span>山西</span>
+				<span>四川</span>
+				<span>青海</span>
+				<span>海南</span>
+				<span>广东</span>
+			</div>
+			<div class="cityline">
+				<span>贵州</span>
+				<span>浙江</span>
+				<span>福建</span>
+				<span>台湾</span>
+				<span>甘肃</span>
+			</div>
+			<div class="cityline">
+				<span>云南</span>
+				<span>内蒙古</span>
+				<span>宁夏</span>
+				<span>新疆</span>
+				<span>西藏</span>
+			</div>
+			<div class="cityline">
+				<span>广西</span>
+				<span>香港</span>
+				<span>澳门</span>
+			</div>
+		</div>
+	</div>
+	<div class="navbox">
+		<div class="nav clearfix">
+			<h1 class="logo">
+				<a href="javascript:;">
+					<img src="img/logo.png" alt="">
+				</a>
+			</h1>
+			<ul class="navlinks clearfix">
+				<li>
+					<a href="javascript:;">首页</a>
+				</li>
+				<li>
+					<a href="javascript:;">疑难杂症导医</a>
+				</li>
+				<li>
+					<a href="javascript:;">健康服务包</a>
+				</li>
+				<li>
+					<a href="javascript:;">名医高手</a>
+				</li>
+				<li>
+					<a href="javascript:;">患者求医</a>
+				</li>
+				<li>
+					<a href="javascript:;">关于我们</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="diarysharelistbox">
+		<div class="menu">
+			<a href="javascript:;">首页</a>
+			<span>>></span>
+			<a href="javascript:;">健康分享</a>
+			<span>>></span>
+			<a href="javascript:;" class="presentpage">分享列表</a>
+		</div>
+		<div class="diaryshare">
+			<div class="diaryshareleft">
+				<div class="patientbox">
+					<div class="patienttitle">
+						<span>张三李四的日记</span>【糖尿病】治疗套餐，包括针灸...
+					</div>
+					<div class="patientmain">
+						<div class="patientleft">
+							<div class="patientpic">
+								<img src="img/patient.jpg" alt="">
+							</div>
+							<div class="patientname">张三李四</div>
+						</div>
+						<div class="patientright">
+							<div class="project">项目：【高血糖】治疗套餐，包括针灸...</div>
+							<div class="time">日期：2016-02-20</div>
+							<div class="hospital">医院：<span>北京中日友谊医院</span></div>
+							<div class="doc">
+								医生：<span>王家辉</span>
+								<div class="consult"></div>
+							</div>
+							<div class="tag1">
+								<div class="iconbox">
+									<div class="icon"></div>
+								</div>
+								<div class="tag1right">
+									<span>健康项目</span>
+								</div>
+							</div>
+							<div class="tag2">
+								<div class="iconbox">
+									<div class="icon"></div>
+								</div>
+								<div class="tag2right">
+									<span>易疲劳</span>
+								</div>
+							</div>
+							<div class="tag3">
+								<div class="iconbox">
+									<div class="icon"></div>
+								</div>
+								<div class="tag3right">
+									<span>效果非常好</span>
+									<span>按摩技术好</span>
+									<span>服务态度好</span>
+									<span>性价比很好</span>
+									<span>会推荐朋友</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="diarybox">
+					<div class="diarynumber">
+						<img src="img/diarynumber.png" alt="">
+					</div>
+					<div class="diarymain">
+						<div class="article">
+							他的美妆范围包括眉、眼睫、唇、发际等部位。将FDA审核认证的色
+料，移植到眉毛，眼线，嘴唇，发际线等部位。其最大的优势就是无
+痛，同时是半永久性的，定妆一次效果能够维持2-3年之久，随后会
+随着皮肤的新陈代谢，而逐渐淡去。
+						</div>
+						<div class="picbox">
+							<div class="diarypic">
+								<img src="img/diarypic.jpg" alt="">
+							</div>
+							<div class="diarypic">
+								<img src="img/diarypic.jpg" alt="">
+							</div>
+							<div class="diarypic">
+								<img src="img/diarypic.jpg" alt="">
+							</div>
+							<div class="diarypic">
+								<img src="img/diarypic.jpg" alt="">
+							</div>
+							<div class="diarypic">
+								<img src="img/diarypic.jpg" alt="">
+							</div>
+						</div>
+						<div class="timeandrank">
+							<div class="time">
+								2016-2-22   15：31
+							</div>
+							<div class="rank">
+								<div class="likeicon">
+									<div class="icon"></div>
+								</div>
+								<div class="like">555</div>
+								<div class="commenticon">
+									<div class="icon"></div>
+								</div>
+								<div class="comment">1322</div>
+								<div class="lookicon">
+									<div class="icon"></div>
+								</div>
+								<div class="look">59万+</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="diarybox">
+					<div class="diarynumber">
+						<img src="img/diarynumber.png" alt="">
+					</div>
+					<div class="diarymain">
+						<div class="article">
+							他的美妆范围包括眉、眼睫、唇、发际等部位。将FDA审核认证的色
+料，移植到眉毛，眼线，嘴唇，发际线等部位。其最大的优势就是无
+痛，同时是半永久性的，定妆一次效果能够维持2-3年之久，随后会
+随着皮肤的新陈代谢，而逐渐淡去。
+						</div>
+						<div class="picbox">
+							<div class="diarypic">
+								<img src="img/diarypic.jpg" alt="">
+							</div>
+							<div class="diarypic">
+								<img src="img/diarypic.jpg" alt="">
+							</div>
+							<div class="diarypic">
+								<img src="img/diarypic.jpg" alt="">
+							</div>
+							<div class="diarypic">
+								<img src="img/diarypic.jpg" alt="">
+							</div>
+							<div class="diarypic">
+								<img src="img/diarypic.jpg" alt="">
+							</div>
+						</div>
+						<div class="timeandrank">
+							<div class="time">
+								2016-2-22   15：31
+							</div>
+							<div class="rank">
+								<div class="likeicon">
+									<div class="icon"></div>
+								</div>
+								<div class="like">555</div>
+								<div class="commenticon">
+									<div class="icon"></div>
+								</div>
+								<div class="comment">1322</div>
+								<div class="lookicon">
+									<div class="icon"></div>
+								</div>
+								<div class="look">59万+</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="diarybox">
+					<div class="diarynumber">
+						<img src="img/diarynumber.png" alt="">
+					</div>
+					<div class="diarymain">
+						<div class="article">
+							他的美妆范围包括眉、眼睫、唇、发际等部位。将FDA审核认证的色
+料，移植到眉毛，眼线，嘴唇，发际线等部位。其最大的优势就是无
+痛，同时是半永久性的，定妆一次效果能够维持2-3年之久，随后会
+随着皮肤的新陈代谢，而逐渐淡去。
+						</div>
+						<div class="picbox">
+							<div class="diarypic">
+								<img src="img/diarypic.jpg" alt="">
+							</div>
+							<div class="diarypic">
+								<img src="img/diarypic.jpg" alt="">
+							</div>
+							<div class="diarypic">
+								<img src="img/diarypic.jpg" alt="">
+							</div>
+							<div class="diarypic">
+								<img src="img/diarypic.jpg" alt="">
+							</div>
+							<div class="diarypic">
+								<img src="img/diarypic.jpg" alt="">
+							</div>
+						</div>
+						<div class="timeandrank">
+							<div class="time">
+								2016-2-22   15：31
+							</div>
+							<div class="rank">
+								<div class="likeicon">
+									<div class="icon"></div>
+								</div>
+								<div class="like">555</div>
+								<div class="commenticon">
+									<div class="icon"></div>
+								</div>
+								<div class="comment">1322</div>
+								<div class="lookicon">
+									<div class="icon"></div>
+								</div>
+								<div class="look">59万+</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="diaryshareright">
+				
+			</div>
+		</div>
+		<div class="diffdiseasepagebox">
+			<span class="pagebtn">上一页</span>
+			<a href="javascript:;" class="pagenumber">1</a>
+			<a href="javascript:;" class="pagenumber">2</a>
+			<a href="javascript:;" class="pagenumber">3</a>
+			<a href="javascript:;" class="pagenumber">4</a>
+			<a href="javascript:;" class="pagenumber">5</a>
+			<a href="javascript:;" class="pagenumber">6</a>
+			<a href="javascript:;" class="pagenumber">7</a>
+			<span class="pagebtn">...</span>
+			<span class="pagebtn">下一页</span>
+			<span class="pagebtn">共18页</span>
+			<span class="pagebtn">到第</span> 
+			<input type="text" class="pageinput">
+			<span class="pagebtn">页</span>
+			<span class="confirmbtn">确定</span>
+		</div>
+	</div>
+	
+	
+	<div class="footbox">
+		<div class="foot">
+			<div class="logo">
+				<img src="img/logo.png" alt="">
+			</div>
+			<ul class="links">
+				<li>
+					<div class="linktitle">
+						<a href="javascript:;">关于我们</a>
+					</div>
+					<div class="footlink">
+						<a href="javascript:;">· 领导关注</a>
+					</div>
+					<div class="footlink">
+						<a href="javascript:;">· 公司愿景</a>
+					</div>
+					<div class="footlink">
+						<a href="javascript:;">· 团队精神</a>
+					</div>
+				</li>
+				<li>
+					<div class="linktitle">
+						<a href="javascript:;">健桥资讯</a>
+					</div>
+					<div class="footlink">
+						<a href="javascript:;">· 公司新闻</a>
+					</div>
+					<div class="footlink">
+						<a href="javascript:;">· 项目动态</a>
+					</div>
+					<div class="footlink">
+						<a href="javascript:;">· 行业新闻</a>
+					</div>
+				</li>
+				<li>
+					<div class="linktitle">
+						<a href="javascript:;">联系我们</a>
+					</div>
+					<div class="footlink">
+						<a href="javascript:;">· 联系方式</a>  
+					</div>
+					<div class="footlink">
+						<a href="javascript:;">· 在线留言</a>
+					</div>
+					<div class="footlink">
+						<a href="javascript:;">· 人才招聘</a>
+					</div>
+				</li>
+			</ul>
+			<div class="divide">
+				<div class="divideline"></div>
+			</div>
+			<ul class="twocode">
+				<li>
+					<div class="codebox">
+						<img src="img/twocode.jpg" alt="">
+					</div>
+					<div class="noteword">健桥官网</div>
+				</li>
+				<li>
+					<div class="codebox">
+						<img src="img/twocode.jpg" alt="">
+					</div>
+					<div class="noteword">ADROID APP</div>
+				</li>
+				<li class="lastcode">
+					<div class="codebox">
+						<img src="img/twocode.jpg" alt="">
+					</div>
+					<div class="noteword">IOS APP</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="footbottombox">
+		<div class="footbottom">
+			北京上善健桥健康管理中心     jianqiao001.com 京ICP备12048628号
+		</div>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

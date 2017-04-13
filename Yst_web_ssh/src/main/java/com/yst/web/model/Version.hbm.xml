@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yst.web.model">
+	<class name="Version" table="system_version"  dynamic-insert="true" dynamic-update="true">
+		<id name="version_id" type="integer" column="version_id" >
+			<generator class="native" />
+		</id>
+		<property name="platform"  type="string" length="50"/>
+		<property name="app_name"  type="string" length="100"/>
+		<property name="version"  type="string" length="100"/>
+		<property name="url"  type="string" length="500"/> 
+		<property name="des"  type="string" length="500"/> 
+		<property name="update_time">
+			<column name="update_time" sql-type="datetime" />
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/home.css">
+	<script src="js/jquery-1.7.2.js"></script>
+	<style>
+    label {
+            color: #ccc;
+            position: absolute;
+            top: 11px;
+            left: 48px;
+        }
+    </style>
+</head>
+<body>
+   <div class="beijing">
+    <div class="denglu">
+        <img src="img/jian_10.jpg" class="logo">
+        <div class="denglu_1">会员登录</div>
+        <a class="denglu_2" href="javascript:;">还没有健桥账户？立即注册</a>
+        <div class="denglu_3">
+           <label>请输入手机号</label>
+            <input type="text" class="deng_1">
+            <p class="deng_2">请输入正确的手机号</p>
+        </div>
+        <div class="denglu_4">
+            <label>请输入密码</label>
+            <input type="password" class="deng_1">
+        </div>
+        <a href="javascript:;" class="dinglu_5">忘记密码</a>
+        <a href="javascript:;" class="dinglu_6">登录</a>
+    </div>
+     </div>
+    <script>
+    $(function(){
+         $('label').click(function(){
+             $(this).css('display','none');
+             $(this).siblings('input').focus();
+         });
+         $('input').focus(function(){
+             $(this).siblings('label').css('display','none');
+         });
+         $('input').blur(function(){
+             if($(this).val()==''){
+                  $(this).siblings('label').css('display','block');
+             }
+         });
+	});
+
+    $(".dinglu_6").click(function checkMobil() {
+        if ($(".deng_1").val() == "") {
+            $(".deng_2").html("手机号码不能为空");
+            $(".deng_1").focus();
+            return false;
+        }
+        if (!$(".deng_1").val().match(/^(((13[0-9]{1})|159|153)+\d{8})$/)) {
+            $(".deng_2").html("手机号码格式不正确！");
+            $(".deng_1").focus();
+            return false;
+        }else{
+            $(".deng_2").html("");
+        }
+    });
+
+
+    </script>
+</body>
+</html>

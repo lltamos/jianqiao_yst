@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-en">
+<head>
+    <meta charset="UTF-8">
+    <title>求医发布</title>
+    <link rel="stylesheet" href="css/base.css" type="text/css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/yishengqiuzheng.css">
+	<link rel="stylesheet" href="css/default/ui.css">
+	<script src="js/jquery-1.7.2.js"></script>
+	<script src="js/xheditor-1.2.2.min.js"></script>
+	<script src="js/zh-cn.js"></script>
+
+</head>
+<body>
+   <div class="header clearfix">
+		<div class="cityicon">
+			<div class="icon"></div>
+		</div>
+		<span>选择城市</span>
+		<div class="headerright">
+			<span class="welcome">欢迎您来到健桥官方网站！！</span>
+			<a href="javascript:;" class="pleaselogin">请登录</a>
+			<a href="javascript:;" class="register">免费注册</a>
+			<div class="appiconbox">
+				<span class="appicon"></span>
+			</div>
+			<a href="javascript:;" class="txt">健桥APP</a>
+			<div class="weixiniconbox">
+				<span class="weixinicon"></span>
+			</div>
+			<a href="javascript:;" class="txt">微信公众号</a>
+			<div class="shareiconbox">
+				<span class="shareicon"></span>
+			</div>
+			<a href="javascript:;" class="txt">分享论坛</a>
+		</div>
+		<div class="selectcity" style="display: none">
+			<div class="cityline">
+				<span>北京</span>
+				<span>上海</span>
+				<span>天津</span>
+				<span>重庆</span>
+			</div>
+			<div class="cityline">
+				<span>黑龙江</span>
+				<span>吉林</span>
+				<span>辽宁</span>
+				<span>江苏</span>
+				<span>安徽</span>
+			</div>
+			<div class="cityline">
+				<span>河北</span>
+				<span>河南</span>
+				<span>湖北</span>
+				<span>湖南</span>
+				<span>江西</span>
+			</div>
+			<div class="cityline">
+				<span>山西</span>
+				<span>四川</span>
+				<span>青海</span>
+				<span>海南</span>
+				<span>广东</span>
+			</div>
+			<div class="cityline">
+				<span>贵州</span>
+				<span>浙江</span>
+				<span>福建</span>
+				<span>台湾</span>
+				<span>甘肃</span>
+			</div>
+			<div class="cityline">
+				<span>云南</span>
+				<span>内蒙古</span>
+				<span>宁夏</span>
+				<span>新疆</span>
+				<span>西藏</span>
+			</div>
+			<div class="cityline">
+				<span>广西</span>
+				<span>香港</span>
+				<span>澳门</span>
+			</div>
+		</div>
+	</div>
+	<div class="navbox">
+		<div class="nav clearfix">
+			<h1 class="logo">
+				<a href="javascript:;">
+					<img src="img/logo.png" alt="">
+				</a>
+			</h1>
+			<ul class="navlinks clearfix">
+				<li>
+					<a href="javascript:;">首页</a>
+				</li>
+				<li>
+					<a href="javascript:;">疑难杂症导医</a>
+				</li>
+				<li>
+					<a href="javascript:;">健康服务包</a>
+				</li>
+				<li>
+					<a href="javascript:;">名医高手</a>
+				</li>
+				<li>
+					<a href="javascript:;">患者求医</a>
+				</li>
+				<li>
+					<a href="javascript:;">关于我们</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+    <div class="topsue">
+       <div class="topsue_1">
+            <div class="issue_1">
+                请填写医生信息
+            </div>
+        </div>
+    </div>
+    <div class="middlebj">
+        <div class="agebj">
+            <span>类型：</span><select class="age_1">
+                                  <option value ="volvo">Volvo</option>
+                                  <option value ="saab">Saab</option>
+                                  <option value="opel">Opel</option>
+                                  <option value="audi">Audi</option>
+                                </select>
+        </div>
+        <div class="nickname">
+            <span>昵称：</span><input type="text">
+        </div>
+        <div class="genderjq">
+            <span>性别：</span><span class="derjq boy"><i class="der_1"></i> 男</span><span class="derjq girl"><i class="der_2"></i> 女</span>
+        </div>
+        <div class="clasify">
+            <span>所在医院：</span><select class="asify">
+                                      <option value ="volvo">Volvo</option>
+                                      <option value ="saab">Saab</option>
+                                      <option value="opel">Opel</option>
+                                      <option value="audi">Audi</option>
+                                </select>
+        </div>
+        <div class="clasify">
+            <span>医院类型：</span><select class="age_1">
+                                      <option value ="volvo">Volvo</option>
+                                      <option value ="saab">Saab</option>
+                                      <option value="opel">Opel</option>
+                                      <option value="audi">Audi</option>
+                                </select>
+        </div>
+        <div class="clasify">
+            <span>医生专长：</span><select class="age_1">
+                                      <option value ="volvo">Volvo</option>
+                                      <option value ="saab">Saab</option>
+                                      <option value="opel">Opel</option>
+                                      <option value="audi">Audi</option>
+                                </select>
+        </div>
+        <div class="agebj">
+            <span>科室：</span><select class="age_1">
+                                  <option value ="volvo">Volvo</option>
+                                  <option value ="saab">Saab</option>
+                                  <option value="opel">Opel</option>
+                                  <option value="audi">Audi</option>
+                                </select>
+        </div>
+        <div class="agebj">
+            <span>昵称：</span><select class="age_1">
+                                  <option value ="volvo">Volvo</option>
+                                  <option value ="saab">Saab</option>
+                                  <option value="opel">Opel</option>
+                                  <option value="audi">Audi</option>
+                                </select>
+        </div>
+        <div class="describejq">
+            <span>个人擅长：</span>
+			<textarea id="elm3" name="elm3" class="xheditor-simple" rows="12" cols="80" style="width: 80%">
+			</textarea>
+        </div>
+        <p class="yishengzz">医生资质： 请上传医生资质文件照片以便我们对您医生的资质进行审核（资质信息只有您自己能看到，不会显示给其他人。）</p>
+        <div class="bulebott">
+           <div class="bluebott_1">
+               <div class="bott_2"><img src="img/jianj_29.jpg"><img class="hidell" src="img/jianp_11.png"></div>
+           </div>
+            <a href="javascript:;" class="uploadingjq">
+				<input type="file" name="fileupload"  />
+			</a>
+            <!--<span class="tianjja">最多添加X张图片</span>-->
+			<script>
+				$('.uploadingjq').live('click',function(){
+					var ie = !-[1,];
+					if(ie){
+						$('input:file').trigger('click').trigger('change');
+					}else{
+						$('input:file').trigger('click');
+					}
+
+				});
+			</script>
+        </div>
+        <a href="javascript:;" class="fabujq">提交</a>
+    </div>
+    
+    
+    
+    <div class="footbox">
+		<div class="foot">
+			<div class="logo">
+				<img src="img/logo.png" alt="">
+			</div>
+			<ul class="links">
+				<li>
+					<div class="linktitle">
+						<a href="javascript:;">关于我们</a>
+					</div>
+					<div class="footlink">
+						<a href="javascript:;">· 领导关注</a>
+					</div>
+					<div class="footlink">
+						<a href="javascript:;">· 公司愿景</a>
+					</div>
+					<div class="footlink">
+						<a href="javascript:;">· 团队精神</a>
+					</div>
+				</li>
+				<li>
+					<div class="linktitle">
+						<a href="javascript:;">健桥资讯</a>
+					</div>
+					<div class="footlink">
+						<a href="javascript:;">· 公司新闻</a>
+					</div>
+					<div class="footlink">
+						<a href="javascript:;">· 项目动态</a>
+					</div>
+					<div class="footlink">
+						<a href="javascript:;">· 行业新闻</a>
+					</div>
+				</li>
+				<li>
+					<div class="linktitle">
+						<a href="javascript:;">联系我们</a>
+					</div>
+					<div class="footlink">
+						<a href="javascript:;">· 联系方式</a>  
+					</div>
+					<div class="footlink">
+						<a href="javascript:;">· 在线留言</a>
+					</div>
+					<div class="footlink">
+						<a href="javascript:;">· 人才招聘</a>
+					</div>
+				</li>
+			</ul>
+			<div class="divide">
+				<div class="divideline"></div>
+			</div>
+			<ul class="twocode">
+				<li>
+					<div class="codebox">
+						<img src="img/twocode.jpg" alt="">
+					</div>
+					<div class="noteword">健桥官网</div>
+				</li>
+				<li>
+					<div class="codebox">
+						<img src="img/twocode.jpg" alt="">
+					</div>
+					<div class="noteword">ADROID APP</div>
+				</li>
+				<li class="lastcode">
+					<div class="codebox">
+						<img src="img/twocode.jpg" alt="">
+					</div>
+					<div class="noteword">IOS APP</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="footbottombox">
+		<div class="footbottom">
+			北京上善健桥健康管理中心     jianqiao001.com 京ICP备12048628号
+		</div>
+	</div>
+   <script>
+	   $('.genderjq').bind('click',function(e){
+		   var span = e.target.childNodes.length == 0 ? $(e.target.parentNode) : $(e.target) ;
+		   console.log(span);
+		   var i = $('i',span);
+		   if(span.hasClass('boy')){
+			   if(i.hasClass('der_2')){
+				   $('.derjq.girl i.der_1').removeClass('der_1').addClass('der_2');
+				   i.removeClass('der_2').addClass('der_1');
+			   }
+		   }
+		   else if(span.hasClass('girl')){
+			   if(i.hasClass('der_2')){
+				   $('.derjq.boy i.der_1').removeClass('der_1').addClass('der_2');
+				   i.removeClass('der_2').addClass('der_1');
+			   }
+		   }
+	   });
+   </script>
+</body>
+</html>

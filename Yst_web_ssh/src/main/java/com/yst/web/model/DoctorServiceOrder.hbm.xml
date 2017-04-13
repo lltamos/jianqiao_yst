@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yst.web.model">
+	<class name="DoctorServiceOrder" table="doctor_service_order"
+		dynamic-insert="true" dynamic-update="true">
+		<id name="order_id" type="integer" column="order_id">
+			<generator class="native" />
+		</id>
+		<many-to-one name="customer" class="Customer" fetch="select"
+			lazy="false" unique="true">
+			<column name="customer_id"></column>
+		</many-to-one>
+		<many-to-one name="doctor" class="Doctor" fetch="select"
+			lazy="false" unique="true">
+			<column name="doctor_id"></column>
+		</many-to-one>
+		<property name="order_date">
+			<column name="order_date" sql-type="datetime" />
+		</property>
+		<many-to-one name="dicServiceType" class="DicServiceType"
+			fetch="select" lazy="false" unique="true">
+			<column name="service_type_id"></column>
+		</many-to-one>
+		<property name="price" type="integer" column="price" />
+		<property name="executed" type="integer">
+			<column name="executed"  not-null="true" default="0" ></column>
+		</property>
+		<property name="deleted" type="integer" column="deleted" />
+		<property name="pay_status" type="integer">
+			<column name="pay_status" not-null="true" default="0" ></column>
+		</property>
+		<property name="pay_type" type="integer" column="pay_type" />
+		<property name="pay_relative_id" type="string" column="pay_relative_id" length="50"  />
+		<property name="pay_time">
+			<column name="pay_time" sql-type="datetime" />
+		</property>
+		<property name="approved" type="integer" column="approved" />
+		<property name="buy_time" type="integer" column="buy_time" />
+		<property name="online_consult_start_time">
+			<column name="online_consult_start_time" sql-type="datetime" />
+		</property>
+		<property name="online_consult_end_time">
+			<column name="online_consult_end_time" sql-type="datetime" />
+		</property>
+		<property name="already_call_duration" type="integer" column="already_call_duration" />
+		<property name="residue_call_duration" type="integer" column="residue_call_duration" />
+	</class>
+</hibernate-mapping>

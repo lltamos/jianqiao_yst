@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yst.web.model">
+	<class name="DoctorRecomm" table="doctor_recomm"  dynamic-insert="true" dynamic-update="true">
+		<id name="reco_id" column="reco_id">
+			<generator class="native" />
+		</id>
+		<property name="home_doctor_1"  type="integer" column="home_doctor_1"/>
+		<property name="home_doctor_2"  type="integer" column="home_doctor_2"/>
+		<property name="home_doctor_3"  type="integer" column="home_doctor_3"/>
+		<property name="home_doctor_4"  type="integer" column="home_doctor_4"/>
+		<property name="home_doctor_5"  type="integer" column="home_doctor_5"/>
+		<property name="spec_doctor_1"  type="integer" column="spec_doctor_1"/>
+		<property name="spec_doctor_2"  type="integer" column="spec_doctor_2"/>
+		<property name="spec_doctor_3"  type="integer" column="spec_doctor_3"/>
+		<property name="spec_doctor_4"  type="integer" column="spec_doctor_4"/>
+		<property name="spec_doctor_5"  type="integer" column="spec_doctor_5"/>
+		
+	</class>
+</hibernate-mapping>

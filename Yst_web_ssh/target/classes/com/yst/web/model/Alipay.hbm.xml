@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yst.web.model">
+	<class name="Alipay" table="system_alipay" dynamic-insert="true"
+		dynamic-update="true">
+		<id name="alipay_id" type="integer" column="alipay_id">
+			<generator class="native" />
+		</id>
+		 <property name="alipay_act" type="integer" />
+        <property name="send_payment_type" type="string" />
+        <property name="send_out_trade_no" type="string" not-null="true" unique="true" />
+        <property name="send_subject" type="string" />
+        <property name="send_total_fee" type="integer" />
+        <property name="send_body" type="string" />
+        <property name="exter_invoke_ip" type="string" />
+        <property name="create_time">
+			<column name="create_time" sql-type="datetime" />
+		</property>
+        
+        <property name="buyer_email" type="string" />
+        <property name="buyer_id" type="string" />
+        <property name="discount" type="double" />
+        <property name="gmt_create">
+			<column name="gmt_create" sql-type="datetime" />
+		</property>
+		<property name="gmt_payment">
+			<column name="gmt_payment" sql-type="datetime" />
+		</property>
+		<property name="is_total_fee_adjust" type="string" />
+        <property name="notify_id" type="string" />
+        <property name="notify_time">
+			<column name="notify_time" sql-type="datetime" />
+		</property>
+        <property name="notify_type" type="string" />
+        <property name="price" type="double" />
+        <property name="quantity" type="integer" />
+        <property name="seller_email" type="string" />
+        <property name="seller_id" type="string" />
+        <property name="sign" type="string" />
+        <property name="sign_type" type="string" />
+        <property name="trade_no" type="string" />
+        <property name="trade_status" type="string" />
+        <property name="use_coupon" type="string" />
+        <property name="out_trade_no" type="string" />
+        <property name="payment_type" type="string" />
+        <property name="subject" type="string" />
+        <property name="body" type="string" />
+        <property name="total_fee" type="double" />
+	</class>
+</hibernate-mapping>

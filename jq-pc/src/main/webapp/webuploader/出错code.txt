@@ -1,0 +1,19 @@
+﻿uploader.onError = function (code) {
+	switch (code) {
+		case 'Q_TYPE_DENIED':
+			lib.alert("请选择支持的文件格式！");
+			break;
+		case 'Q_EXCEED_NUM_LIMIT':
+			lib.alert("单次只能上传10个文件！");
+			break;
+		case 'Q_EXCEED_SIZE_LIMIT':
+			lib.alert("单次上传的文件总量不能超过1G！");
+			break;
+		case 'F_EXCEED_SIZE':
+			lib.alert("单个文件容量过大,最大200M！");
+			break;
+		case 'F_DUPLICATE':
+			lib.alert("选择了重复文件！");
+			break;
+	}
+};

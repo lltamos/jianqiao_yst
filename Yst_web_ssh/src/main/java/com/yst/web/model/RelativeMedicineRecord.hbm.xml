@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yst.web.model">
+	<class name="RelativeMedicineRecord" table="relative_medicine_record" dynamic-insert="true" dynamic-update="true">
+		<id name="record_id" type="integer" column="record_id">
+			<generator class="native" />
+		</id>
+	<many-to-one name="customerRelative" class="CustomerRelative" fetch="select" lazy="false" unique="true">  
+            <column name="relative_id"></column>  
+    </many-to-one>
+	<property name="image_medicine_box" type="string" length="200" column="image_medicine_box" />
+	<property name="image_recipe" type="string" length="200" column="image_recipe" />
+	
+	<property name="des" type="string" length="200" column="des" />
+	<property name="doctor_name" type="string" length="30" column="doctor_name" />
+	<property name="office_name" type="string" length="50" column="office_name" />
+	<property name="during" type="integer" column="during" />
+	<property name="start_date">
+			<column name="start_date" sql-type="datetime" />
+	</property>
+	<!-- <set name="relativeMedicineImageSet" cascade="delete" lazy="extra">
+		<key>
+			<column name="record_id"></column>
+		</key>
+		<one-to-many class="RelativeMedicineImage" />
+	</set> -->
+	</class>
+</hibernate-mapping>

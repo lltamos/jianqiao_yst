@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须指向Dao接口 -->
+<mapper namespace="com.alqsoft.dao.product.ProductDao">
+	<!-- 疑难杂症导航 -->
+	<select id="findServiceByCategory" 
+	parameterType="java.lang.String" resultType="java.util.HashMap"
+		>
+		SELECT 
+		d.id,
+		d.department_name as departmentName,
+		d.service_name as serviceName
+		FROM dic_service_type d
+		WHERE d.department_name = #{departmentName}
+		
+	</select>
+	<!-- 首页显示六条服务包 -->
+	<select id="getProductIndex"  parameterType="java.lang.Integer" resultType="java.util.HashMap" >
+		SELECT
+			p.id,
+			dst.service_name AS productTypeName,
+			p.name,
+			p.des1,
+			(SELECT pig.address FROM  product_image pig WHERE pig.product_id=p.id LIMIT 0,1) AS address
+		FROM product p,dic_service_type dst
+		WHERE 
+		p.service_type_id=dst.id
+		AND 
+		p.deleted=0		
+		ORDER BY 
+			p.created_time DESC 
+		LIMIT #{rows}
+	</select>
+	<!-- 分页显示所有服务包 -->
+	<select id="getProductByPage"  resultType="java.util.HashMap" parameterType="java.util.HashMap">
+		SELECT
+			p.id,
+			dst.service_name AS productTypeName,
+			p.name,
+			p.des1,
+			(SELECT pig.address FROM  product_image pig WHERE pig.product_id=p.id LIMIT 0,1) AS address
+		FROM product p,dic_service_type dst
+		WHERE 
+		p.service_type_id=dst.id
+		AND 
+		p.deleted=0	
+		ORDER BY 
+			p.created_time DESC 
+		LIMIT #{page},#{rows}
+	</select>
+	
+	<!-- 根据类型分页显示所有服务包 -->
+	<select id="serviceByType"  resultType="java.util.HashMap" parameterType="java.util.HashMap">
+		SELECT
+			p.id,
+			dst.service_name AS productTypeName,
+			p.name,
+			p.des1,
+			(SELECT pig.address FROM  product_image pig WHERE pig.product_id=p.id LIMIT 0,1) AS address
+		FROM product p,dic_service_type dst
+		WHERE 
+		p.service_type_id=dst.id
+		AND 
+		dst.service_name=#{serviceName}
+		AND 
+		p.deleted=0	
+		ORDER BY 
+		p.created_time DESC 
+		LIMIT #{page},#{rows}
+	</select>
+	<!-- 获得服务包总数 -->
+	<select id="getProductTotal"  resultType="java.lang.Integer" >
+		SELECT COUNT(*) FROM product WHERE product.deleted=0	;
+	</select>
+	
+	<!-- 根据类别获得服务包总数 -->
+	<select id="getProductTotalByServiceName"  resultType="java.lang.Integer" parameterType="java.lang.String">
+		SELECT COUNT(*) FROM product p, product_image pig 
+		WHERE p.product_type_name =#{serviceName} 
+		AND p.id =pig.product_id
+		AND 
+		p.deleted=0
+	</select>
+	
+	<select id="getProductById" resultType="com.alqsoft.entity.Product" parameterType="Long">
+		SELECT * FROM product WHERE id=#{id} 
+	</select>
+	
+	<select id="getProductNameById" resultType="java.lang.String" parameterType="Long">
+		SELECT service_name from dic_service_type where id =(select service_type_id from product where id=#{id})
+	</select>
+	
+	<select id="getProductImageById" resultType="String" parameterType="Long">
+		SELECT pig.address FROM  product_image pig WHERE pig.product_id=#{id} LIMIT 0,1	
+	</select>
+	
+</mapper>

@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须指向Dao接口 -->
+<mapper namespace="com.alqsoft.dao.doctor.DoctorDao">
+	<!-- 首页：显示三个不同的科室 -->
+	<select id="getServiceNameByOrder" resultType="java.util.HashMap">
+		SELECT id,NAME
+		FROM product_ype LIMIT 3
+	</select>
+	<!-- 首页：显示三个不同的科室的医生 -->
+	<select id="getDoctorByProducTypeId" resultType="com.alqsoft.entity.doctor.DoctorInfo"
+		parameterType="java.lang.Long">
+		SELECT * FROM doctor WHERE
+		product_type_id = #{producTypeId}
+		AND doctor.product_type_id IS NOT NULL
+		AND doctor.deleted=0
+		AND doctor.apply_status=1
+		AND 1=(SELECT customer.type FROM customer WHERE
+		customer.id=doctor.customer_id)
+		ORDER BY title_id
+		LIMIT 3
+	</select>
+	<!-- 名医高手页面 -->
+	<select id="doctorPage" resultType="com.alqsoft.entity.doctor.DoctorInfo"
+		parameterType="java.util.HashMap">
+		SELECT * FROM doctor
+		WHERE doctor.product_type_id IS NOT NULL
+		AND doctor.deleted=0
+		AND doctor.apply_status=1
+		AND 1=(SELECT customer.type FROM customer WHERE
+		customer.id=doctor.customer_id)
+		ORDER BY title_id
+		LIMIT #{page},#{rows}
+	</select>
+	<select id="countOnlineAsk" resultType="java.lang.Integer"
+		parameterType="java.lang.Long">
+		SELECT
+		COUNT(*) FROM product_order WHERE doctor_id=#{doctorId} AND pay_status!=0
+
+	</select>
+	<select id="countOnlineDate" resultType="java.lang.Integer"
+		parameterType="java.lang.Long">
+		SELECT COUNT(*) FROM doctor_service_order WHERE
+		doctor_id=#{doctorId} AND pay_status!=0
+	</select>
+
+	<!-- 根据医生id查询医生图片 -->
+	<select id="doctorImage" resultType="java.util.HashMap"
+		parameterType="java.util.HashMap">
+		SELECT
+		doctor_image.image,
+		doctor_image.des
+		FROM
+		doctor,
+		doctor_image
+		WHERE doctor.id = #{id}
+		AND doctor.id =
+		doctor_image.doctor_id
+		LIMIT #{page},#{rows};
+	</select>
+	<!-- 医生详情页面的用户关于该医生的日记 -->
+	<select id="doctorDiary" resultType="java.util.HashMap"
+		parameterType="java.util.HashMap">
+		SELECT
+		diary_book.satisfaction,
+		diary_book.created_time AS
+		createTime,
+		diary_book.fabulousval,
+		diary_book.steponval,
+		customer.image ,
+		customer.name
+		FROM
+		diary_book,customer
+		WHERE
+		diary_book.doctor_id =#{id}
+		AND
+		diary_book.customer_id=customer.id
+		ORDER BY
+		diary_book.created_time DESC
+		LIMIT #{page},#{rows}
+	</select>
+	<!-- 根据医生id获取日记的本总数-->
+	<select id="findDiaryByDoctorIdTotal" resultType="java.lang.Integer"
+		parameterType="java.lang.Long">
+		SELECT
+		COUNT(*)
+		FROM
+		diary_book
+		WHERE
+		diary_book.doctor_id =#{id}
+	</select>
+
+	<!-- 根据id获取医生的个人信息 -->
+	<select id="getDoctorInfoById" resultType="com.alqsoft.entity.doctor.DoctorInfo"
+		parameterType="java.lang.Long">
+		SELECT * FROM doctor WHERE id=#{id}
+	</select>
+
+	<!-- 根据id获取医生doctor_service_order价格 -->
+	<select id="getDoctorOrderPriceById" resultType="java.lang.Integer"
+		parameterType="java.lang.Long">
+		SELECT service_online_time_price FROM doctor_service
+		WHERE doctor_id=#{doctorId}
+	</select>
+
+	<!-- 根据id获取医生的 product的 deposite_price价格,和id name -->
+	<select id="getProductOrderPriceById" resultType="java.util.HashMap"
+		parameterType="java.lang.Long">
+		SELECT deposite_price,name,id FROM product
+		WHERE id=(SELECT product_type_id FROM doctor WHERE id=#{doctorId})
+		AND
+		product.deleted=0;
+	</select>
+
+
+	<!-- 根据城市id，和科室，获取该城市的医生 -->
+	<select id="findDoctorByCityName" resultType="com.alqsoft.entity.doctor.DoctorInfo"
+		parameterType="java.util.HashMap">
+		SELECT * FROM doctor WHERE office_name=#{officeName}
+		AND
+		doctor.product_type_id IS NOT NULL
+		AND doctor.deleted=0
+		AND doctor.apply_status=1
+		AND 1=(SELECT customer.type FROM customer WHERE
+		customer.id=doctor.customer_id)
+		ORDER BY title_id
+		LIMIT #{page},#{rows}
+	</select>
+	<!-- 根据城市id，和科室，获取该城市的医生的总数 -->
+	<select id="getDoctorByCitNameTotal" resultType="java.lang.Integer"
+		parameterType="java.util.HashMap">
+		SELECT COUNT(*) FROM doctor WHERE
+		office_name=#{officeName}
+		AND doctor.product_type_id IS NOT NULL
+		AND doctor.deleted=0
+		AND doctor.apply_status=1
+		AND 1=(SELECT customer.type FROM customer WHERE
+		customer.id=doctor.customer_id)
+	</select>
+	<!-- 患者求医页面的患者求医记录 -->
+	<select id="findDoctor" resultType="com.alqsoft.entity.PatientHistory"
+		parameterType="map">
+		SELECT * FROM patient_disease ORDER BY created_time DESC
+		LIMIT #{page},#{rows}
+	</select>
+	<select id="findHeaderImage" resultType="java.lang.String"
+		parameterType="java.lang.Long">
+		SELECT customer.image FROM customer WHERE
+		#{custmorId}=customer.id
+	</select>
+	<select id="findDiseaseImage" resultType="java.lang.String"
+		parameterType="java.lang.Long">
+		SELECT address FROM patient_image WHERE
+		patient_disease_id=#{id}
+	</select>
+	<!-- 根据customerid查找医生（腾卉） -->
+	<select id="findByCid" resultType="com.alqsoft.entity.doctor.Doctors"
+		parameterType="java.lang.Long">
+		SELECT * FROM doctor WHERE customer_id=#{customer_id}
+	</select>
+	<!-- 获取所有医生总数 -->
+	<select id="getDoctorTotal" resultType="java.lang.Integer">
+		SELECT COUNT(*) FROM
+		doctor WHERE doctor.product_type_id IS NOT NULL
+		AND doctor.deleted=0
+		AND doctor.apply_status=1
+		AND 1=(SELECT customer.type FROM customer WHERE
+		customer.id=doctor.customer_id)
+	</select>
+
+	<!-- 获取所有患者求医记录总数 -->
+	<select id="getPatientTotal" resultType="java.lang.Integer">
+		SELECT COUNT(*) FROM
+		patient_disease
+	</select>
+
+	<!-- 根据患者求医ID查找cutomerId -->
+	<select id="findCustomerIdByPatientDisease" resultType="com.alqsoft.entity.patient.PatientDisease"
+		parameterType="java.lang.Long">
+		SELECT * FROM patient_disease WHERE id=#{id};
+	</select>
+
+	<select id="verificationDoctor" resultType="int" parameterType="Long">
+		select count(*) from doctor where customer_id=#{cid}
+	</select>
+	<!-- 根据用户id获取医生个人信息(前提是他是医生) -->
+	<select id="getDoctorByCustomerId" resultType="com.alqsoft.entity.doctor.Doctors"
+		parameterType="java.lang.Long">
+		SELECT * FROM doctor WHERE customer_id=#{customerId}
+	</select>
+	<!-- 根据用户id获取医生个人信息(前提是他是医生) -->
+	<select id="getDoctorServiceTimeByDoctorId" resultType="java.util.HashMap"
+		parameterType="java.lang.Long">
+		SELECT * FROM doctor_service_time WHERE
+		doctor_id=#{doctorId}
+	</select>
+
+	<!-- 获取所有的城市 -->
+	<select id="findAllPro" resultType="java.util.HashMap">
+		SELECT *
+		FROM loc_prov
+	</select>
+	<!-- 获取所有的服务包类型 -->
+	<select id="findProductType" resultType="java.util.HashMap">
+		SELECT * FROM dic_service_type
+	</select>
+	<!-- 根据医生id获取医生服务是否开启-->
+	<select id="getDoctorServiceStats" resultType="java.lang.Integer" parameterType="java.lang.Integer">
+		SELECT service_online_time_onoff FROM doctor_service WHERE doctor_id=#{doctorId}
+	</select>
+	
+	<select id="getDoctorById" resultType="com.alqsoft.entity.doctor.Doctors" parameterType="Long">
+		SELECT * FROM doctor WHERE id=#{doctorId}
+	</select>
+	
+	
+	<!--  根据城市id获取城市名称 -->
+	<select id="getPatientProvById" resultType="java.lang.String" parameterType="java.lang.Long">
+		SELECT loc_prov.name FROM loc_prov WHERE id =#{id}
+	</select>
+</mapper>

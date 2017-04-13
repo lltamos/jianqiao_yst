@@ -1,0 +1,168 @@
+ body{
+    background: url(../img/denglubeijing.jpg) no-repeat;
+    height:100%;
+} 
+.beijing{
+    background: url(../img/register.png) no-repeat;
+    width: 1040px;
+    margin: 10px auto 0;
+    overflow: hidden;
+}
+.denglu{
+    width: 390px;
+    height: 545px;
+    background: #fff;
+    margin-left: 327px;
+    margin-top: 42px;
+    border-radius: 10px;
+    position: relative;
+}
+.denglu .logo{
+    width: 148px;
+    height: 72px;
+    position: absolute;
+    top: -43px;
+    left: 116px;
+}
+.denglu .denglu_1{
+    font-size: 19px;
+    color: #000;
+    text-align: center;
+    padding-top: 38px;
+    font-weight: bold;
+}
+.denglu .denglu_2{
+    display: block;
+    font-size: 14px;
+    text-align: center;
+    color: #f28300;
+    margin-top: 13px;
+    text-decoration: underline;
+}
+.denglu .denglu_3{
+    margin-top: 52px;
+    height: 84px;
+    position: relative;
+}
+.deng_1{
+    display: block;
+    width: 308px;
+    height: 44px;
+    border: #9e9e9e solid 1px;
+    border-radius: 5px;
+    margin: 0 auto;
+    outline: none;
+    padding-left:10px;
+}
+.denglu .denglu_3 .deng_2{
+    margin-left: 45px;
+    margin-top: 8px;
+    color: #f49320;
+}
+.denglu .denglu_4{
+    height: 84px;
+    position: relative;
+}
+.denglu .dinglu_5{
+    font-size: 14px;
+    /* margin-left: 300px; */
+    color: #908f8f;
+    text-decoration: underline;
+}
+.denglu .dinglu_6{
+    width: 318px;
+    height: 45px;
+    background: #00b0fb;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    color: #fff;
+    line-height: 45px;
+    font-size: 18px;
+    border-radius: 5px;
+    margin-top: 70px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

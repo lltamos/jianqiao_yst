@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须指向Dao接口 -->
+<mapper namespace="com.alqsoft.dao.order.ProductOrderDao">
+
+
+	<sql id="where_costomerid">
+		<where>
+			customer_id=#{id}
+		</where>
+	</sql>
+
+	<!-- 分页查询全部订单 -->
+	<select id="findProductOrderListByCid" resultType="java.util.HashMap"
+		parameterType="java.util.HashMap">
+
+		SELECT
+		(select pi.address from product_image pi where
+		p.id=pi.product_id
+		order by pi.id LIMIT 1 ) as image,p.product_type_name,
+		p.name,po.total_price,po.created_time,po.pay_relative_id,po.count,po.pay_status,po.doctor_id
+		FROM
+		product_order po,product p
+		WHERE
+		po.product_id=p.id AND
+		po.customer_id=#{id}
+		ORDER BY
+		po.created_time DESC
+		LIMIT
+		#{startIndex},#{endIndex}
+
+	</select>
+
+
+
+
+
+	<!-- 根据状态查询订单 -->
+
+	<select id="findProductOrderByStatusAndCId" resultType="java.util.HashMap"
+		parameterType="java.util.HashMap">
+
+		SELECT
+		(select pi.address from product_image pi where
+		p.id=pi.product_id order by pi.id LIMIT 1 ) as image,p.product_type_name,
+		p.name,po.total_price,po.created_time,po.pay_relative_id,po.count,po.pay_status,po.doctor_id
+		FROM
+		product_order po,product p
+		WHERE
+		po.product_id=p.id AND
+		po.customer_id=#{id} AND
+
+		<if test="status==0">
+			pay_status=0
+		</if>
+		<if test="status==2">
+			pay_status in(1,23,4,5,6,7,13)
+		</if>
+		ORDER BY po.created_time DESC
+		LIMIT
+		#{startIndex},#{endIndex}
+	</select>
+
+
+
+
+	<select id="getProductOrderById" resultType="java.util.HashMap"
+		parameterType="int">
+		SELECT *
+		FROM product_order WHERE id=#{id}
+
+	</select>
+
+	<select id="getCountFormOrder" resultType="int" parameterType="Long">
+
+		SELECT
+		count(*)
+		FROM
+		product_order po,product p
+		WHERE
+		po.customer_id=#{id}
+		AND
+		po.product_id=p.id
+	</select>
+
+
+	<select id="getCountFormOrderByStatus" resultType="int"
+		parameterType="java.util.HashMap">
+
+		select count(*) from product_order
+		<include refid="where_costomerid" />
+		and
+		pay_status=#{status}
+
+	</select>
+
+
+	<!-- 分页查询服务包全部订单（腾卉） -->
+	<select id="findProductOrderListByDoctorId" resultType="java.util.HashMap"
+		parameterType="java.util.HashMap">
+		SELECT
+		c.nick_name,i.address,p.name,p.product_type_name,po.total_price,po.created_time,po.pay_relative_id,po.count,po.pay_status
+		FROM
+		product_order po,product p,customer c,product_image i
+		WHERE
+		po.product_id=p.id 
+		AND po.customer_id=c.id
+		AND p.id=i.product_id
+		AND po.doctor_id=#{doctor_id}
+		ORDER BY
+		po.pay_time DESC
+		LIMIT #{startIndex},#{endIndex}
+	</select>
+	<!-- 查询订单数量（腾卉） -->
+	<select id="getCountOrderByDoctorId" resultType="int"
+		parameterType="Long">
+
+		select count(*) from product_order where doctor_id=#{doctor_id}
+
+	</select>
+
+	<select id="getProductorderByCid" resultType="com.alqsoft.entity.ProductOrder"
+		parameterType="map">
+		select * from product_order where customer_id=#{cid} and
+		pay_status=13 and book_type=0
+	</select>
+
+	<!-- <select id="getProductorderByCidCount" resultType="int" parameterType="Long"> 
+		select count(*) from product_order where customer_id=#{cid} and pay_status=1 
+		</select> -->
+
+	<select id="getProductOrderByProductOrderId" resultType="com.alqsoft.entity.ProductOrder"
+		parameterType="Long">
+		select * from product_order where id=#{cid}
+	</select>
+	
+	<select id="getProductIdById" resultType="int" parameterType="Long">
+		select p.product_id from product_order as p where id=#{oid}
+	</select>
+
+	<select id="getProductOrderByOid" resultType="com.alqsoft.entity.ProductOrder" parameterType="Long">
+		select * from product_order as p where id=#{productOrderId}
+	</select>
+	<!-- 根据订单号查找订单 -->
+	<select id="getProductOrder" resultType="com.alqsoft.entity.ProductOrder" parameterType="java.util.Map">
+		SELECT * FROM product_order AS 
+		p WHERE p.doctor_id=#{doctorId} 
+		AND p.customer_id=#{customerId} 
+		AND p.product_name=#{productName} 
+		AND p.product_id=#{productId} 
+		LIMIT 0,1;
+	</select>
+
+</mapper>

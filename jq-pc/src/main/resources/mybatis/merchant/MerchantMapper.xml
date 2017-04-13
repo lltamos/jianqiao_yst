@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须指向Dao接口 -->
+<mapper namespace="com.alqsoft.dao.merchant.MerchantDao">
+
+	<select id="findMerchantAll" resultType="map">
+		select * from merchant
+	</select>
+
+	<select id="getMerchantById" resultType="com.alqsoft.entity.Merchant" parameterType="Long">
+		select * from merchant where id=#{id};
+	</select>
+
+</mapper>

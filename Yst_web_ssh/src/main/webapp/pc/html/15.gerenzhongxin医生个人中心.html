@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="zh-en">
+<head>
+    <meta charset="UTF-8">
+    <title>求医发布</title>
+    <link rel="stylesheet" href="css/base.css" type="text/css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/gerenzhongxin.css">
+    <script src="js/jquery-1.7.2.js"></script>
+
+    <style>
+    .yuer_32 .jilu{
+    background-color: #E9E9E9;
+    }
+    .yuer_32 .jilu .yellow{
+    background-color:#D9E4B6 ;
+    }
+    </style>
+</head>
+<body>
+<div class="header clearfix">
+    <div class="cityicon">
+        <div class="icon"></div>
+    </div>
+    <span>选择城市</span>
+
+    <div class="headerright">
+        <span class="welcome">欢迎您来到健桥官方网站！！</span>
+        <a href="javascript:;" class="pleaselogin">请登录</a>
+        <a href="javascript:;" class="register">免费注册</a>
+
+        <div class="appiconbox">
+            <span class="appicon"></span>
+        </div>
+        <a href="javascript:;" class="txt">健桥APP</a>
+
+        <div class="weixiniconbox">
+            <span class="weixinicon"></span>
+        </div>
+        <a href="javascript:;" class="txt">微信公众号</a>
+
+        <div class="shareiconbox">
+            <span class="shareicon"></span>
+        </div>
+        <a href="javascript:;" class="txt">分享论坛</a>
+    </div>
+    <div class="selectcity" style="display: none">
+        <div class="cityline">
+            <span>北京</span>
+            <span>上海</span>
+            <span>天津</span>
+            <span>重庆</span>
+        </div>
+        <div class="cityline">
+            <span>黑龙江</span>
+            <span>吉林</span>
+            <span>辽宁</span>
+            <span>江苏</span>
+            <span>安徽</span>
+        </div>
+        <div class="cityline">
+            <span>河北</span>
+            <span>河南</span>
+            <span>湖北</span>
+            <span>湖南</span>
+            <span>江西</span>
+        </div>
+        <div class="cityline">
+            <span>山西</span>
+            <span>四川</span>
+            <span>青海</span>
+            <span>海南</span>
+            <span>广东</span>
+        </div>
+        <div class="cityline">
+            <span>贵州</span>
+            <span>浙江</span>
+            <span>福建</span>
+            <span>台湾</span>
+            <span>甘肃</span>
+        </div>
+        <div class="cityline">
+            <span>云南</span>
+            <span>内蒙古</span>
+            <span>宁夏</span>
+            <span>新疆</span>
+            <span>西藏</span>
+        </div>
+        <div class="cityline">
+            <span>广西</span>
+            <span>香港</span>
+            <span>澳门</span>
+        </div>
+    </div>
+</div>
+<div class="navbox">
+    <div class="nav clearfix">
+        <h1 class="logo">
+            <a href="javascript:;">
+                <img src="img/logo.png" alt="">
+            </a>
+        </h1>
+        <ul class="navlinks clearfix">
+            <li>
+                <a href="javascript:;">首页</a>
+            </li>
+            <li>
+                <a href="javascript:;">疑难杂症导医</a>
+            </li>
+            <li>
+                <a href="javascript:;">健康服务包</a>
+            </li>
+            <li>
+                <a href="javascript:;">名医高手</a>
+            </li>
+            <li>
+                <a href="javascript:;">患者求医</a>
+            </li>
+            <li>
+                <a href="javascript:;">关于我们</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="daohangf">
+    <a href="javascript:;">首页</a>>><span>个人中心</span>
+</div>
+<div class="personal">
+    <div class="personal_1 clearfix">
+        <a href="javascript:;" class="yszhuye select solidw">医生主页</a>
+        <span class="tiao"></span>
+        <a href="#fuwuxiug" class="select yszhuye"><span>5</span>服务</a>
+        <span class="tiao"></span>
+        <a href="#xiangcez" class="select yszhuye"><span>1</span>相册</a>
+        <span class="tiao"></span>
+        <a href="#yonghubjt" class="select yszhuye"><span>2</span>用户评价</a>
+        <span class="tiao"></span>
+        <a href="javascript:;" class="select gerenzhong">个人账户</a>
+    </div>
+</div>
+
+
+<script>
+    $(function () {
+        $('.yszhuye').click(function () {
+            $('.ycdw').hide();
+            $('.yszhu').show();
+        });
+        $('.gerenzhong').click(function () {
+            $('.ycdw').hide();
+            $('.zhanghuyel').show();
+        });
+        $('.select').click(function () {
+            $('.select').removeClass('solidw');
+            $(this).addClass('solidw');
+        });
+    });
+</script>
+
+<!--医生主页-->
+<div class="yszhu ycdw" style="display:block;">
+    <div class="gezhongxli">
+        <div class="personal_2 clearfix">
+            <div class="sonal_21"><img src="img/jian_14.jpg"></div>
+            <div class="sonal_22">
+                <p class="mingzi">王嘉湖</p>
+
+                <p class="zhuzhiyi"><span>主治医生</span><i>北京王府医院</i></p>
+
+                <p class="shanchang"><span>擅长：</span><i>胸闷、胸痛的鉴别诊断；擅长：胸闷、胸痛鉴别诊断；擅长胸闷 胸痛的鉴别诊断</i></p>
+            </div>
+            <div class="personal_3">
+                <a href="javascript:;"></a>
+
+                <p class="sonal_31">
+                    <span>口碑：</span>
+                    <b><img src="img/jianp_8.png"><img src="img/jianp_8.png"><img src="img/jianp_8.png"><img
+                            src="img/jianp_8.png"><img src="img/jianp_8.png"></b>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="fuwuxiug" class="fuwuxiug">
+        <div class="fuwuxiug_1">
+            <div class="xiug_12 clearfix">
+                <p class="gli_1 clearfix">
+                    <a href="javascript:;">服务</a>
+                    <a href="javascript:;" class="bils">服务修改</a>
+                </p>
+
+                <div class="gli_2">服务</div>
+            </div>
+            <div class="zixunl clearfix">
+                <div class="zixunl_1 clearfix">
+                    <div class="zixunl_12"><img src="img/jianj_22.jpg"></div>
+                    <div class="zixunl_13">
+                        <p class="unl_1"><span>在线咨询</span> <i>￥<b>30</b>/次</i></p>
+
+                        <p>通过文字、图片、语音进行咨询</p>
+                    </div>
+                </div>
+                <div class="zixunl_1 clearfix">
+                    <div class="zixunl_12"><img src="img/jianj_23.jpg"></div>
+                    <div class="zixunl_13">
+                        <p class="unl_1"><span>在线咨询</span> <i>￥<b>30</b>/次</i></p>
+
+                        <p>通过文字、图片、语音进行咨询</p>
+                    </div>
+                </div>
+                <div class="zixunl_1 clearfix">
+                    <div class="zixunl_12"><img src="img/jianj_24.jpg"></div>
+                    <div class="zixunl_13">
+                        <p class="unl_1"><span>在线咨询</span> <i>￥<b>30</b>/次</i></p>
+
+                        <p>通过文字、图片、语音进行咨询</p>
+                    </div>
+                </div>
+                <div class="zixunl_1 clearfix">
+                    <div class="zixunl_12"><img src="img/jianj_25.jpg"></div>
+                    <div class="zixunl_13">
+                        <p class="unl_1"><span>在线咨询</span> <i>￥<b>30</b>/次</i></p>
+
+                        <p>通过文字、图片、语音进行咨询</p>
+                    </div>
+                </div>
+                <div class="zixunl_1 clearfix">
+                    <div class="zixunl_12"><img src="img/jianj_26.jpg"></div>
+                    <div class="zixunl_13">
+                        <p class="unl_1"><span>在线咨询</span> <i>￥<b>30</b>/次</i></p>
+
+                        <p>通过文字、图片、语音进行咨询</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="xiangcez" class="xiangcez">
+        <div class="cez_1">
+            <span>相册</span>
+            <a href="javascript:;">添加照片</a>
+        </div>
+        <div class="cez_2 clearfix">
+            <div class="cez_21">
+                <img class="ez_211" src="img/jianj_27.jpg">
+                <img class="ez_212" src="img/jianp_9.png">
+            </div>
+
+            <div class="cez_21">
+                <img class="ez_211" src="img/jianj_27.jpg">
+                <img class="ez_212" src="img/jianp_9.png">
+            </div>
+            <div class="cez_21">
+                <img class="ez_211" src="img/jianj_27.jpg">
+                <img class="ez_212" src="img/jianp_9.png">
+            </div>
+            <div class="cez_21">
+                <img class="ez_211" src="img/jianj_27.jpg">
+                <img class="ez_212" src="img/jianp_9.png">
+            </div>
+            <div class="cez_21">
+                <img class="ez_211" src="img/jianj_27.jpg">
+                <img class="ez_212" src="img/jianp_9.png">
+            </div>
+            <div class="cez_21">
+                <img class="ez_211" src="img/jianj_27.jpg">
+                <img class="ez_212" src="img/jianp_9.png">
+            </div>
+            <div class="cez_21">
+                <img class="ez_211" src="img/jianj_27.jpg">
+                <img class="ez_212" src="img/jianp_9.png">
+            </div>
+            <div class="cez_21">
+                <img class="ez_211" src="img/jianj_27.jpg">
+                <img class="ez_212" src="img/jianp_9.png">
+            </div>
+            <div class="cez_21">
+                <img class="ez_211" src="img/jianj_27.jpg">
+                <img class="ez_212" src="img/jianp_9.png">
+            </div>
+            <div class="cez_21">
+                <img class="ez_211" src="img/jianj_27.jpg">
+                <img class="ez_212" src="img/jianp_9.png">
+            </div>
+            <div class="cez_21">
+                <img class="ez_211" src="img/jianj_27.jpg">
+                <img class="ez_212" src="img/jianp_9.png">
+            </div>
+            <div class="cez_21">
+                <img class="ez_211" src="img/jianj_27.jpg">
+                <img class="ez_212" src="img/jianp_9.png">
+            </div>
+            <div class="cez_21">
+                <img class="ez_211" src="img/jianj_27.jpg">
+                <img class="ez_212" src="img/jianp_9.png">
+            </div>
+            <div class="cez_21">
+                <img class="ez_211" src="img/jianj_27.jpg">
+                <img class="ez_212" src="img/jianp_9.png">
+            </div>
+            <div class="cez_21">
+                <img class="ez_211" src="img/jianj_27.jpg">
+                <img class="ez_212" src="img/jianp_9.png">
+            </div>
+            <div class="cez_21">
+                <img class="ez_211" src="img/jianj_27.jpg">
+                <img class="ez_212" src="img/jianp_9.png">
+            </div>
+        </div>
+    </div>
+    <div id="yonghubjt" class="yonghubjt">
+        <div class="yonghupj clearfix">
+            <div class="yonghupj_1">
+                <p>用户评价</p>
+                <img src="img/jianp_5.png">
+            </div>
+            <div class="yonghupj_2 clearfix">
+                <div class="hupj_21">
+                    <div class="pj_1"><img src="img/jianj_18.jpg"></div>
+                    <p>刘晓倩</p>
+                </div>
+                <div class="hupj_22">
+                    <div class="pj_2">
+                   <span class="pj_21">
+                        <img src="img/jianp_10.png">
+                        <img src="img/jianp_10.png">
+                        <img src="img/jianp_10.png">
+                        <img src="img/jianp_10.png">
+                        <img src="img/jianp_10.png">
+                    </span>
+                        <span class="pj_22">很满意</span>
+                    </div>
+                    <div class="pj_3">超人去看的医院叫什么名字啊？</div>
+                    <div class="pj_4">
+                        <span>1楼</span><i>2016-2-21 19:20</i>
+                    </div>
+                </div>
+            </div>
+            <div class="yonghupj_2 clearfix">
+                <div class="hupj_21">
+                    <div class="pj_1"><img src="img/jianj_18.jpg"></div>
+                    <p>刘晓倩</p>
+                </div>
+                <div class="hupj_22">
+                    <div class="pj_2">
+                   <span class="pj_21">
+                        <img src="img/jianp_10.png">
+                        <img src="img/jianp_10.png">
+                        <img src="img/jianp_10.png">
+                        <img src="img/jianp_10.png">
+                        <img src="img/jianp_10.png">
+                    </span>
+                        <span class="pj_22">很满意</span>
+                    </div>
+                    <div class="pj_3">超人去看的医院叫什么名字啊？</div>
+                    <div class="pj_4">
+                        <span>2楼</span><i>2016-2-21 19:20</i>
+                    </div>
+                </div>
+            </div>
+            <p class="yonghupj_3"><a href="javascript:;" class="blue">1</a><a href="javascript:;">2</a><a
+                    href="javascript:;">></a></p>
+        </div>
+    </div>
+</div>
+
+<!--个人中心-->
+<div class="zhanghuyel ycdw" style="display:none;">
+    <div class="yuer_1">
+        <span><i>账户余额：</i><b>1188.23</b>元</span>
+    </div>
+    <div class="beijihw">
+        <div class="woyuer">
+            <div class="yuer_2">
+                <p>收支明细</p>
+                <img src="img/jianp_5.png">
+            </div>
+            <div class="yuer_3">
+                <p class="yuer_31">
+                    <span>订单编号</span>
+                    <span>交易类型</span>
+                    <span>支出</span>
+                    <span>存入</span>
+                    <span>余额</span>
+                    <span class="bordernone">时间</span>
+                </p>
+
+                <div class="yuer_32">
+                    <p class="jilu">
+                        <span>09438956t577u8</span>
+                        <span>在线咨询</span>
+                        <span>40.00</span>
+                        <span>00.00</span>
+                        <span class="yellow">11588.23</span>
+                        <span>2016-01-23</span>
+                    </p>
+
+                    <p class="jilu">
+                        <span>09438956t577u8</span>
+                        <span>在线咨询</span>
+                        <span>40.00</span>
+                        <span>00.00</span>
+                        <span class="yellow">11588.23</span>
+                        <span>2016-01-23</span>
+                    </p>
+
+                    <p class="jilu">
+                        <span>09438956t577u8</span>
+                        <span>在线咨询</span>
+                        <span>40.00</span>
+                        <span>00.00</span>
+                        <span class="yellow">11588.23</span>
+                        <span>2016-01-23</span>
+                    </p>
+
+                    <p class="jilu">
+                        <span>09438956t577u8</span>
+                        <span>在线咨询</span>
+                        <span>40.00</span>
+                        <span>00.00</span>
+                        <span class="yellow">11588.23</span>
+                        <span>2016-01-23</span>
+                    </p>
+
+                    <p class="jilu">
+                        <span>09438956t577u8</span>
+                        <span>在线咨询</span>
+                        <span>40.00</span>
+                        <span>00.00</span>
+                        <span class="yellow">11588.23</span>
+                        <span>2016-01-23</span>
+                    </p>
+
+                    <p class="jilu">
+                        <span>09438956t577u8</span>
+                        <span>在线咨询</span>
+                        <span>40.00</span>
+                        <span>00.00</span>
+                        <span class="yellow">11588.23</span>
+                        <span>2016-01-23</span>
+                    </p>
+
+                    <p class="jilu">
+                        <span>09438956t577u8</span>
+                        <span>在线咨询</span>
+                        <span>40.00</span>
+                        <span>00.00</span>
+                        <span class="yellow">11588.23</span>
+                        <span>2016-01-23</span>
+                    </p>
+
+                    <p class="jilu">
+                        <span>09438956t577u8</span>
+                        <span>在线咨询</span>
+                        <span>40.00</span>
+                        <span>00.00</span>
+                        <span class="yellow">11588.23</span>
+                        <span>2016-01-23</span>
+                    </p>
+                </div>
+            </div>
+            <div class="fenyedol">
+                <a href="javascript:;">上一页</a>
+                <i class="dangqian">1</i>
+                <i>2</i>
+                <i>3</i>
+                <i>4</i>
+                <i>5</i>
+                <i>6</i>
+                <i>7</i>
+                <a href="javascript:;">下一页</a>
+                <span>共<b>18</b>页</span>
+                <span class="souduo">到第 <input type="text" value="1"> 页</span>
+                <a class="queding" href="javascript:;">确定</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="footbox">
+    <div class="foot">
+        <div class="logo">
+            <img src="img/logo.png" alt="">
+        </div>
+        <ul class="links">
+            <li>
+                <div class="linktitle">
+                    <a href="javascript:;">关于我们</a>
+                </div>
+                <div class="footlink">
+                    <a href="javascript:;">· 领导关注</a>
+                </div>
+                <div class="footlink">
+                    <a href="javascript:;">· 公司愿景</a>
+                </div>
+                <div class="footlink">
+                    <a href="javascript:;">· 团队精神</a>
+                </div>
+            </li>
+            <li>
+                <div class="linktitle">
+                    <a href="javascript:;">健桥资讯</a>
+                </div>
+                <div class="footlink">
+                    <a href="javascript:;">· 公司新闻</a>
+                </div>
+                <div class="footlink">
+                    <a href="javascript:;">· 项目动态</a>
+                </div>
+                <div class="footlink">
+                    <a href="javascript:;">· 行业新闻</a>
+                </div>
+            </li>
+            <li>
+                <div class="linktitle">
+                    <a href="javascript:;">联系我们</a>
+                </div>
+                <div class="footlink">
+                    <a href="javascript:;">· 联系方式</a>
+                </div>
+                <div class="footlink">
+                    <a href="javascript:;">· 在线留言</a>
+                </div>
+                <div class="footlink">
+                    <a href="javascript:;">· 人才招聘</a>
+                </div>
+            </li>
+        </ul>
+        <div class="divide">
+            <div class="divideline"></div>
+        </div>
+        <ul class="twocode">
+            <li>
+                <div class="codebox">
+                    <img src="img/twocode.jpg" alt="">
+                </div>
+                <div class="noteword">健桥官网</div>
+            </li>
+            <li>
+                <div class="codebox">
+                    <img src="img/twocode.jpg" alt="">
+                </div>
+                <div class="noteword">ADROID APP</div>
+            </li>
+            <li class="lastcode">
+                <div class="codebox">
+                    <img src="img/twocode.jpg" alt="">
+                </div>
+                <div class="noteword">IOS APP</div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="footbottombox">
+    <div class="footbottom">
+        北京上善健桥健康管理中心 jianqiao001.com 京ICP备12048628号
+    </div>
+</div>
+<script>
+$(".yuer_32>.jilu:even").css("background","#fff");
+$(".yuer_32>.jilu>.yellow:even").css("background","#F1F8D9");
+</script>
+
+</body>
+</html>

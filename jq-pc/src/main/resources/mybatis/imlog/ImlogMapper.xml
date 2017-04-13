@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须指向Dao接口 -->
+<mapper namespace="com.alqsoft.dao.imlog.ImlogDao">
+
+	<!-- 医生个人中心聊天记录 -->
+	<select id="findAllByDoctorId" resultType="java.util.HashMap"
+		parameterType="java.util.HashMap">
+		select i.*,c.image,c.name from imlog i,customer c
+		WHERE
+		i.customer_id=c.id
+		AND i.doctor_id=#{doctorId}
+		ORDER BY i.created_time
+		DESC
+		LIMIT
+		#{startIndex},#{endIndex}
+	</select>
+	<!-- -->
+	<select id="getCountByDoctorId" resultType="int" parameterType="Long">
+		select count(*) from imlog where doctor_id=#{doctorId}
+	</select>
+
+	<select id="getCountByCustomerId" resultType="int"
+		parameterType="Long">
+		select count(*) from imlog where customer_id=#{value}
+	</select>
+
+	<!-- 个人中心聊天记录 -->
+	<select id="findAllByCustomerId" resultType="java.util.HashMap"
+		parameterType="java.util.HashMap">
+		select imlog.* ,doctor.name, doctor.image_header as
+		image from
+		imlog ,doctor
+		WHERE imlog.customer_id=#{id} AND
+		doctor.id=imlog.doctor_id
+
+		ORDER BY imlog.created_time DESC
+		LIMIT
+		#{startIndex},#{endIndex};
+	</select>
+</mapper>

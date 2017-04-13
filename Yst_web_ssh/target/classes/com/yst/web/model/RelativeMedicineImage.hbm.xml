@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yst.web.model">
+	<class name="RelativeMedicineImage" table="relative_medicine_image" dynamic-insert="true" dynamic-update="true">
+		<id name="image_id" type="integer" column="image_id">
+			<generator class="native" />
+		</id>
+	<!-- cascade="save-update,persist" -->
+    <!-- <many-to-one name="relativeMedicineRecord"  class="RelativeMedicineRecord"  unique="true">  
+            <column name="record_id"></column>  
+    </many-to-one> -->
+    <property name="record_id" type="integer" length="32" column="record_id" />
+	<property name="image_url" type="string" length="200" column="image_url" />
+	</class>
+</hibernate-mapping>

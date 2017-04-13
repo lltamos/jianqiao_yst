@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yst.web.model">
+	<class name="DoctorServiceTime" table="doctor_service_time" dynamic-insert="true" dynamic-update="true">
+		<id name="doctorId" type="integer" column="doctor_id">
+			<generator class="native" />
+		</id>
+	<property name="available" type="integer" column="available" />
+	<property name="mon_avaliable" type="integer" column="mon_avaliable" />
+	<property name="mon_begin" type="string" length="30" column="mon_begin" />
+	<property name="mon_end" type="string" length="30" column="mon_end" />
+	<property name="tue_available" type="integer" column="tue_available" />
+	<property name="tue_begin" type="string" length="30" column="tue_begin" />
+	<property name="tue_end" type="string" length="30" column="tue_end" />
+	<property name="wed_available" type="integer" column="wed_available" />
+	<property name="wed_begin" type="string" length="30" column="wed_begin" />
+	<property name="wed_end" type="string" length="30" column="wed_end" />
+	<property name="thu_available" type="integer" column="thu_available" />
+	<property name="thu_begin" type="string" length="30" column="thu_begin" />
+	<property name="thu_end" type="string" length="30" column="thu_end" />
+	<property name="fri_available" type="integer" column="fri_available" />
+	<property name="fri_begin" type="string" length="30" column="fri_begin" />
+	<property name="fri_end" type="string" length="30" column="fri_end" />
+	<property name="sat_available" type="integer" column="sat_available" />
+	<property name="sat_begin" type="string" length="30" column="sat_begin" />
+	<property name="sat_end" type="string" length="30" column="sat_end" />
+	<property name="sun_available" type="integer" column="sun_available" />
+	<property name="sun_begin" type="string" length="30" column="sun_begin" />
+	<property name="sun_end" type="string" length="30" column="sun_end" />
+	</class>
+</hibernate-mapping>

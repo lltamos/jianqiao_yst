@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须指向Dao接口 -->
+<mapper namespace="com.alqsoft.dao.consultation.ConsultationDao">
+	<!-- 医生向用户发起通话请求,查询当前用户是否在有效时间段内-->
+	<select id="findCustomer" resultType="java.util.Map" parameterType="java.util.Map">
+	SELECT pay_timeout FROM doctor_service_order
+	WHERE customer_id =#{customerid} AND doctor_id=#{doctorid}
+	order by pay_timeout desc limit 0,1
+	</select>
+	
+	<!-- 根据患者求医ID查找cutomerId-->
+	<select id="findDoctor" resultType="java.util.Map" parameterType="java.util.Map">
+	SELECT
+	s.pay_time payTime,
+	s.pay_timeout payTimeOut,
+	s.doctor_id doctorId,
+	(
+		SELECT
+			NAME
+		FROM
+			doctor t
+		WHERE
+			t.id = s.doctor_id
+	) AS doctorName,
+	(
+		SELECT
+			t.deleted
+		FROM
+			doctor t
+		WHERE
+			t.id = s.doctor_id
+	) AS doctorType,
+	(
+		SELECT
+			t.customer_phone
+		FROM
+			doctor t
+		WHERE
+			t.id = s.doctor_id
+	) AS customerPhone 
+FROM
+	doctor_service_order s
+WHERE
+	s.pay_status = '1' and s.customer_id=#{customerId} and s.doctor_id=#{doctorId} order by s.pay_timeout desc limit 0,1
+
+	</select>
+	
+	
+	
+<!-- 	
+	<select id="findCustomer" resultType="java.util.Map" parameterType="java.util.Map">
+	SELECT
+	s.pay_time payTime,
+	s.pay_timeout payTimeOut,
+	s.doctor_id doctorId,
+	(
+		SELECT
+			NAME
+		FROM
+			doctor t
+		WHERE
+			t.id = s.doctor_id
+	) AS doctorName,
+	(
+		SELECT
+			t.type
+		FROM
+			doctor t
+		WHERE
+			t.id = s.doctor_id
+	) AS doctorType,
+	(
+		SELECT
+			t.customer_phone
+		FROM
+			doctor t
+		WHERE
+			t.id = s.doctor_id
+	) AS customerPhone 
+FROM
+	doctor_service_order s
+WHERE
+	s.pay_status = '1' and s.customer_id=#{yourId} and s.doctor_id=#{customerId} order by s.pay_timeout desc limit 0,1
+
+	</select>
+	 -->
+	
+		<select id="findPhone" resultType="java.util.Map" parameterType="java.util.Map">
+		select c.phone myPhone,(select phone from customer t where t.id=#{yourId})as yourPhone  from customer c where c.id=#{myId}
+	</select>
+	
+	<select id="getDoctorServiceTime" resultType="java.lang.Integer" parameterType="java.lang.String">
+		select  service_online_time_onoff as timeonoff  from doctor_service where doctor_id=#{doctorId}
+	</select>
+	
+	
+		<select id="getDoctorServiceDayTime" resultType="com.alqsoft.entity.DoctorServiceTime" parameterType="java.lang.String">
+		 SELECT
+			monday,
+			tuesday Tuesday,
+			wednesday Wednesday,
+			thursday Thursday,
+			friday Friday,
+			saturday Saturday,
+			sunday Sunday,
+			can_consult_starttime canConsultStarttime,
+			can_consult_endtime canConsultEndtime
+		FROM
+			doctor_service_time 
+				where doctor_id=#{doctorId}
+	</select>
+</mapper>

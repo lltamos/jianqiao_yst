@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须指向Dao接口 -->
+<mapper namespace="com.alqsoft.dao.customeraddress.CustomerAddressDao">
+
+	<select id="findByColumnValue" resultType="com.alqsoft.entity.CustomerAddress" parameterType="Long">
+		select * from customer_address where id=#{aid}
+	</select>
+
+</mapper>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yst.web.model">
+	<class name="ProductStat" table="product_stat" dynamic-insert="true"
+		dynamic-update="true">
+		<id name="product_id" type="integer" column="product_id">
+			<generator class="foreign">
+				<param name="property">product</param>
+			</generator>
+		</id>
+		<property name="sale_count" type="integer">
+			<column name="sale_count" not-null="true" default="0"></column>
+		</property>
+		<property name="view_count" type="integer">
+			<column name="view_count" not-null="true" default="0"></column>
+		</property>
+
+		<one-to-one name="product" class="Product" />
+	</class>
+</hibernate-mapping>
